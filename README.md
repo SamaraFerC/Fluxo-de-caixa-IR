@@ -1,4 +1,4 @@
-# Fluxo-de-caixa-IR
-Sistema de Fluxo de caixa  para gestão financeira de atividades de instituição religiosa sem fins lucrativo.
+# Fluxo-de-caixa
+Sistema de Fluxo de caixa para gestão financeira de serviçoes usados em uma instituição religiosa sem fins lucrativos.
 
-Sistema feito para materia de extensão do curso
+Sistema está sendo desenvolvido também como parte da matéria de extensão Construção de Software.
