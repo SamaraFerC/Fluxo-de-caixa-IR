@@ -11,12 +11,11 @@
 using System;
 using System.Reflection;
 
-[assembly: Microsoft.AspNetCore.Identity.UI.UIFrameworkAttribute("Bootstrap5")]
 [assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("aspnet-FluxoCaixa-adb88725-ec33-434d-a669-e1d600229d66")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("FluxoCaixa")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3639d90e7a007d7c052435da7706319ef41e4800")]
 [assembly: System.Reflection.AssemblyProductAttribute("FluxoCaixa")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FluxoCaixa")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

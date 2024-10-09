@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\SamaraFerreira\\Documents\\Projetos\\Fluxo de caixa\\FluxoCaixa\\FluxoCaixa.csproj": {}
+    "C:\\Users\\samar\\OneDrive\\Documentos\\GitHub\\Fluxo-de-caixa-IR\\FluxoCaixa.csproj": {}
   },
   "projects": {
-    "C:\\Users\\SamaraFerreira\\Documents\\Projetos\\Fluxo de caixa\\FluxoCaixa\\FluxoCaixa.csproj": {
+    "C:\\Users\\samar\\OneDrive\\Documentos\\GitHub\\Fluxo-de-caixa-IR\\FluxoCaixa.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\SamaraFerreira\\Documents\\Projetos\\Fluxo de caixa\\FluxoCaixa\\FluxoCaixa.csproj",
+        "projectUniqueName": "C:\\Users\\samar\\OneDrive\\Documentos\\GitHub\\Fluxo-de-caixa-IR\\FluxoCaixa.csproj",
         "projectName": "FluxoCaixa",
-        "projectPath": "C:\\Users\\SamaraFerreira\\Documents\\Projetos\\Fluxo de caixa\\FluxoCaixa\\FluxoCaixa.csproj",
-        "packagesPath": "C:\\Users\\SamaraFerreira\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\SamaraFerreira\\Documents\\Projetos\\Fluxo de caixa\\FluxoCaixa\\obj\\",
+        "projectPath": "C:\\Users\\samar\\OneDrive\\Documentos\\GitHub\\Fluxo-de-caixa-IR\\FluxoCaixa.csproj",
+        "packagesPath": "C:\\Users\\samar\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\samar\\OneDrive\\Documentos\\GitHub\\Fluxo-de-caixa-IR\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\SamaraFerreira\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\samar\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,8 +22,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
-          "https://api.nuget.org/v3/index.json": {}
+          "C:\\Program Files\\dotnet\\library-packs": {}
         },
         "frameworks": {
           "net6.0": {
