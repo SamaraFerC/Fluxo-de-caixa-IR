@@ -1,54 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "GbiTAFP1osI=",
-  "success": false,
+  "dgSpecHash": "hb84w4AXgbg=",
+  "success": true,
   "projectFilePath": "C:\\Users\\samar\\OneDrive\\Documentos\\GitHub\\Fluxo-de-caixa-IR\\FluxoCaixa.csproj",
   "expectedPackageFiles": [],
-  "logs": [
-    {
-      "code": "NU1101",
-      "level": "Error",
-      "message": "Não é possível encontrar o pacote Microsoft.EntityFrameworkCore.SqlServer. Não existe nenhum pacote com esta ID nas origens: C:\\Program Files\\dotnet\\library-packs, Microsoft Visual Studio Offline Packages",
-      "libraryId": "Microsoft.EntityFrameworkCore.SqlServer",
-      "targetGraphs": [
-        "net6.0"
-      ]
-    },
-    {
-      "code": "NU1101",
-      "level": "Error",
-      "message": "Não é possível encontrar o pacote Microsoft.AspNetCore.Identity.EntityFrameworkCore. Não existe nenhum pacote com esta ID nas origens: C:\\Program Files\\dotnet\\library-packs, Microsoft Visual Studio Offline Packages",
-      "libraryId": "Microsoft.AspNetCore.Identity.EntityFrameworkCore",
-      "targetGraphs": [
-        "net6.0"
-      ]
-    },
-    {
-      "code": "NU1101",
-      "level": "Error",
-      "message": "Não é possível encontrar o pacote Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore. Não existe nenhum pacote com esta ID nas origens: C:\\Program Files\\dotnet\\library-packs, Microsoft Visual Studio Offline Packages",
-      "libraryId": "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore",
-      "targetGraphs": [
-        "net6.0"
-      ]
-    },
-    {
-      "code": "NU1101",
-      "level": "Error",
-      "message": "Não é possível encontrar o pacote Microsoft.AspNetCore.Identity.UI. Não existe nenhum pacote com esta ID nas origens: C:\\Program Files\\dotnet\\library-packs, Microsoft Visual Studio Offline Packages",
-      "libraryId": "Microsoft.AspNetCore.Identity.UI",
-      "targetGraphs": [
-        "net6.0"
-      ]
-    },
-    {
-      "code": "NU1101",
-      "level": "Error",
-      "message": "Não é possível encontrar o pacote Microsoft.EntityFrameworkCore.Tools. Não existe nenhum pacote com esta ID nas origens: C:\\Program Files\\dotnet\\library-packs, Microsoft Visual Studio Offline Packages",
-      "libraryId": "Microsoft.EntityFrameworkCore.Tools",
-      "targetGraphs": [
-        "net6.0"
-      ]
-    }
-  ]
+  "logs": []
 }

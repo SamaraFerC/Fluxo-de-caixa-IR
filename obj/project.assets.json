@@ -1,17 +1,11 @@
 {
   "version": 3,
   "targets": {
-    "net6.0": {}
+    "net8.0": {}
   },
   "libraries": {},
   "projectFileDependencyGroups": {
-    "net6.0": [
-      "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore >= 6.0.15",
-      "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 6.0.15",
-      "Microsoft.AspNetCore.Identity.UI >= 6.0.15",
-      "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.15",
-      "Microsoft.EntityFrameworkCore.Tools >= 6.0.15"
-    ]
+    "net8.0": []
   },
   "packageFolders": {
     "C:\\Users\\samar\\.nuget\\packages\\": {}
@@ -30,15 +24,15 @@
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
-        "net6.0"
+        "net8.0"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "C:\\Program Files\\dotnet\\library-packs": {}
       },
       "frameworks": {
-        "net6.0": {
-          "targetAlias": "net6.0",
+        "net8.0": {
+          "targetAlias": "net8.0",
           "projectReferences": {}
         }
       },
@@ -54,30 +48,8 @@
       }
     },
     "frameworks": {
-      "net6.0": {
-        "targetAlias": "net6.0",
-        "dependencies": {
-          "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
-            "target": "Package",
-            "version": "[6.0.15, )"
-          },
-          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
-            "target": "Package",
-            "version": "[6.0.15, )"
-          },
-          "Microsoft.AspNetCore.Identity.UI": {
-            "target": "Package",
-            "version": "[6.0.15, )"
-          },
-          "Microsoft.EntityFrameworkCore.SqlServer": {
-            "target": "Package",
-            "version": "[6.0.15, )"
-          },
-          "Microsoft.EntityFrameworkCore.Tools": {
-            "target": "Package",
-            "version": "[6.0.15, )"
-          }
-        },
+      "net8.0": {
+        "targetAlias": "net8.0",
         "imports": [
           "net461",
           "net462",
@@ -97,55 +69,8 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1101",
-      "level": "Error",
-      "message": "Não é possível encontrar o pacote Microsoft.EntityFrameworkCore.SqlServer. Não existe nenhum pacote com esta ID nas origens: C:\\Program Files\\dotnet\\library-packs, Microsoft Visual Studio Offline Packages",
-      "libraryId": "Microsoft.EntityFrameworkCore.SqlServer",
-      "targetGraphs": [
-        "net6.0"
-      ]
-    },
-    {
-      "code": "NU1101",
-      "level": "Error",
-      "message": "Não é possível encontrar o pacote Microsoft.AspNetCore.Identity.EntityFrameworkCore. Não existe nenhum pacote com esta ID nas origens: C:\\Program Files\\dotnet\\library-packs, Microsoft Visual Studio Offline Packages",
-      "libraryId": "Microsoft.AspNetCore.Identity.EntityFrameworkCore",
-      "targetGraphs": [
-        "net6.0"
-      ]
-    },
-    {
-      "code": "NU1101",
-      "level": "Error",
-      "message": "Não é possível encontrar o pacote Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore. Não existe nenhum pacote com esta ID nas origens: C:\\Program Files\\dotnet\\library-packs, Microsoft Visual Studio Offline Packages",
-      "libraryId": "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore",
-      "targetGraphs": [
-        "net6.0"
-      ]
-    },
-    {
-      "code": "NU1101",
-      "level": "Error",
-      "message": "Não é possível encontrar o pacote Microsoft.AspNetCore.Identity.UI. Não existe nenhum pacote com esta ID nas origens: C:\\Program Files\\dotnet\\library-packs, Microsoft Visual Studio Offline Packages",
-      "libraryId": "Microsoft.AspNetCore.Identity.UI",
-      "targetGraphs": [
-        "net6.0"
-      ]
-    },
-    {
-      "code": "NU1101",
-      "level": "Error",
-      "message": "Não é possível encontrar o pacote Microsoft.EntityFrameworkCore.Tools. Não existe nenhum pacote com esta ID nas origens: C:\\Program Files\\dotnet\\library-packs, Microsoft Visual Studio Offline Packages",
-      "libraryId": "Microsoft.EntityFrameworkCore.Tools",
-      "targetGraphs": [
-        "net6.0"
-      ]
-    }
-  ]
+  }
 }
