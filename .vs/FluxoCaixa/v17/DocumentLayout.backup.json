@@ -1,12 +1,88 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\samar\\OneDrive\\Documentos\\GitHub\\Fluxo-de-caixa-IR\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{6CF5EEDD-0FF7-4FE4-BC77-5311432DA2AC}|SFinanceiro\\SFinanceiro.csproj|c:\\users\\samar\\onedrive\\documentos\\github\\fluxo-de-caixa-ir\\sfinanceiro\\modeldata\\entities\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6CF5EEDD-0FF7-4FE4-BC77-5311432DA2AC}|SFinanceiro\\SFinanceiro.csproj|solutionrelative:sfinanceiro\\modeldata\\entities\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6CF5EEDD-0FF7-4FE4-BC77-5311432DA2AC}|SFinanceiro\\SFinanceiro.csproj|c:\\users\\samar\\onedrive\\documentos\\github\\fluxo-de-caixa-ir\\sfinanceiro\\views\\usuarios\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6CF5EEDD-0FF7-4FE4-BC77-5311432DA2AC}|SFinanceiro\\SFinanceiro.csproj|solutionrelative:sfinanceiro\\views\\usuarios\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6CF5EEDD-0FF7-4FE4-BC77-5311432DA2AC}|SFinanceiro\\SFinanceiro.csproj|c:\\users\\samar\\onedrive\\documentos\\github\\fluxo-de-caixa-ir\\sfinanceiro\\views\\usuarios\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6CF5EEDD-0FF7-4FE4-BC77-5311432DA2AC}|SFinanceiro\\SFinanceiro.csproj|solutionrelative:sfinanceiro\\views\\usuarios\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6CF5EEDD-0FF7-4FE4-BC77-5311432DA2AC}|SFinanceiro\\SFinanceiro.csproj|c:\\users\\samar\\onedrive\\documentos\\github\\fluxo-de-caixa-ir\\sfinanceiro\\controllers\\usuarioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6CF5EEDD-0FF7-4FE4-BC77-5311432DA2AC}|SFinanceiro\\SFinanceiro.csproj|solutionrelative:sfinanceiro\\controllers\\usuarioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\samar\\OneDrive\\Documentos\\GitHub\\Fluxo-de-caixa-IR\\SFinanceiro\\Views\\Usuarios\\Index.cshtml",
+              "RelativeDocumentMoniker": "SFinanceiro\\Views\\Usuarios\\Index.cshtml",
+              "ToolTip": "C:\\Users\\samar\\OneDrive\\Documentos\\GitHub\\Fluxo-de-caixa-IR\\SFinanceiro\\Views\\Usuarios\\Index.cshtml",
+              "RelativeToolTip": "SFinanceiro\\Views\\Usuarios\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-20T23:03:54.749Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\samar\\OneDrive\\Documentos\\GitHub\\Fluxo-de-caixa-IR\\SFinanceiro\\Views\\Usuarios\\Edit.cshtml",
+              "RelativeDocumentMoniker": "SFinanceiro\\Views\\Usuarios\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\samar\\OneDrive\\Documentos\\GitHub\\Fluxo-de-caixa-IR\\SFinanceiro\\Views\\Usuarios\\Edit.cshtml",
+              "RelativeToolTip": "SFinanceiro\\Views\\Usuarios\\Edit.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-20T23:03:38.835Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Usuario.cs",
+              "DocumentMoniker": "C:\\Users\\samar\\OneDrive\\Documentos\\GitHub\\Fluxo-de-caixa-IR\\SFinanceiro\\ModelData\\Entities\\Usuario.cs",
+              "RelativeDocumentMoniker": "SFinanceiro\\ModelData\\Entities\\Usuario.cs",
+              "ToolTip": "C:\\Users\\samar\\OneDrive\\Documentos\\GitHub\\Fluxo-de-caixa-IR\\SFinanceiro\\ModelData\\Entities\\Usuario.cs",
+              "RelativeToolTip": "SFinanceiro\\ModelData\\Entities\\Usuario.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-20T23:02:56.639Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UsuariosController.cs",
+              "DocumentMoniker": "C:\\Users\\samar\\OneDrive\\Documentos\\GitHub\\Fluxo-de-caixa-IR\\SFinanceiro\\Controllers\\UsuariosController.cs",
+              "RelativeDocumentMoniker": "SFinanceiro\\Controllers\\UsuariosController.cs",
+              "ToolTip": "C:\\Users\\samar\\OneDrive\\Documentos\\GitHub\\Fluxo-de-caixa-IR\\SFinanceiro\\Controllers\\UsuariosController.cs",
+              "RelativeToolTip": "SFinanceiro\\Controllers\\UsuariosController.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABMAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-20T22:55:04.998Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }

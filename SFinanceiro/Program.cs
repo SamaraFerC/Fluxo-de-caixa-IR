@@ -1,7 +1,14 @@
+using Microsoft.EntityFrameworkCore;
+using SFinanceiro.ModelData.Context;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+var connection = builder.Configuration.GetConnectionString("DefaultConnection");
+builder.Services.AddDbContext<AppDbContext>(options => 
+                options.UseMySQL(connection));
 
 var app = builder.Build();
 
