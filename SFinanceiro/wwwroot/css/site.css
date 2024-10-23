@@ -1,8 +1,12 @@
+.navbar {
+    background-color: #ff5733; /* Escolha a cor que desejar */
+}
+
 html {
   font-size: 14px;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1000px) {
   html {
     font-size: 16px;
   }
@@ -20,3 +24,16 @@ html {
 body {
   margin-bottom: 60px;
 }
+.top-bar {
+    width: 100%;
+    height: 60px; /* Pode ajustar a altura conforme necessário */
+    background-color: #4CAF50; /* Cor de fundo da barra */
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed; /* Para manter a barra fixa no topo da página */
+    top: 0;
+    left: 0;
+}
+
