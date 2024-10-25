@@ -10,7 +10,7 @@
 </head>
 <body>
     <div class="navbar navbar-expand-lg fixed-top bg-primary" data-bs-theme="dark">
-        <a class="navbar-brand" href="#">FluxoCaixa</a>
+        <a class="navbar-brand mx-3" href="@Url.Action("Index", "Home")">FluxoCaixa</a>
         <div class="collapse navbar-collapse" id="navbarColor01">
             <ul class="navbar-nav me-auto">
                 <li class="nav-item">
@@ -30,41 +30,22 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#">Financeiro</a>
                 </li>
-                <!--<li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-            <div class="dropdown-menu">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Something else here</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Separated link</a>
-            </div>
-        </li>-->
             </ul>
-
             <div class="d-flex">
                 <div class="me-2">
-                    <a href="@Url.Action("Login", "Account")" class="btn btn-secondary my-2 my-sm-0">Entrar</a>
+                    @Html.Partial("_LoginPartial")
                 </div>
                 <div>
-                    <a href="@Url.Action("Register", "Account")" class="btn btn-secondary my-2 my-sm-0">Cadastrar-se</a>
+                    <!--<a href="@Url.Action("Register", "Account")" class="btn btn-secondary my-2 my-sm-0">Cadastrar-se</a>-->
                 </div>
             </div>
-
         </div>
     </div>
-
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
-
-    <!--<footer class="border-top footer text-muted">
-      <div class="container">
-               &copy; 2024 - SFinanceiro - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-               </div>
-    </footer>-->
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
