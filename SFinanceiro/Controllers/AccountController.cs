@@ -32,7 +32,7 @@ namespace SFinanceiro.Controllers
                     Email = registroViewModel.Email,
                 };
 
-                var usuarioCriado = await _userManager.CreateAsync(user);
+                var usuarioCriado = await _userManager.CreateAsync(user,registroViewModel.Password);
 
                 if (usuarioCriado.Succeeded)
                 {
@@ -61,7 +61,8 @@ namespace SFinanceiro.Controllers
         {
             if (ModelState.IsValid)
             {
-                var senhaCriada = await _signInManager.PasswordSignInAsync(loginViewModel.Email, loginViewModel.Password,loginViewModel.RememberMe, false);
+                var senhaCriada = await _signInManager.PasswordSignInAsync(
+                    loginViewModel.Email, loginViewModel.Password,loginViewModel.RememberMe, false);
 
                 if (senhaCriada.Succeeded)
                 {
@@ -83,6 +84,13 @@ namespace SFinanceiro.Controllers
             await _signInManager.SignOutAsync();
             
             return RedirectToAction("Index", "Home");
+        }
+
+        [HttpGet]
+        [Route("/Account/AccessDenied")]
+        public ActionResult AccessDenied()
+        {
+            return View();
         }
     }
 }
