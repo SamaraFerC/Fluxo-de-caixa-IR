@@ -1,0 +1,313 @@
+.cad-usuario-sitema-container {
+  width: 100%;
+  display: flex;
+  overflow: auto;
+  min-height: 100vh;
+  align-items: center;
+  flex-direction: column;
+}
+.cad-usuario-sitema-cad-usuario-sitema {
+  width: 100%;
+  height: 832px;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  align-items: flex-start;
+  flex-shrink: 0;
+  border-radius: 28px;
+  background-color: rgba(173, 216, 230, 1);
+}
+.cad-usuario-sitema-cadastrovoluntario {
+  top: 144px;
+  left: 456px;
+  width: 368px;
+  height: 544px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 0;
+}
+.cad-usuario-sitema-rectangle8 {
+  top: 0px;
+  left: 0px;
+  width: 357px;
+  height: 544px;
+  position: absolute;
+  box-sizing: content-box;
+  border-color: rgba(0, 0, 0, 1);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 22px;
+}
+.cad-usuario-sitema-voltarcadastro1 {
+  top: 483px;
+  left: 49px;
+  width: 70px;
+  height: 32px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 0;
+}
+.cad-usuario-sitema-rectangle2 {
+  top: 0px;
+  left: 0px;
+  width: 70px;
+  height: 32px;
+  position: absolute;
+  border-color: rgba(0, 0, 0, 0.20000000298023224);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 10px;
+}
+.cad-usuario-sitema-text10 {
+  top: 6.256486892700195px;
+  left: 14px;
+  color: rgba(15, 34, 82, 1);
+  width: 42px;
+  height: auto;
+  position: absolute;
+  font-size: 15px;
+  font-style: Regular;
+  text-align: center;
+  font-family: Inter;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.cad-usuario-sitema-salvarcadastro1 {
+  top: 480px;
+  left: 203px;
+  width: 72px;
+  height: 35px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 0;
+}
+.cad-usuario-sitema-rectangle9 {
+  top: 0px;
+  left: 0px;
+  width: 72px;
+  height: 35px;
+  position: absolute;
+  border-color: rgba(0, 0, 0, 0.20000000298023224);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 10px;
+}
+.cad-usuario-sitema-text12 {
+  top: 8.24903392791748px;
+  left: 14px;
+  color: rgba(255, 255, 255, 1);
+  height: auto;
+  position: absolute;
+  font-size: 15px;
+  font-style: Regular;
+  text-align: center;
+  font-family: Inter;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.cad-usuario-sitema-entrar1 {
+  top: 359px;
+  left: 247px;
+  width: 8px;
+  height: 38px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 0;
+}
+.cad-usuario-sitema-rectangle13 {
+  top: 241px;
+  left: 50px;
+  width: 236px;
+  height: 31px;
+  position: absolute;
+  align-self: stretch;
+  box-sizing: content-box;
+  border-color: rgba(0, 0, 0, 1);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 15px;
+}
+.cad-usuario-sitema-rectangle14 {
+  top: 172px;
+  left: 50px;
+  width: 237px;
+  height: 32px;
+  position: absolute;
+  align-self: stretch;
+  box-sizing: content-box;
+  border-color: rgba(0, 0, 0, 1);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 15px;
+}
+.cad-usuario-sitema-rectangle11 {
+  top: 305px;
+  left: 50px;
+  width: 237px;
+  height: 31px;
+  position: absolute;
+  align-self: stretch;
+  box-sizing: content-box;
+  border-color: rgba(0, 0, 0, 1);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 15px;
+}
+.cad-usuario-sitema-rectangle12 {
+  top: 423px;
+  left: 50px;
+  width: 236px;
+  height: 31px;
+  position: absolute;
+  align-self: stretch;
+  box-sizing: content-box;
+  border-color: rgba(0, 0, 0, 1);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 15px;
+}
+.cad-usuario-sitema-rectangle17 {
+  top: 365px;
+  left: 50px;
+  width: 236px;
+  height: 32px;
+  position: absolute;
+  align-self: stretch;
+  box-sizing: content-box;
+  border-color: rgba(0, 0, 0, 1);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 15px;
+}
+.cad-usuario-sitema-rectangle15 {
+  top: 113px;
+  left: 50px;
+  width: 236px;
+  height: 31px;
+  position: absolute;
+  align-self: stretch;
+  box-sizing: content-box;
+  border-color: rgba(0, 0, 0, 1);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 15px;
+}
+.cad-usuario-sitema-text14 {
+  top: 82px;
+  left: 49px;
+  color: rgba(0, 0, 0, 1);
+  width: 129px;
+  height: auto;
+  position: absolute;
+  font-size: 12px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.cad-usuario-sitema-text16 {
+  top: 148px;
+  left: 48px;
+  color: rgba(0, 0, 0, 1);
+  width: 92px;
+  height: auto;
+  position: absolute;
+  font-size: 12px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.cad-usuario-sitema-text18 {
+  top: 214px;
+  left: 46px;
+  color: rgba(0, 0, 0, 1);
+  width: 64px;
+  height: auto;
+  position: absolute;
+  font-size: 12px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.cad-usuario-sitema-text20 {
+  top: 279px;
+  left: 48px;
+  color: rgba(0, 0, 0, 1);
+  width: 73px;
+  height: auto;
+  position: absolute;
+  font-size: 12px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.cad-usuario-sitema-text22 {
+  top: 402px;
+  left: 50px;
+  color: rgba(0, 0, 0, 1);
+  width: 37px;
+  height: auto;
+  position: absolute;
+  font-size: 12px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.cad-usuario-sitema-text24 {
+  top: 340px;
+  left: 50px;
+  color: rgba(0, 0, 0, 1);
+  width: 151px;
+  height: auto;
+  position: absolute;
+  font-size: 12px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.cad-usuario-sitema-text26 {
+  top: 20px;
+  left: 104px;
+  color: rgba(9, 8, 101, 1);
+  height: auto;
+  position: absolute;
+  font-size: 30px;
+  font-style: Bold;
+  text-align: center;
+  font-family: Inter;
+  font-weight: 700;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}

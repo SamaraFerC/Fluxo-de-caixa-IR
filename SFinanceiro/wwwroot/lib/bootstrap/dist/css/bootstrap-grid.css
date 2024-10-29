@@ -18,14 +18,14 @@
   margin-left: auto;
 }
 
-@media (min-width: 576px) {
+@media (min-width: 1000px) {
   .container-sm, .container {
-    max-width: 540px;
+    max-width: 1000px;
   }
 }
-@media (min-width: 768px) {
+@media (min-width: 1000px) {
   .container-md, .container-sm, .container {
-    max-width: 720px;
+    max-width: 1000px;
   }
 }
 @media (min-width: 992px) {

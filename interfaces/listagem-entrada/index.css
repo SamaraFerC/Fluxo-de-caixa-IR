@@ -1,0 +1,676 @@
+.listagemdeentradafinanceira-container1 {
+  width: 100%;
+  display: flex;
+  overflow: auto;
+  min-height: 100vh;
+  align-items: center;
+  flex-direction: column;
+}
+.listagemdeentradafinanceira-listagemdeentradafinanceira {
+  width: 100%;
+  height: 832px;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  align-items: flex-start;
+  flex-shrink: 0;
+  border-radius: 30px 0 0 30px;
+  background-color: rgba(173, 216, 230, 1);
+}
+.listagemdeentradafinanceira-text10 {
+  top: 73px;
+  left: 232px;
+  color: rgba(9, 8, 101, 1);
+  width: 496px;
+  height: auto;
+  position: absolute;
+  font-size: 20px;
+  font-style: Bold;
+  text-align: center;
+  font-family: Inter;
+  font-weight: 700;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.listagemdeentradafinanceira-servico1 {
+  top: 244px;
+  left: 153px;
+  width: 776px;
+  height: 84px;
+  display: flex;
+  overflow: hidden;
+  position: absolute;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) ;
+  align-items: flex-start;
+  flex-shrink: 0;
+  background-color: rgba(173, 216, 230, 1);
+}
+.listagemdeentradafinanceira-servico2 {
+  top: 31px;
+  left: 19px;
+  width: 205px;
+  height: 30px;
+  position: absolute;
+  border-radius: 5px;
+}
+.listagemdeentradafinanceira-arrowdropdown1 {
+  top: 34px;
+  left: 23px;
+  width: 24px;
+  height: 24px;
+  position: absolute;
+}
+.listagemdeentradafinanceira-text12 {
+  top: 4px;
+  left: 14px;
+  color: rgba(9, 7, 100, 1);
+  height: auto;
+  position: absolute;
+  font-size: 14px;
+  font-style: Bold;
+  text-align: center;
+  font-family: Inter;
+  font-weight: 700;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.listagemdeentradafinanceira-buscarbotao {
+  top: 0px;
+  left: 473px;
+  width: 129px;
+  height: 75px;
+  display: flex;
+  overflow: hidden;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 0;
+  background-color: rgba(173, 216, 230, 1);
+}
+.listagemdeentradafinanceira-rectangle1 {
+  top: 33px;
+  left: 9px;
+  width: 120px;
+  height: 33px;
+  position: absolute;
+  border-color: rgba(0, 0, 0, 0.20000000298023224);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 10px;
+}
+.listagemdeentradafinanceira-text16 {
+  top: 41.1359748840332px;
+  left: 26.949445724487305px;
+  color: rgba(255, 255, 255, 1);
+  height: auto;
+  position: absolute;
+  font-size: 15px;
+  font-style: Regular;
+  text-align: center;
+  font-family: Inter;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.listagemdeentradafinanceira-search1 {
+  top: 41px;
+  left: 96px;
+  width: 24px;
+  height: 24px;
+  position: absolute;
+}
+.listagemdeentradafinanceira-servico3 {
+  top: 29px;
+  left: 249px;
+  width: 205px;
+  height: 30px;
+  position: absolute;
+  border-radius: 5px;
+}
+.listagemdeentradafinanceira-text18 {
+  top: 4px;
+  left: 250px;
+  color: rgba(9, 7, 100, 1);
+  height: auto;
+  position: absolute;
+  font-size: 14px;
+  font-style: Bold;
+  text-align: center;
+  font-family: Inter;
+  font-weight: 700;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.listagemdeentradafinanceira-arrowdropdown2 {
+  top: 31px;
+  left: 250px;
+  width: 24px;
+  height: 24px;
+  position: absolute;
+}
+.listagemdeentradafinanceira-dados-voluntario {
+  top: 124px;
+  left: 153px;
+  width: 778px;
+  height: 105px;
+  display: flex;
+  overflow: hidden;
+  position: absolute;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) ;
+  align-items: flex-start;
+  flex-shrink: 0;
+  background-color: rgba(173, 216, 230, 1);
+}
+.listagemdeentradafinanceira-cpf-voluntario {
+  top: 36px;
+  left: 23px;
+  width: 196px;
+  height: 30px;
+  position: absolute;
+  border-radius: 5px;
+}
+.listagemdeentradafinanceira-text20 {
+  top: 11px;
+  left: 23px;
+  color: rgba(9, 8, 101, 1);
+  height: auto;
+  position: absolute;
+  font-size: 14px;
+  font-style: Bold;
+  text-align: center;
+  font-family: Inter;
+  font-weight: 700;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.listagemdeentradafinanceira-nome-voluntario {
+  top: 39px;
+  left: 255px;
+  width: 208px;
+  height: 30px;
+  position: absolute;
+  border-radius: 5px;
+}
+.listagemdeentradafinanceira-text22 {
+  top: 14px;
+  left: 255px;
+  color: rgba(9, 8, 101, 1);
+  height: auto;
+  position: absolute;
+  font-size: 14px;
+  font-style: Bold;
+  text-align: center;
+  font-family: Inter;
+  font-weight: 700;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.listagemdeentradafinanceira-search2 {
+  top: 39px;
+  left: 188px;
+  width: 24px;
+  height: 24px;
+  position: absolute;
+}
+.listagemdeentradafinanceira-extended-fab1 {
+  top: 367px;
+  left: 365px;
+  width: 171px;
+  height: 40px;
+  display: flex;
+  overflow: hidden;
+  position: absolute;
+  box-shadow: 0px 4px 8px 3px rgba(0, 0, 0, 0.15000000596046448) ;
+  align-items: center;
+  flex-shrink: 0;
+  border-radius: 16px;
+  flex-direction: column;
+  justify-content: center;
+  background-color: rgba(236, 230, 240, 1);
+}
+.listagemdeentradafinanceira-statelayer1 {
+  gap: 12px;
+  display: flex;
+  padding: 16px 20px 16px 16px;
+  align-self: stretch;
+  align-items: center;
+  flex-shrink: 0;
+  justify-content: center;
+}
+.listagemdeentradafinanceira-icon1 {
+  width: 24px;
+  height: 24px;
+}
+.listagemdeentradafinanceira-text24 {
+  color: rgba(33, 0, 93, 1);
+  height: auto;
+  text-align: center;
+  line-height: 20px;
+}
+.listagemdeentradafinanceira-extended-fab2 {
+  top: 367px;
+  left: 160px;
+  width: 169px;
+  height: 40px;
+  display: flex;
+  overflow: hidden;
+  position: absolute;
+  box-shadow: 0px 4px 8px 3px rgba(0, 0, 0, 0.15000000596046448) ;
+  align-items: center;
+  flex-shrink: 0;
+  border-radius: 16px;
+  flex-direction: column;
+  justify-content: center;
+  background-color: rgba(236, 230, 240, 1);
+}
+.listagemdeentradafinanceira-statelayer2 {
+  gap: 12px;
+  display: flex;
+  padding: 16px 20px 16px 16px;
+  align-self: stretch;
+  align-items: center;
+  flex-shrink: 0;
+  justify-content: center;
+}
+.listagemdeentradafinanceira-text26 {
+  color: rgba(33, 0, 93, 1);
+  height: auto;
+  text-align: center;
+  line-height: 20px;
+}
+.listagemdeentradafinanceira-add {
+  top: 375px;
+  left: 176px;
+  width: 29px;
+  height: 24px;
+  position: absolute;
+}
+.listagemdeentradafinanceira-rectangle2 {
+  top: 449px;
+  left: 160px;
+  width: 660px;
+  height: 31px;
+  position: absolute;
+}
+.listagemdeentradafinanceira-rectangle4 {
+  top: 449px;
+  left: 160px;
+  width: 777px;
+  height: 31px;
+  position: absolute;
+}
+.listagemdeentradafinanceira-rectangle3 {
+  top: 495px;
+  left: 160px;
+  width: 777px;
+  height: 31px;
+  position: absolute;
+}
+.listagemdeentradafinanceira-rectangle5 {
+  top: 624px;
+  left: 160px;
+  width: 777px;
+  height: 31px;
+  position: absolute;
+}
+.listagemdeentradafinanceira-rectangle6 {
+  top: 537px;
+  left: 160px;
+  width: 777px;
+  height: 31px;
+  position: absolute;
+}
+.listagemdeentradafinanceira-rectangle7 {
+  top: 583px;
+  left: 160px;
+  width: 777px;
+  height: 31px;
+  position: absolute;
+}
+.listagemdeentradafinanceira-text28 {
+  top: 457px;
+  left: 165px;
+  color: rgba(0, 0, 0, 1);
+  width: 130px;
+  height: auto;
+  position: absolute;
+  font-size: 10px;
+  font-style: Regular;
+  text-align: center;
+  font-family: Inter;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.listagemdeentradafinanceira-text30 {
+  top: 457px;
+  left: 482px;
+  color: rgba(0, 0, 0, 1);
+  width: 126px;
+  height: auto;
+  position: absolute;
+  font-size: 10px;
+  font-style: Regular;
+  text-align: center;
+  font-family: Inter;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.listagemdeentradafinanceira-text32 {
+  top: 457px;
+  left: 796px;
+  color: rgba(0, 0, 0, 1);
+  width: 40px;
+  height: auto;
+  position: absolute;
+  font-size: 10px;
+  font-style: Regular;
+  text-align: center;
+  font-family: Inter;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.listagemdeentradafinanceira-navigation-rail {
+  gap: 40px;
+  top: 0px;
+  left: 0px;
+  width: 94px;
+  height: 832px;
+  display: flex;
+  padding: 44px 0 56px;
+  overflow: hidden;
+  position: absolute;
+  align-items: center;
+  flex-shrink: 0;
+  border-radius: 30px 0 0 30px;
+  flex-direction: column;
+  background-color: rgba(15, 34, 82, 1);
+}
+.listagemdeentradafinanceira-menu-fab {
+  gap: 4px;
+  width: 80px;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  flex-direction: column;
+}
+.listagemdeentradafinanceira-menu {
+  gap: 10px;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  flex-direction: column;
+  justify-content: center;
+}
+.listagemdeentradafinanceira-container2 {
+  gap: 10px;
+  display: flex;
+  overflow: hidden;
+  align-items: center;
+  border-radius: 100px;
+  justify-content: center;
+}
+.listagemdeentradafinanceira-destinations {
+  gap: 12px;
+  display: flex;
+  overflow: hidden;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+.listagemdeentradafinanceira-voluntrios {
+  gap: 4px;
+  display: flex;
+  padding: 0 2px 4px;
+  align-self: stretch;
+  align-items: center;
+  flex-direction: column;
+}
+.listagemdeentradafinanceira-container3 {
+  display: flex;
+  overflow: hidden;
+  align-items: center;
+  border-radius: 100px;
+  flex-direction: column;
+  justify-content: center;
+}
+.listagemdeentradafinanceira-statelayer3 {
+  display: flex;
+  padding: 4px 16px;
+  align-items: center;
+  justify-content: center;
+}
+.listagemdeentradafinanceira-icon2 {
+  width: 24px;
+  height: 24px;
+}
+.listagemdeentradafinanceira-text34 {
+  color: rgba(231, 224, 236, 1);
+  height: auto;
+  align-self: stretch;
+  text-align: center;
+  line-height: 16px;
+}
+.listagemdeentradafinanceira-atividades {
+  gap: 4px;
+  display: flex;
+  padding: 0 2px 4px;
+  align-self: stretch;
+  align-items: center;
+  flex-direction: column;
+}
+.listagemdeentradafinanceira-container4 {
+  display: flex;
+  overflow: hidden;
+  align-items: center;
+  border-radius: 100px;
+  flex-direction: column;
+  justify-content: center;
+}
+.listagemdeentradafinanceira-statelayer4 {
+  display: flex;
+  padding: 4px 16px;
+  align-items: center;
+  justify-content: center;
+}
+.listagemdeentradafinanceira-icon3 {
+  width: 24px;
+  height: 24px;
+}
+.listagemdeentradafinanceira-text36 {
+  color: rgba(231, 224, 236, 1);
+  height: auto;
+  align-self: stretch;
+  text-align: center;
+  line-height: 16px;
+}
+.listagemdeentradafinanceira-servios-voluntrios {
+  gap: 4px;
+  display: flex;
+  padding: 0 2px 4px;
+  align-self: stretch;
+  align-items: center;
+  flex-direction: column;
+}
+.listagemdeentradafinanceira-container5 {
+  display: flex;
+  overflow: hidden;
+  align-items: center;
+  border-radius: 100px;
+  justify-content: center;
+  background-color: rgba(232, 222, 248, 1);
+}
+.listagemdeentradafinanceira-statelayer5 {
+  display: flex;
+  padding: 4px 16px;
+  align-items: center;
+  justify-content: center;
+}
+.listagemdeentradafinanceira-icon4 {
+  width: 24px;
+  height: 24px;
+}
+.listagemdeentradafinanceira-text38 {
+  color: rgba(254, 247, 255, 1);
+  height: auto;
+  align-self: stretch;
+  text-align: center;
+  line-height: 16px;
+}
+.listagemdeentradafinanceira-home {
+  top: 42px;
+  left: 27px;
+  width: 48px;
+  height: 49px;
+  position: absolute;
+}
+.listagemdeentradafinanceira-barradepaginas {
+  gap: 8px;
+  top: 694px;
+  left: 259px;
+  width: 909px;
+  height: 32px;
+  display: flex;
+  position: absolute;
+  align-items: center;
+  flex-shrink: 0;
+}
+.listagemdeentradafinanceira-pagination-previous {
+  gap: 8px;
+  display: flex;
+  opacity: 0.50;
+  padding: 8px 12px;
+  align-items: center;
+  border-radius: 8px;
+  justify-content: center;
+}
+.listagemdeentradafinanceira-arrowleft {
+  width: 16px;
+  height: 16px;
+}
+.listagemdeentradafinanceira-text40 {
+  color: rgba(117, 117, 117, 1);
+  height: auto;
+  text-align: left;
+  line-height: 100%;
+}
+.listagemdeentradafinanceira-pagination-list {
+  gap: 8px;
+  display: flex;
+  align-items: center;
+}
+.listagemdeentradafinanceira-pagination-page1 {
+  display: flex;
+  padding: 8px 12px;
+  align-items: center;
+  border-radius: 8px;
+  flex-direction: column;
+  justify-content: center;
+  background-color: rgba(44, 44, 44, 1);
+}
+.listagemdeentradafinanceira-text42 {
+  color: rgba(245, 245, 245, 1);
+  height: auto;
+  text-align: left;
+  line-height: 100%;
+}
+.listagemdeentradafinanceira-pagination-page2 {
+  display: flex;
+  padding: 8px 12px;
+  align-items: center;
+  border-radius: 8px;
+  flex-direction: column;
+  justify-content: center;
+}
+.listagemdeentradafinanceira-text43 {
+  color: rgba(30, 30, 30, 1);
+  height: auto;
+  text-align: left;
+  line-height: 100%;
+}
+.listagemdeentradafinanceira-pagination-page3 {
+  display: flex;
+  padding: 8px 12px;
+  align-items: center;
+  border-radius: 8px;
+  flex-direction: column;
+  justify-content: center;
+}
+.listagemdeentradafinanceira-text44 {
+  color: rgba(30, 30, 30, 1);
+  height: auto;
+  text-align: left;
+  line-height: 100%;
+}
+.listagemdeentradafinanceira-pagination-gap {
+  display: flex;
+  padding: 8px 16px;
+  align-items: center;
+  border-radius: 8px;
+  flex-direction: column;
+  justify-content: center;
+}
+.listagemdeentradafinanceira-text45 {
+  color: rgba(0, 0, 0, 1);
+  height: auto;
+  text-align: left;
+  line-height: 139.9999976158142%;
+}
+.listagemdeentradafinanceira-pagination-page4 {
+  display: flex;
+  padding: 8px 12px;
+  align-items: center;
+  border-radius: 8px;
+  flex-direction: column;
+  justify-content: center;
+}
+.listagemdeentradafinanceira-text47 {
+  color: rgba(30, 30, 30, 1);
+  height: auto;
+  text-align: left;
+  line-height: 100%;
+}
+.listagemdeentradafinanceira-pagination-page5 {
+  display: flex;
+  padding: 8px 12px;
+  align-items: center;
+  border-radius: 8px;
+  flex-direction: column;
+  justify-content: center;
+}
+.listagemdeentradafinanceira-text49 {
+  color: rgba(30, 30, 30, 1);
+  height: auto;
+  text-align: left;
+  line-height: 100%;
+}
+.listagemdeentradafinanceira-pagination-next {
+  gap: 8px;
+  display: flex;
+  padding: 8px 12px;
+  align-items: center;
+  border-radius: 8px;
+  justify-content: center;
+}
+.listagemdeentradafinanceira-text51 {
+  color: rgba(30, 30, 30, 1);
+  height: auto;
+  text-align: left;
+  line-height: 100%;
+}
+.listagemdeentradafinanceira-arrowright {
+  width: 16px;
+  height: 16px;
+}
