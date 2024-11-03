@@ -6,11 +6,11 @@ using SFinanceiro.ModelData.Context;
 namespace SFinanceiro.Controllers
 {
     [Authorize]
-    public class VolunteerController : Controller
+    public class CollaboratorController : Controller
     {
         private readonly AppDbContext _context;
 
-        public VolunteerController(AppDbContext context)
+        public CollaboratorController(AppDbContext context)
         {
             _context = context;
         }

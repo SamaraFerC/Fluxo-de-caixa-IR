@@ -2,16 +2,15 @@
 
 namespace SFinanceiro.ModelData.ViewModel
 {
-    public class VolunteerViewModel
+    public class CollaboratorViewModel
     {
         [Display(Name = "CPF/CNPJ")]
-        public int VolunteerId { get; set; }
+        public int CollaboratorId { get; set; }
 
         [Display(Name = "Nome")]
         public string Name { get; set; }
 
-        [Display(Name = "Email")]
-        public string Email { get; set; }
-
+        [Display(Name = "Situação")]
+        public bool Status { get; set; }
     }
 }
