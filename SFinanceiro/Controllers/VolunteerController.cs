@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using SFinanceiro.ModelData.Context;
+using SFinanceiro.ModelData.Entities;
 
 namespace SFinanceiro.Controllers
 {
@@ -17,7 +18,7 @@ namespace SFinanceiro.Controllers
 
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Usuario.ToListAsync());
+            return View(await _context.Collaborator.ToListAsync());
         }
 
         public async Task<IActionResult> Details(int? id)
@@ -27,8 +28,8 @@ namespace SFinanceiro.Controllers
                 return NotFound();
             }
 
-            var usuario = await _context.Usuario
-                .FirstOrDefaultAsync(m => m.UsuarioId == id);
+            var usuario = await _context.Collaborator
+                .FirstOrDefaultAsync(m => m.Id == id);
             if (usuario == null)
             {
                 return NotFound();
@@ -44,7 +45,7 @@ namespace SFinanceiro.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("UsuarioId,Name,Email,Password")] Usuario usuario)
+        public async Task<IActionResult> Create([Bind("UsuarioId,Name,Email,Password")] Collaborator usuario)
         {
             if (ModelState.IsValid)
             {
@@ -62,7 +63,7 @@ namespace SFinanceiro.Controllers
                 return NotFound();
             }
 
-            var usuario = await _context.Usuario.FindAsync(id);
+            var usuario = await _context.Collaborator.FindAsync(id);
             if (usuario == null)
             {
                 return NotFound();
@@ -72,9 +73,9 @@ namespace SFinanceiro.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("UsuarioId,Name,Email,Password")] Usuario usuario)
+        public async Task<IActionResult> Edit(int id, [Bind("UsuarioId,Name,Email,Password")] Collaborator usuario)
         {
-            if (id != usuario.UsuarioId)
+            if (id != usuario.Id)
             {
                 return NotFound();
             }
@@ -88,7 +89,7 @@ namespace SFinanceiro.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!UsuarioExists(usuario.UsuarioId))
+                    if (!UsuarioExists(usuario.Id))
                     {
                         return NotFound();
                     }
@@ -109,8 +110,8 @@ namespace SFinanceiro.Controllers
                 return NotFound();
             }
 
-            var usuario = await _context.Usuario
-                .FirstOrDefaultAsync(m => m.UsuarioId == id);
+            var usuario = await _context.Collaborator
+                .FirstOrDefaultAsync(m => m.Id == id);
             if (usuario == null)
             {
                 return NotFound();
@@ -123,10 +124,10 @@ namespace SFinanceiro.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var usuario = await _context.Usuario.FindAsync(id);
+            var usuario = await _context.Collaborator.FindAsync(id);
             if (usuario != null)
             {
-                _context.Usuario.Remove(usuario);
+                _context.Collaborator.Remove(usuario);
             }
 
             await _context.SaveChangesAsync();
@@ -135,7 +136,7 @@ namespace SFinanceiro.Controllers
 
         private bool UsuarioExists(int id)
         {
-            return _context.Usuario.Any(e => e.UsuarioId == id);
+            return _context.Collaborator.Any(e => e.Id == id);
         }
     }
 }

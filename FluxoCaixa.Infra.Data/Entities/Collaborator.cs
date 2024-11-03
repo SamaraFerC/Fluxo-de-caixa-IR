@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
-namespace SFinanceiro.ModelData.Entities
+
+namespace FluxoCaixa.Infra.Data.Entities
 {
     public class Collaborator
     {

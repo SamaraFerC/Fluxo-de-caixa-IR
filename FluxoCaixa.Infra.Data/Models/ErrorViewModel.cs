@@ -1,4 +1,4 @@
-namespace SFinanceiro.Models
+namespace FluxoCaixa.Infra.Data.Models
 {
     public class ErrorViewModel
     {

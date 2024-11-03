@@ -1,9 +1,8 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using FluxoCaixa.Infra.Data.Entities;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using SFinanceiro.ModelData.Entities;
-using System.Reflection.Metadata;
 
-namespace SFinanceiro.ModelData.Context
+namespace FluxoCaixa.Infra.Data.Context
 {
     public class AppDbContext : IdentityDbContext
 

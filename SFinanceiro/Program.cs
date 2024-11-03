@@ -1,36 +1,13 @@
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using SFinanceiro.ModelData.Context;
 using SFinanceiro.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
 builder.Services.AddControllersWithViews();
-
-var connection = builder.Configuration.GetConnectionString("DefaultConnection");
-
-builder.Services.AddDbContext<AppDbContext>(options => 
-                options.UseMySQL(connection));
-
-builder.Services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<AppDbContext>();
-
-builder.Services.Configure<IdentityOptions>(options => {
-    options.Password.RequiredLength = 10;
-    options.Password.RequiredUniqueChars = 3;
-    options.Password.RequireNonAlphanumeric = false;
-});
-
-builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
-    .AddCookie(options => 
-            {
-                options.Cookie.Name = "AspNetCore.Cookie";
-                options.ExpireTimeSpan = TimeSpan.FromMinutes(5);
-                options.SlidingExpiration = true;
-            });
-
-builder.Services.AddScoped<ISeedUserRoleInitial, SeedUserRoleInitial>();
 
 var app = builder.Build();
 
