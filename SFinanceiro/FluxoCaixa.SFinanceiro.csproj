@@ -33,4 +33,9 @@
     <Folder Include="Areas\Admin\Views\AdminRoles\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\FluxoCaixa.Infra.Data\FluxoCaixa.Infra.Data.csproj" />
+    <ProjectReference Include="..\FluxoCaixa.Infra.IoC\FluxoCaixa.Infra.IoC.csproj" />
+  </ItemGroup>
+
 </Project>

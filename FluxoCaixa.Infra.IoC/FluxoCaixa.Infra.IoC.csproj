@@ -6,4 +6,10 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\FluxoCaixa.Application\FluxoCaixa.Application.csproj" />
+    <ProjectReference Include="..\FluxoCaixa.Domain\FluxoCaixa.Domain.csproj" />
+    <ProjectReference Include="..\FluxoCaixa.Infra.Data\FluxoCaixa.Infra.Data.csproj" />
+  </ItemGroup>
+
 </Project>
