@@ -1,8 +1,11 @@
 ﻿using System.ComponentModel.DataAnnotations;
 namespace SFinanceiro.ModelData.Entities
 {
-    public class Usuario
+    public class Volunteer
     {
+        /// <summary>
+        /// trocar nome para Collaborator
+        /// </summary>
         public int UsuarioId { get; set; }
 
         [Display(Name = "Nome")]
@@ -12,8 +15,10 @@ namespace SFinanceiro.ModelData.Entities
         public string Email { get; set; }
 
         [Display(Name = "Senha")]
-        public string Password { get; set; }
+        public string Password { get; set; }     
 
-        public Usuario() { }
+        //adicinar relacionamento com addres
+
+        public Volunteer() { }
     }
 }

@@ -46,7 +46,7 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseRouting();
 
-await CriarPerfisUsuariosAsync(app);
+await CriarPerfisVoluntariosAsync(app);
 
 app.UseAuthentication();
 app.UseAuthorization();
@@ -61,7 +61,7 @@ app.MapControllerRoute(
 
 app.Run();
 
-async Task CriarPerfisUsuariosAsync(WebApplication app)
+async Task CriarPerfisVoluntariosAsync(WebApplication app)
 {
     var scopedFactory = app.Services.GetService<IServiceScopeFactory>();
 
