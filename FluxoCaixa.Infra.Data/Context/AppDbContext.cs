@@ -22,19 +22,10 @@ namespace FluxoCaixa.Infra.Data.Context
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-            //modelBuilder.ApplyConfiguration(new ActivityConfiguration());
-
-            modelBuilder.Entity<TypeCollaborator>()
-                        .HasMany(e => e.Collaborators)
-                        .WithOne(e => e.TypeCollaborator)
-                        .HasForeignKey(e => e.TypeCollaboratorID)
-                        .HasPrincipalKey(e => e.Id);
-
-            modelBuilder.Entity<Address>()
-                       .HasMany(e => e.Collaborators)
-                       .WithOne(e => e.Address)
-                       .HasForeignKey(e => e.AddressID)
-                       .HasPrincipalKey(e => e.Id);
+            modelBuilder.ApplyConfiguration(new ActivityConfiguration());
+            modelBuilder.ApplyConfiguration(new AddressConfiguration());
+            modelBuilder.ApplyConfiguration(new CollaboratorConfiguration());
+            modelBuilder.ApplyConfiguration(new TypeCollaboratorConfiguration());
         }
     }
 }

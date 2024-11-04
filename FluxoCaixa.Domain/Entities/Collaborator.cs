@@ -4,12 +4,13 @@
     {
         public required int Id { get; set; }
         public required string FullName { get; set; }
-        public required bool Status { get; set; }
         public DateTime? DateBirth { get; set; }
         public required string UserIncluded { get; set; }
         public DateTime DateIncluded { get; set; }      
         public string? UserChange { get; set; }
         public DateTime? DateChange { get; set; }
+        public required bool Status { get; set; }
+
         public required int AddressID { get; set; }
         public required int TypeCollaboratorID { get; set; }
 
