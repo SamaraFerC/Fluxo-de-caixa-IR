@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using SFinanceiro.ModelData.Context;
-using SFinanceiro.ModelData.Entities;
+using FluxoCaixa.Infra.Data.Context;
+using FluxoCaixa.Infra.Data.Entities;
 
 namespace SFinanceiro.Controllers
 {

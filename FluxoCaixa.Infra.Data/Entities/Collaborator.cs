@@ -1,51 +1,33 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace FluxoCaixa.Infra.Data.Entities
+﻿namespace FluxoCaixa.Infra.Data.Entities
 {
     public class Collaborator
     {
-        [Required]
-        public int Id { get; set; }
-
-        [Required]
-        [StringLength(100)]
-        public string FullName { get; set; }
-
-        [Required]
-        public bool Status { get; set; }
-
+        public required int Id { get; set; }
+        public required string FullName { get; set; }
+        public required bool Status { get; set; }
         public DateTime? DateBirth { get; set; }
+        public required string UserIncluded { get; set; }
+        public DateTime DateIncluded { get; set; }      
+        public string? UserChange { get; set; }
+        public DateTime? DateChange { get; set; }
+        public required int AddressID { get; set; }
+        public required int TypeCollaboratorID { get; set; }
 
-        [Required]
-        [StringLength(50)]
-        public string UserIncluded { get; set; }
-
-        [Required]
-        public DateTime DateIncluded { get; set; }
-
-        [StringLength(50)]
-        public string UserChange { get; set; }
-
-        public DateTime? DateChange{ get; set; }
-
-        public int AddressID { get; set; }
-       
-        public int TypeCollaboratorID { get; set; }
-        
-        public TypeCollaborator TypeCollaborator { get; set; }
-
-        public Address Address { get; set; }
+        public required TypeCollaborator TypeCollaborator { get; set; }
+        public required Address Address { get; set; }
 
         public Collaborator() { }
 
-        public Collaborator(int id, string fullName, DateTime? dateBirth, bool status, string userIncluded, DateTime dateIncluded)
+        public Collaborator(int id, string fullName, bool status, DateTime? dateBirth, string userIncluded, DateTime dateIncluded, int addressID, int typeCollaboratorID)
         {
             Id = id;
             FullName = fullName;
-            DateBirth = dateBirth;
             Status = status;
+            DateBirth = dateBirth;
             UserIncluded = userIncluded;
             DateIncluded = dateIncluded;
+            AddressID = addressID;
+            TypeCollaboratorID = typeCollaboratorID;
         }
     }
 }

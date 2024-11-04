@@ -14,10 +14,10 @@ namespace FluxoCaixa.Infra.Data
 {
     public static class DependencyInjection
     {
-        public static IServiceCollection AddInfraesteucture(this IServiceCollection services, IConfiguration configuration) {
+        public static IServiceCollection AddInfrastructure(this IServiceCollection services, IConfiguration configuration) {
 
             services.AddDbContext<AppDbContext>(options =>
-                            options.UseMySQL(configuration.GetConnectionString("DefaultConnection")));
+                            options.UseMySQL(connectionString: configuration.GetConnectionString("DefaultConnection")));
 
             //services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<AppDbContext>();
 

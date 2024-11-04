@@ -5,23 +5,14 @@ namespace FluxoCaixa.Infra.Data.Entities
     public class TypeCollaborator
     {
         public required int Id { get; set; }
-
-        [StringLength(100)]
         public required string Description { get; set; }
-
-        public required bool Status { get; set; }
-
-        [StringLength(50)]
+        public required bool Status { get; set; } 
         public required string UserIncluded { get; set; }
-
         public required DateTime DateIncluded { get; set; }
-
-        [StringLength(50)]
         public string? UserChange { get; set; }
-
         public DateTime? DateChange { get; set; }
 
-        public ICollection<Collaborator> Collaborators { get; set; }
+        public ICollection<Collaborator>? Collaborators { get; set; }
 
         public TypeCollaborator()
         {

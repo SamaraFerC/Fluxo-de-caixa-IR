@@ -1,9 +1,8 @@
-﻿@model SFinanceiro.ModelData.Entities.Usuario
+﻿@model FluxoCaixa.Infra.Data.Entities.Collaborator
 
 @{
     ViewData["Title"] = "Create";
 }
-
 
 <h1 style="margin-top:80px;">Insira os dados do voluntário</h1>
 
@@ -12,11 +11,11 @@
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="Name" class="control-label">Nome</label>
-                <input asp-for="Name" class="form-control" />
-                <span asp-validation-for="Name" class="text-danger"></span>
+                <label asp-for="FullName" class="control-label">Nome</label>
+                <input asp-for="FullName" class="form-control" />
+                <span asp-validation-for="FullName" class="text-danger"></span>
             </div>
-            <div class="form-group">
+           @*  <div class="form-group">
                 <label asp-for="Email" class="control-label">Email</label>
                 <input asp-for="Email" class="form-control" />
                 <span asp-validation-for="Email" class="text-danger"></span>
@@ -25,7 +24,7 @@
                 <label asp-for="Password" class="control-label">Senha</label>
                 <input asp-for="Password" class="form-control" />
                 <span asp-validation-for="Password" class="text-danger"></span>
-            </div>
+            </div> *@
             <div class="form-group">
                 <input type="submit" value="Adicionar" class="btn btn-primary mt-5" />
                 <a class="btn btn-secondary mt-5" asp-action="Index">Voltar</a>
