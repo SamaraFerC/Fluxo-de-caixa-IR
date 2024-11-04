@@ -13,7 +13,7 @@ namespace FluxoCaixa.Infra.Ioc
             services.AddDbContext<AppDbContext>(options =>
                             options.UseMySQL(connectionString: configuration.GetConnectionString("DefaultConnection")));
 
-            //services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<AppDbContext>();
+            //services. AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<AppDbContext>();
 
             services.Configure<IdentityOptions>(options => {
                 options.Password.RequiredLength = 10;

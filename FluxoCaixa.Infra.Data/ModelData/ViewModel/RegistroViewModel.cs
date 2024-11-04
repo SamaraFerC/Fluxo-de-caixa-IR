@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace FluxoCaixa.Infra.Data
+namespace FluxoCaixa.Infra.Data.ModelData.ViewModel
 {
     public class RegistroViewModel
     {

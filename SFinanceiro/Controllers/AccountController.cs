@@ -1,6 +1,6 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using FluxoCaixa.Infra.Data.ModelData.ViewModel;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using SFinanceiro.ModelData.ViewModel;
 
 namespace SFinanceiro.Controllers
 {
