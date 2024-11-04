@@ -1,4 +1,5 @@
-﻿using FluxoCaixa.Infra.Data.Entities;
+﻿using FluxoCaixa.Domain.Entities;
+using FluxoCaixa.Infra.Data.EntityConfiguration;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
@@ -13,6 +14,7 @@ namespace FluxoCaixa.Infra.Data.Context
 
         }
 
+        public DbSet<Activity> Activity{ get; set; }
         public DbSet<Collaborator> Collaborator { get; set; }
         public DbSet<Address> Addresses { get; set; }
         public DbSet<TypeCollaborator> TypeCollaborators { get; set; }
@@ -20,6 +22,7 @@ namespace FluxoCaixa.Infra.Data.Context
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+            //modelBuilder.ApplyConfiguration(new ActivityConfiguration());
 
             modelBuilder.Entity<TypeCollaborator>()
                         .HasMany(e => e.Collaborators)

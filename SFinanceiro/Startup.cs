@@ -1,4 +1,4 @@
-﻿using FluxoCaixa.Infra.Data;
+﻿using FluxoCaixa.Infra.Ioc;
 
 namespace FluxoCaixa.SFinanceiro
 {
@@ -28,8 +28,10 @@ namespace FluxoCaixa.SFinanceiro
                 app.UseHttpsRedirection();
                 app.UseStaticFiles();
                 app.UseRouting();
-                app.UseAuthentication();
-                app.UseAuthorization();              
+                //app.UseAuthentication();
+                //app.UseAuthorization();              
+
+
             }
         }
     }

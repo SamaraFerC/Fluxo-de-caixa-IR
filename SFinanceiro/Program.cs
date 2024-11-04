@@ -1,6 +1,5 @@
 using FluxoCaixa.Infra.Data.Context;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Hosting;
 
 namespace FluxoCaixa.SFinanceiro
 {
