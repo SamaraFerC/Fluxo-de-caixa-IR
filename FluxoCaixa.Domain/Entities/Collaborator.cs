@@ -1,4 +1,4 @@
-﻿namespace FluxoCaixa.Infra.Data.Entities
+﻿namespace FluxoCaixa.Domain.Entities
 {
     public class Collaborator
     {
