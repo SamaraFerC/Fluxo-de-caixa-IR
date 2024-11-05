@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FluxoCaixa.Infra.Data.ViewModel
+namespace FluxoCaixa.Application.Interfaces
 {
-    internal class ActivityViewModel
+    public class IActivityService
     {
     }
 }
