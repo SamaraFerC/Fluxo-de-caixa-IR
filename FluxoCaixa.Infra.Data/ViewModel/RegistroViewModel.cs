@@ -1,12 +1,12 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace FluxoCaixa.Infra.Data.ModelData.ViewModel
+namespace FluxoCaixa.Infra.Data.ViewModel
 {
     public class RegistroViewModel
     {
         [Required]
         [EmailAddress(ErrorMessage = "Email inválido")]
-        public string? Email{ get; set; }
+        public string? Email { get; set; }
 
         [Required]
         [DataType(DataType.Password)]
@@ -14,7 +14,7 @@ namespace FluxoCaixa.Infra.Data.ModelData.ViewModel
 
         [DataType(DataType.Password)]
         [Display(Name = "Confirme a senha")]
-        [Compare("Password",ErrorMessage ="Senha Incorreta")]
+        [Compare("Password", ErrorMessage = "Senha Incorreta")]
         public string? ConfirmPassword { get; set; }
     }
 }

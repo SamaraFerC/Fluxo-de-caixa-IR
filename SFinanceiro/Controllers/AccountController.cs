@@ -1,4 +1,4 @@
-﻿using FluxoCaixa.Infra.Data.ModelData.ViewModel;
+﻿using FluxoCaixa.Infra.Data.ViewModel;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 

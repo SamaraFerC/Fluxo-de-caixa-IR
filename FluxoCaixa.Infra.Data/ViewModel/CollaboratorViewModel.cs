@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace FluxoCaixa.Infra.Data.ModelData.ViewModel
+namespace FluxoCaixa.Infra.Data.ViewModel
 {
     public class CollaboratorViewModel
     {

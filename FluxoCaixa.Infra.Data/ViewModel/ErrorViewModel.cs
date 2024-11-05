@@ -1,4 +1,4 @@
-namespace FluxoCaixa.Infra.Data.Models
+namespace FluxoCaixa.Infra.Data.ViewModel
 {
     public class ErrorViewModel
     {

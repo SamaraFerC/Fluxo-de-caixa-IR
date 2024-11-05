@@ -1,12 +1,12 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace FluxoCaixa.Infra.Data.ModelData.ViewModel
+namespace FluxoCaixa.Infra.Data.ViewModel
 {
     public class LoginViewModel
     {
 
-        [Required(ErrorMessage ="Campo Email é obrigátorio")]
-        [EmailAddress(ErrorMessage ="Email inválido")]
+        [Required(ErrorMessage = "Campo Email é obrigátorio")]
+        [EmailAddress(ErrorMessage = "Email inválido")]
         public string? Email { get; set; }
 
 
@@ -16,6 +16,6 @@ namespace FluxoCaixa.Infra.Data.ModelData.ViewModel
 
 
         [Display(Name = "Lembrar-me")]
-        public bool RememberMe{ get; set; }
+        public bool RememberMe { get; set; }
     }
 }
