@@ -1,15 +1,18 @@
-﻿
-using FluxoCaixa.Domain.Entities;
+﻿using FluxoCaixa.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace FluxoCaixa.Infra.Data.EntityConfiguration
 {
-    public class TypeCollaboratorConfiguration :IEntityTypeConfiguration<TypeCollaborator>
+    public class FlowTypeConfiguration : IEntityTypeConfiguration<FlowType>
     {
-        public void Configure(EntityTypeBuilder<TypeCollaborator> entity)
+        public void Configure(EntityTypeBuilder<FlowType> entity)
         {
             entity.HasKey(x => x.Id);
+
+            entity.Property(p => p.Name)
+                .HasMaxLength(100)
+                .IsRequired();
 
             entity.Property(p => p.Description)
                 .HasMaxLength(100)
@@ -25,12 +28,12 @@ namespace FluxoCaixa.Infra.Data.EntityConfiguration
             entity.Property(p => p.DateIncluded)
               .IsRequired();
 
-            entity.Property(p => p.UserChange)
+            entity.Property(p => p.UserChanged)
                 .HasMaxLength(50);
 
-            entity.HasMany(e => e.Collaborators)
-                  .WithOne(e => e.TypeCollaborator)
-                  .HasForeignKey(e => e.TypeCollaboratorID)
+            entity.HasMany(e => e.CashFlow)
+                  .WithOne(e => e.FlowType)
+                  .HasForeignKey(e => e.FlowTypeId)
                   .HasPrincipalKey(e => e.Id);
         }
     }

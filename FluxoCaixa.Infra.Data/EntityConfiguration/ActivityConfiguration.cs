@@ -9,6 +9,10 @@ namespace FluxoCaixa.Infra.Data.EntityConfiguration
         public void Configure(EntityTypeBuilder<Activity> entity)
         {
             entity.HasKey(x => x.Id);
+            
+            entity.Property(p => p.Name)
+                .HasMaxLength(50)
+                .IsRequired();
 
             entity.Property(p => p.Description)
                 .HasMaxLength(100)
@@ -24,7 +28,7 @@ namespace FluxoCaixa.Infra.Data.EntityConfiguration
              entity.Property(p => p.DateIncluded)
                .IsRequired();
 
-            entity.Property(p => p.UserChange)
+            entity.Property(p => p.UserChanged)
                 .HasMaxLength(50);        
         }
     }

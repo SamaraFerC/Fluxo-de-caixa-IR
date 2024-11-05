@@ -15,9 +15,11 @@ namespace FluxoCaixa.Infra.Data.Context
         }
 
         public DbSet<Activity> Activity{ get; set; }
-        public DbSet<Collaborator> Collaborator { get; set; }
         public DbSet<Address> Addresses { get; set; }
-        public DbSet<TypeCollaborator> TypeCollaborators { get; set; }
+        public DbSet<CashFlow> CashFlow { get; set; }
+        public DbSet<Collaborator> Collaborator { get; set; }
+        public DbSet<CollaboratorType> CollaboratorTypes { get; set; }
+        public DbSet<FlowType>  FlowType { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -25,7 +27,7 @@ namespace FluxoCaixa.Infra.Data.Context
             modelBuilder.ApplyConfiguration(new ActivityConfiguration());
             modelBuilder.ApplyConfiguration(new AddressConfiguration());
             modelBuilder.ApplyConfiguration(new CollaboratorConfiguration());
-            modelBuilder.ApplyConfiguration(new TypeCollaboratorConfiguration());
+            modelBuilder.ApplyConfiguration(new CollaboratorTypeConfiguration());
         }
     }
 }

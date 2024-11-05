@@ -27,13 +27,13 @@ namespace FluxoCaixa.Infra.Data.EntityConfiguration
             entity.Property(p => p.DateIncluded)
                .IsRequired();
 
-            entity.Property(p => p.UserChange)
+            entity.Property(p => p.UserChanged)
                 .HasMaxLength(50);
 
             entity.Property(p => p.AddressID)
                 .IsRequired();
 
-            entity.Property(p => p.TypeCollaboratorID)
+            entity.Property(p => p.CollaboratorTypeID)
                 .IsRequired();
         }
     }

@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
-using FluxoCaixa.Infra.Data.Models;
+using FluxoCaixa.Infra.Data.ViewModel;
 
 namespace SFinanceiro.Controllers
 {

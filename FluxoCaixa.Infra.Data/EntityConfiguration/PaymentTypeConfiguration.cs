@@ -4,25 +4,17 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace FluxoCaixa.Infra.Data.EntityConfiguration
 {
-    public class AddressConfiguration : IEntityTypeConfiguration<Address>
+    public class PaymentTypeConfiguration : IEntityTypeConfiguration<PaymentType>
     {
-        public void Configure(EntityTypeBuilder<Address> entity)
+        public void Configure(EntityTypeBuilder<PaymentType> entity)
         {
             entity.HasKey(x => x.Id);
 
-            entity.Property(p => p.Street)
+            entity.Property(p => p.Name)
                 .HasMaxLength(100)
                 .IsRequired();
 
-            entity.Property(p => p.CEP)
-                .HasMaxLength(100)
-                .IsRequired();
-
-            entity.Property(p => p.City)
-                .HasMaxLength(100)
-                .IsRequired();
-
-            entity.Property(p => p.State)
+            entity.Property(p => p.Description)
                 .HasMaxLength(100)
                 .IsRequired();
 
@@ -34,15 +26,15 @@ namespace FluxoCaixa.Infra.Data.EntityConfiguration
                 .IsRequired();
 
             entity.Property(p => p.DateIncluded)
-               .IsRequired();
+              .IsRequired();
 
             entity.Property(p => p.UserChanged)
                 .HasMaxLength(50);
 
-            entity.HasMany(e => e.Collaborators)
-                       .WithOne(e => e.Address)
-                       .HasForeignKey(e => e.AddressID)
-                       .HasPrincipalKey(e => e.Id);
+            entity.HasMany(e => e.CashFlow)
+                  .WithOne(e => e.PaymentType)
+                  .HasForeignKey(e => e.FlowTypeId)
+                  .HasPrincipalKey(e => e.Id);
         }
     }
 }

@@ -7,19 +7,19 @@
         public DateTime? DateBirth { get; set; }
         public required string UserIncluded { get; set; }
         public DateTime DateIncluded { get; set; }      
-        public string? UserChange { get; set; }
-        public DateTime? DateChange { get; set; }
+        public string? UserChanged { get; set; }
+        public DateTime? DateChanged { get; set; }
         public required bool Status { get; set; }
 
         public required int AddressID { get; set; }
-        public required int TypeCollaboratorID { get; set; }
+        public required int CollaboratorTypeID { get; set; }
 
-        public required TypeCollaborator TypeCollaborator { get; set; }
+        public required CollaboratorType CollaboratorType { get; set; }
         public required Address Address { get; set; }
 
         public Collaborator() { }
 
-        public Collaborator(int id, string fullName, bool status, DateTime? dateBirth, string userIncluded, DateTime dateIncluded, int addressID, int typeCollaboratorID)
+        public Collaborator(int id, string fullName, bool status, DateTime? dateBirth, string userIncluded, DateTime dateIncluded, int addressID, int collaboratorTypeID)
         {
             Id = id;
             FullName = fullName;
@@ -28,7 +28,7 @@
             UserIncluded = userIncluded;
             DateIncluded = dateIncluded;
             AddressID = addressID;
-            TypeCollaboratorID = typeCollaboratorID;
+            CollaboratorTypeID = collaboratorTypeID;
         }
     }
 }
