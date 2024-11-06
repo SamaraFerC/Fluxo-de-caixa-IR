@@ -24,4 +24,8 @@
     <ProjectReference Include="..\FluxoCaixa.Infra.IoC\FluxoCaixa.Infra.IoC.csproj" />
   </ItemGroup>
 
+	<ItemGroup>
+		<PackageReference Include="AutoMapper" Version="13.0.1" />
+	</ItemGroup>
+
 </Project>

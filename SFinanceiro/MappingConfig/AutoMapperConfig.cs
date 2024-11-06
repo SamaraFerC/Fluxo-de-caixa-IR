@@ -11,7 +11,7 @@ namespace FluxoCaixa.SFinanceiro.MappingConfig
                 throw new ArgumentNullException(nameof(services));
             }
 
-            services.AddAutoMapperConfig(typeof(EntityToViewModelProfile), typeof(ViewModelToEntityProfile));
+            services.AddAutoMapper(typeof(EntityToViewModelProfile), typeof(ViewModelToEntityProfile));
         }
     }
 }
