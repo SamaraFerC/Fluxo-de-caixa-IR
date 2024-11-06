@@ -4,16 +4,15 @@ namespace FluxoCaixa.Infra.Data.ViewModel
 {
     public class ActivityViewModel
     {
-        [Display(Name = "CPF/CNPJ")]
-        public int CollaboratorId { get; set; }
-
         [Display(Name = "Nome")]
-        public string Name { get; set; }
+        [MaxLength(50)]
+        public required string Name { get; set; }
 
-        [Display(Name = "Nome")]
-        public string Description { get; set; }
+        [MaxLength(100)]
+        [Display(Name = "Descrição")]
+        public required string Description { get; set; }
 
         [Display(Name = "Situação")]
-        public bool Status { get; set; }
+        public required bool Status { get; set; }
     }
 }
