@@ -1,4 +1,5 @@
 ﻿using FluxoCaixa.Infra.Ioc;
+using FluxoCaixa.SFinanceiro.MappingConfig;
 
 namespace FluxoCaixa.SFinanceiro
 {
@@ -13,10 +14,10 @@ namespace FluxoCaixa.SFinanceiro
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddInfrastructure(Configuration);
             services.AddControllersWithViews();
             services.AddRazorPages();
-
+            services.AddInfrastructure(Configuration);
+            services.AddAutoMapperConfig();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment webHostEnvironment)
@@ -29,8 +30,8 @@ namespace FluxoCaixa.SFinanceiro
 
                 app.UseStaticFiles();
                 app.UseRouting();
-                //app.UseAuthentication();
-                //app.UseAuthorization();
+                app.UseAuthentication();
+                app.UseAuthorization();
 
                 app.UseEndpoints(endpoints =>
                 {

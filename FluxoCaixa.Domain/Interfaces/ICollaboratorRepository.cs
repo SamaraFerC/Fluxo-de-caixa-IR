@@ -2,7 +2,7 @@
 
 namespace FluxoCaixa.Domain.Interfaces
 {
-    public interface ICollaborator
+    public interface ICollaboratorRepository
     {
         public IEnumerable<Collaborator> GetCollaborators();
     }

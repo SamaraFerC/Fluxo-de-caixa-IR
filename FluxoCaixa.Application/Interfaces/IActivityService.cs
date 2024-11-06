@@ -1,12 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using FluxoCaixa.Infra.Data.ViewModel;
 
 namespace FluxoCaixa.Application.Interfaces
 {
-    public class IActivityService
+    public interface IActivityService
     {
+        Task<List<ActivityViewModel>> GetAllActivities();
+
+        public Task<ActivityViewModel> GetById(int id);
+
+        void AddActivity(ActivityViewModel activity);
+
+        void UpdateActivity(ActivityViewModel activity);
+
+        void DeleteActivity(int id);
     }
 }

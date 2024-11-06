@@ -4,7 +4,7 @@ using FluxoCaixa.Infra.Data.Context;
 
 namespace FluxoCaixa.Infra.Data.Repositories
 {
-    public class CollaboratorRepository : ICollaborator
+    public class CollaboratorRepository : ICollaboratorRepository
     {
         private AppDbContext _context;
 

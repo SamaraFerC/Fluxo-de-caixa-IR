@@ -38,7 +38,9 @@ namespace FluxoCaixa.Infra.Data.Repositories
         public void DeleteActivity(Activity activity)
         {
             _context.Remove(activity);
+            _context.SaveChanges();
         }
+
         public void UpdateActivity(Activity activity)
         {
             _context.Update(activity);

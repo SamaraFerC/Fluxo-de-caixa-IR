@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FluxoCaixa.Application.Mappings
+namespace FluxoCaixa.Domain.Interfaces
 {
-    public class ViewModelToEntityActivity
+    public interface ICashFlowRepository
     {
     }
 }

@@ -1,4 +1,8 @@
-﻿using FluxoCaixa.Infra.Data.Context;
+﻿using FluxoCaixa.Application.Interfaces;
+using FluxoCaixa.Application.Services;
+using FluxoCaixa.Domain.Interfaces;
+using FluxoCaixa.Infra.Data.Context;
+using FluxoCaixa.Infra.Data.Repositories;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -13,13 +17,16 @@ namespace FluxoCaixa.Infra.Ioc
             services.AddDbContext<AppDbContext>(options =>
                             options.UseMySQL(connectionString: configuration.GetConnectionString("DefaultConnection")));
 
-            //services. AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<AppDbContext>();
-
             services.Configure<IdentityOptions>(options => {
                 options.Password.RequiredLength = 10;
                 options.Password.RequiredUniqueChars = 3;
                 options.Password.RequireNonAlphanumeric = false;
             });
+
+            services.AddScoped<IActivityRepository, ActivityRepository>();
+            services.AddScoped<IActivityService, ActivityService>();
+
+            //services. AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<AppDbContext>();
 
             //services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
             //    .AddCookie(options =>
