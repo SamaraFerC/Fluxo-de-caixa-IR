@@ -1,4 +1,5 @@
 ﻿using FluxoCaixa.Application.Interfaces;
+using FluxoCaixa.Application.Mappings;
 using FluxoCaixa.Application.Services;
 using FluxoCaixa.Domain.Interfaces;
 using FluxoCaixa.Infra.Data.Context;
@@ -23,6 +24,7 @@ namespace FluxoCaixa.Infra.Ioc
                 options.Password.RequireNonAlphanumeric = false;
             });
 
+            services.AddAutoMapper(typeof(EntityToViewModelProfile), typeof(ViewModelToEntityProfile));
             services.AddScoped<IActivityRepository, ActivityRepository>();
             services.AddScoped<IActivityService, ActivityService>();
 
