@@ -4,6 +4,14 @@ namespace FluxoCaixa.Domain.Interfaces
 {
     public interface ICollaboratorRepository
     {
-        public IEnumerable<Collaborator> GetCollaborators();
+        IEnumerable<Collaborator> GetAll();
+
+        public Task<Collaborator> GetById(int? id);
+
+        void Add(Collaborator activity);
+
+        void Update(Collaborator activity);
+
+        void Delete(Collaborator activity);
     }
 }
