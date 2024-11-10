@@ -18,9 +18,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.6" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\FluxoCaixa.Application\FluxoCaixa.Application.csproj" />
-    <ProjectReference Include="..\FluxoCaixa.Domain\FluxoCaixa.Domain.csproj" />
-    <ProjectReference Include="..\FluxoCaixa.Infra.Data\FluxoCaixa.Infra.Data.csproj" />
     <ProjectReference Include="..\FluxoCaixa.Infra.IoC\FluxoCaixa.Infra.IoC.csproj" />
   </ItemGroup>
 </Project>

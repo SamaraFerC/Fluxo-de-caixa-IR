@@ -6,7 +6,7 @@ namespace FluxoCaixa.Domain.Interfaces
     {
         Task<List<Activity>> GetAllActivities();
 
-        public Task<Activity> GetById(int id);
+        public Task<Activity> GetById(int? id);
 
         void AddActivity(Activity activity);
 

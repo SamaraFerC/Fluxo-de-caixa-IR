@@ -6,7 +6,7 @@ namespace FluxoCaixa.Application.Mappings
 {
     public class ViewModelToEntityProfile : Profile
     {
-        protected ViewModelToEntityProfile()
+        public ViewModelToEntityProfile()
         {
             CreateMap<ActivityViewModel, Activity>();
         }
