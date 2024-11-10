@@ -33,10 +33,6 @@ namespace FluxoCaixa.SFinanceiro.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    activityViewModel.Status = true;
-                    activityViewModel.UserIncluded = "fulano";
-                    activityViewModel.DateIncluded = DateTime.Now;
-
                     _activityService.AddActivity(activityViewModel);
 
                     return RedirectToAction(nameof(Index));
@@ -53,18 +49,27 @@ namespace FluxoCaixa.SFinanceiro.Controllers
 
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null){
-                return NotFound();
-            }
-
-            var activity = _activityService.GetById(id);
-
-            if(activity == null)
+            try
             {
-                return NotFound();
-            }
+                if (id == null)
+                {
+                    return NotFound();
+                }
 
-            return View(activity);
+                var activity = await _activityService.GetById(id);
+
+                if (activity == null)
+                {
+                    return NotFound();
+                }
+
+                return View(activity);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message,ex.InnerException);
+            }
+            
         }
 
         [HttpPost]
@@ -75,9 +80,6 @@ namespace FluxoCaixa.SFinanceiro.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    activityViewModel.UserChanged = "fulano";
-                    activityViewModel.DateChanged = DateTime.Now;
-
                     _activityService.UpdateActivity(activityViewModel);
 
                     return RedirectToAction("Index");
