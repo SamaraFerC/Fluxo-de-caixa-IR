@@ -95,20 +95,18 @@ namespace FluxoCaixa.SFinanceiro.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int? id)
+        public ActionResult Delete(int id)
         {
             try
             {
-                if (id == null)
-                {
-                    
-                }
-                var activity = _activityService.GetById(id);
-                return RedirectToAction(nameof(Index));
+                _activityService.DeleteActivity(id);
+
+                return Json(new { success = true });
+
             }
-            catch
+            catch (Exception ex)
             {
-                return View();
+                return Json(new { success = false });
             }
         }
 
