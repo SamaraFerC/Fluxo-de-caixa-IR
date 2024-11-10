@@ -13,15 +13,17 @@ namespace FluxoCaixa.SFinanceiro.Controllers
             _activityService = activityService;
         }
 
+        [HttpGet]
         public ActionResult Index()
         {
+            //var obterGrid = _activityService.GetAllActivities();
             return View();
         }
-
+        
         public ActionResult Create()
         {
             return View();
-        }
+        } 
 
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -29,47 +31,77 @@ namespace FluxoCaixa.SFinanceiro.Controllers
         {
             try
             {
-                return RedirectToAction(nameof(Index));
+                if (ModelState.IsValid)
+                {
+                    activityViewModel.Status = true;
+                    activityViewModel.UserIncluded = "fulano";
+                    activityViewModel.DateIncluded = DateTime.Now;
+
+                    _activityService.AddActivity(activityViewModel);
+
+                    return RedirectToAction(nameof(Index));
+                }
+
+                return View(activityViewModel);
             }
-            catch
+            catch(Exception ex)
             {
-                return View();
+                throw new Exception(ex.Message);
             }
         }
 
-        public ActionResult Edit(int id)
+
+        public async Task<IActionResult> Edit(int? id)
         {
-            return View();
+            if (id == null){
+                return NotFound();
+            }
+
+            var activity = _activityService.GetById(id);
+
+            if(activity == null)
+            {
+                return NotFound();
+            }
+
+            return View(activity);
         }
 
-        // POST: ActivityController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(ActivityViewModel activityViewModel)
+        public IActionResult Edit(ActivityViewModel activityViewModel)
         {
             try
             {
-                return RedirectToAction(nameof(Index));
+                if (ModelState.IsValid)
+                {
+                    activityViewModel.UserChanged = "fulano";
+                    activityViewModel.DateChanged = DateTime.Now;
+
+                    _activityService.UpdateActivity(activityViewModel);
+
+                    return RedirectToAction("Index");
+                }
+
+                return View(activityViewModel);
             }
-            catch
+            catch(Exception ex)
             {
-                return View();
+                throw new Exception(ex.Message, ex.InnerException);
             }
         }
 
-        // GET: ActivityController/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: ActivityController/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
+        public ActionResult Delete(int? id)
         {
             try
             {
+                if (id == null)
+                {
+                    
+                }
+                var activity = _activityService.GetById(id);
                 return RedirectToAction(nameof(Index));
             }
             catch
@@ -77,5 +109,22 @@ namespace FluxoCaixa.SFinanceiro.Controllers
                 return View();
             }
         }
+
+        public async Task<IActionResult> Visualize(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var activity = _activityService.GetById(id);
+
+            if (activity == null)
+            {
+                return NotFound();
+            }
+
+            return View(activity);
+        }        
     }
 }

@@ -17,7 +17,7 @@ namespace FluxoCaixa.Application.Services
             _mapper = mapper;
         }
 
-        public async Task<ActivityViewModel> GetById(int id)
+        public async Task<ActivityViewModel> GetById(int? id)
         {
             var objActivity = await _activityRepository.GetById(id);
 
@@ -40,9 +40,9 @@ namespace FluxoCaixa.Application.Services
 
         public void DeleteActivity(int activityID)
         {
-            var act = GetById((int)activityID).Result;
+            var act = _activityRepository.GetById(activityID).Result;
 
-            _activityRepository.DeleteActivity(_mapper.Map<Activity>(act));
+            _activityRepository.DeleteActivity(act);
         }
 
         public void UpdateActivity(ActivityViewModel activity)

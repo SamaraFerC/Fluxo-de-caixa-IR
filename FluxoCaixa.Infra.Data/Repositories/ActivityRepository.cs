@@ -19,7 +19,7 @@ namespace FluxoCaixa.Infra.Data.Repositories
             _context = appDbContext;
         }
 
-        public Task<Activity> GetById(int id)
+        public Task<Activity> GetById(int? id)
         {
             return _context.Activity.FirstOrDefaultAsync(x => x.Id == id);
         }
