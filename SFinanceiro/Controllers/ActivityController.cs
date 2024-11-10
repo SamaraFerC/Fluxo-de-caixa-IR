@@ -46,7 +46,6 @@ namespace FluxoCaixa.SFinanceiro.Controllers
             }
         }
 
-
         public async Task<IActionResult> Edit(int? id)
         {
             try
@@ -82,7 +81,7 @@ namespace FluxoCaixa.SFinanceiro.Controllers
                 {
                     _activityService.UpdateActivity(activityViewModel);
 
-                    return RedirectToAction("Index");
+                    return RedirectToAction(nameof(Index));
                 }
 
                 return View(activityViewModel);
@@ -93,8 +92,7 @@ namespace FluxoCaixa.SFinanceiro.Controllers
             }
         }
 
-        [HttpPost]
-        [ValidateAntiForgeryToken]
+        [HttpPost]        
         public ActionResult Delete(int id)
         {
             try
@@ -112,19 +110,21 @@ namespace FluxoCaixa.SFinanceiro.Controllers
 
         public async Task<IActionResult> Visualize(int? id)
         {
-            if (id == null)
+            try
             {
-                return NotFound();
+                if (id == null)
+                {
+                    return NotFound();
+                }
+
+                var activity = await _activityService.GetById(id);
+
+                return View(activity);
             }
-
-            var activity = _activityService.GetById(id);
-
-            if (activity == null)
+            catch (Exception ex)
             {
-                return NotFound();
-            }
-
-            return View(activity);
+                throw new Exception(ex.Message, ex.InnerException);
+            }            
         }        
     }
 }
