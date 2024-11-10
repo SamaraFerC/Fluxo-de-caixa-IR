@@ -1,15 +1,23 @@
-﻿@model List<FluxoCaixa.Application.ViewModel.ActivityViewModel>
+﻿@model IEnumerable<FluxoCaixa.Application.ViewModel.ActivityViewModel>
+@{
+    ViewData["Title"] = "Atividades";
+}
+
+<div>
+    <h2>@ViewData["Title"]</h2>
+</div>
+<hr />
 
 <p>
-    <a asp-action="Create">Adicionar Novo</a>
+    <a asp-action="Create" class="btn btn-primary">Adicionar Novo</a>
 </p>
 
-@if (Model != null)
-{
-    <table class="table">
+<div class="panel panel-default">
+    <table class="table table-striped">
         <thead>
             <tr>
-                <th> name
+                <th>
+                    name
                     @* @Html.DisplayNameFor(model => model.Name) *@
                 </th>
                 <th>
@@ -37,12 +45,18 @@
                         @Html.DisplayFor(modelItem => item.Status)
                     </td>
                     <td>
-                        @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                        @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                        @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                        <a asp-action="Edit" asp-route-id="@item.Id" title="Edit" class="btn btn-warning">
+                            <span class="fas fa-edit">Editar</span>
+                        </a>
+                        <a asp-action="Visualize" asp-route-id="@item.Id" title="Visualize" class="btn btn-warning">
+                            <span class="fas fa-edit">Visualizar</span>
+                        </a>
+                        <a asp-action="Delete" asp-route-id="@item.Id" title="delete" class="btn btn-warning">
+                            <span class="fas fa-edit">Deletar</span>
+                        </a>
                     </td>
                 </tr>
             }
         </tbody>
     </table>
-}
+</div>

@@ -24,11 +24,11 @@ namespace FluxoCaixa.Application.Services
             return _mapper.Map<ActivityViewModel>(objActivity);
         }
 
-        public async Task<List<ActivityViewModel>> GetAllActivities()
+        public IEnumerable<ActivityViewModel> GetAllActivities()
         {
-            var objActivity = await _activityRepository.GetAllActivities();
+            var objActivity = _activityRepository.GetAllActivities();
 
-            return _mapper.Map<List<ActivityViewModel>>(objActivity);
+            return _mapper.Map<IEnumerable<ActivityViewModel>>(objActivity);
         }
 
         public void AddActivity(ActivityViewModel activity)

@@ -4,6 +4,8 @@ namespace FluxoCaixa.Application.ViewModel
 {
     public class ActivityViewModel
     {
+        public int? Id { get; set; }
+
         [Display(Name = "Nome")]
         [MaxLength(50)]
         public string Name { get; set; }

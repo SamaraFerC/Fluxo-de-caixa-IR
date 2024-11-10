@@ -24,9 +24,9 @@ namespace FluxoCaixa.Infra.Data.Repositories
             return _context.Activity.FirstOrDefaultAsync(x => x.Id == id);
         }
 
-        public Task<List<Activity>> GetAllActivities()
+        public IEnumerable<Activity> GetAllActivities()
         {
-            return _context.Activity.ToListAsync();
+            return _context.Activity;
         }
 
         public void AddActivity(Activity activity)

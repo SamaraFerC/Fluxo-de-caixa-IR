@@ -4,7 +4,7 @@ namespace FluxoCaixa.Domain.Interfaces
 {
     public interface IActivityRepository
     {
-        Task<List<Activity>> GetAllActivities();
+        IEnumerable<Activity> GetAllActivities();
 
         public Task<Activity> GetById(int? id);
 

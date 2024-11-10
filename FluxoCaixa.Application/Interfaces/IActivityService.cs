@@ -4,7 +4,7 @@ namespace FluxoCaixa.Application.Interfaces
 {
     public interface IActivityService
     {
-        Task<List<ActivityViewModel>> GetAllActivities();
+        IEnumerable<ActivityViewModel> GetAllActivities();
 
         public Task<ActivityViewModel> GetById(int? id);
 

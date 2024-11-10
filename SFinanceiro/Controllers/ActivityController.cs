@@ -16,8 +16,8 @@ namespace FluxoCaixa.SFinanceiro.Controllers
         [HttpGet]
         public ActionResult Index()
         {
-            //var obterGrid = _activityService.GetAllActivities();
-            return View();
+            var obterGrid = _activityService.GetAllActivities();
+            return View(obterGrid);
         }
         
         public ActionResult Create()
