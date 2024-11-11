@@ -15,7 +15,7 @@ namespace FluxoCaixa.Infra.Data.Context
         }
 
         public DbSet<Activity> Activity{ get; set; }
-        public DbSet<Address> Addresses { get; set; }
+        public DbSet<Address> Address { get; set; }
         public DbSet<CashFlow> CashFlow { get; set; }
         public DbSet<Collaborator> Collaborator { get; set; }
         public DbSet<CollaboratorTypes> CollaboratorTypes { get; set; }

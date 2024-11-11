@@ -2,14 +2,14 @@
 {
     public class Address
     {
-        public required int Id { get; set; }
-        public required string Street { get; set; }
-        public required string CEP { get; set; }
-        public required string City { get; set; }
-        public required string State { get; set; }
-        public required bool Status { get; set; }
-        public required string UserIncluded { get; set; }
-        public required DateTime DateIncluded { get; set; }
+        public int Id { get; set; }
+        public string Street { get; set; }
+        public string CEP { get; set; }
+        public string City { get; set; }
+        public string State { get; set; }
+        public bool Status { get; set; }
+        public string UserIncluded { get; set; }
+        public DateTime DateIncluded { get; set; }
         public string? UserChanged { get; set; }
         public DateTime? DateChanged { get; set; }
 

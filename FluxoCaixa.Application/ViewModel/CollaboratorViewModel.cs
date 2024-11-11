@@ -16,6 +16,8 @@ namespace FluxoCaixa.Application.ViewModel
         [Display(Name = "Data de Nascimento")]
         public DateTime? DateBirth { get; set; }
 
+        public AddressViewModel addressVM { get; set; }
+
         public int AddressID { get; set; }
         public int CollaboratorTypeID { get; set; }
 

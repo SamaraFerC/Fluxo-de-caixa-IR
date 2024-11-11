@@ -5,15 +5,18 @@ using FluxoCaixa.Application.ViewModel;
 
 namespace SFinanceiro.Controllers
 {
-    [Authorize]
+    
     public class CollaboratorController : Controller
     {
         private readonly ICollaboratorService _collaboratorService;
         private readonly ICollaboratorTypeService _collaboratorTypeService;
-        public CollaboratorController(ICollaboratorService collaboratorService, ICollaboratorTypeService collaboratorTypeService)
+        private readonly IAddressService _AddressService;
+
+        public CollaboratorController(ICollaboratorService collaboratorService, ICollaboratorTypeService collaboratorTypeService, IAddressService AddressService)
         {
             _collaboratorService = collaboratorService;
             _collaboratorTypeService = collaboratorTypeService;
+            _AddressService = AddressService;
         }
 
         [HttpGet]
@@ -46,6 +49,7 @@ namespace SFinanceiro.Controllers
                 if (ModelState.IsValid)
                 {
                     _collaboratorService.Add(collaboratorVM);
+                    
 
                     return RedirectToAction(nameof(Index));
                 }
