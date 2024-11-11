@@ -6,37 +6,37 @@ using FluxoCaixa.Domain.Interfaces;
 
 namespace FluxoCaixa.Application.Services
 {
-    public class CollaboratorTypeService : ICollaboratorTypeService
+    public class PaymentTypeService : IPaymentTypeService
     {
-        private readonly ICollaboratorTypeRepository _collaboratorRepository;
+        private readonly IPaymentTypeRepository _collaboratorRepository;
         private readonly IMapper _mapper;
 
-        public CollaboratorTypeService(ICollaboratorTypeRepository collaboratorRepository, IMapper mapper)
+        public PaymentTypeService(IPaymentTypeRepository collaboratorRepository, IMapper mapper)
         {
             _collaboratorRepository = collaboratorRepository;
             _mapper = mapper;
         }
 
-        public async Task<CollaboratorTypeViewModel> GetById(int? id)
+        public async Task<PaymentTypeViewModel> GetById(int? id)
         {
             var objCollaborator = await _collaboratorRepository.GetById(id);
 
-            return _mapper.Map<CollaboratorTypeViewModel>(objCollaborator);
+            return _mapper.Map<PaymentTypeViewModel>(objCollaborator);
         }
 
-        public IEnumerable<CollaboratorTypeViewModel> GetAll()
+        public IEnumerable<PaymentTypeViewModel> GetAll()
         {
             var objCollaborator = _collaboratorRepository.GetAll();
 
-            return _mapper.Map<IEnumerable<CollaboratorTypeViewModel>>(objCollaborator);
+            return _mapper.Map<IEnumerable<PaymentTypeViewModel>>(objCollaborator);
         }
 
-        public void Add(CollaboratorTypeViewModel type)
+        public void Add(PaymentTypeViewModel typevm)
         {
-            type.UserIncluded = "fulano";
-            type.DateIncluded = DateTime.Now;
+            typevm.UserIncluded = "fulano"; //pegar usuario logado
+            typevm.DateIncluded = DateTime.Now;
 
-            var updateType = _mapper.Map<CollaboratorTypes>(type);
+            var updateType = _mapper.Map<PaymentType>(typevm);
 
             _collaboratorRepository.Add(updateType);
         }
@@ -48,12 +48,12 @@ namespace FluxoCaixa.Application.Services
             _collaboratorRepository.Delete(coll);
         }
 
-        public void Update(CollaboratorTypeViewModel type)
+        public void Update(PaymentTypeViewModel type)
         {
             type.UserChanged = "fulano";
             type.DateChanged = DateTime.Now;
 
-            var updateType = _mapper.Map<CollaboratorTypes>(type);
+            var updateType = _mapper.Map<PaymentType>(type);
 
             _collaboratorRepository.Update(updateType);
         }
