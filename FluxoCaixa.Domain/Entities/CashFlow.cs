@@ -2,15 +2,15 @@
 {
     public class CashFlow
     {
-        public required int Id { get; set; }
-        public required int FlowTypeId { get; set; }
-        public required int ActivityId { get; set; }
-        public required int CollaboratorId { get; set; }
-        public required int PaymentTypeId { get; set; }
-        public required decimal Value { get; set; }
-        public required bool Status { get; set; }
-        public required string UserIncluded { get; set; }
-        public required DateTime DateIncluded { get; set; }
+        public int Id { get; set; }
+        public int FlowTypeId { get; set; }
+        public int ActivityId { get; set; }
+        public int CollaboratorId { get; set; }
+        public int PaymentTypeId { get; set; }
+        public decimal Value { get; set; }
+        public bool Status { get; set; }
+        public string UserIncluded { get; set; }
+        public DateTime DateIncluded { get; set; }
         public string? UserChanged { get; set; }
         public DateTime? DateChanged { get; set; }
 
