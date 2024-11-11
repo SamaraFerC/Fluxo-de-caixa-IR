@@ -27,6 +27,10 @@ namespace FluxoCaixa.Infra.Ioc
             services.AddAutoMapper(typeof(EntityToViewModelProfile), typeof(ViewModelToEntityProfile));
             services.AddScoped<IActivityRepository, ActivityRepository>();
             services.AddScoped<IActivityService, ActivityService>();
+            services.AddScoped<ICollaboratorRepository, CollaboratorRepository>();
+            services.AddScoped<ICollaboratorService, CollaboratorService>();
+            services.AddScoped<ICollaboratorTypeRepository, CollaboratorTypeRepository>();
+            services.AddScoped<ICollaboratorTypeService, CollaboratorTypeService>();
 
             //services. AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<AppDbContext>();
 

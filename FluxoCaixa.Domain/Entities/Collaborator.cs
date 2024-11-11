@@ -14,7 +14,7 @@
         public  int AddressID { get; set; }
         public  int CollaboratorTypeID { get; set; }
 
-        public  CollaboratorType CollaboratorType { get; set; }
+        public  CollaboratorTypes CollaboratorType { get; set; }
         public  Address Address { get; set; }
 
         public Collaborator() { }

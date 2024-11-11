@@ -4,9 +4,9 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace FluxoCaixa.Infra.Data.EntityConfiguration
 {
-    public class CollaboratorTypeConfiguration : IEntityTypeConfiguration<CollaboratorType>
+    public class CollaboratorTypeConfiguration : IEntityTypeConfiguration<CollaboratorTypes>
     {
-        public void Configure(EntityTypeBuilder<CollaboratorType> entity)
+        public void Configure(EntityTypeBuilder<CollaboratorTypes> entity)
         {
             entity.HasKey(x => x.Id);
 

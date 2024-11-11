@@ -1,46 +1,48 @@
 ﻿using FluxoCaixa.Application.Interfaces;
 using FluxoCaixa.Application.ViewModel;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace FluxoCaixa.SFinanceiro.Controllers
+namespace SFinanceiro.Controllers
 {
-    public class ActivityController : Controller
+
+    public class CollaboratorTypeController : Controller
     {
-        private readonly IActivityService _activityService;
-        
-        public ActivityController(IActivityService activityServices)
+        private readonly ICollaboratorTypeService _collaboratorTypeService;
+
+        public CollaboratorTypeController(ICollaboratorTypeService collaboratortypeService)
         {
-            _activityService = activityServices;
+            _collaboratorTypeService = collaboratortypeService;
         }
 
         [HttpGet]
         public ActionResult Index()
         {
-            var obterGrid = _activityService.GetAllActivities();
+            var obterGrid = _collaboratorTypeService.GetAll();
             return View(obterGrid);
         }
-        
+
         public ActionResult Create()
         {
             return View();
-        } 
+        }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(ActivityViewModel activityViewModel)
+        public ActionResult Create(CollaboratorTypeViewModel collaboratortypeVM)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
-                    _activityService.AddActivity(activityViewModel);
+                    _collaboratorTypeService.Add(collaboratortypeVM);
 
                     return RedirectToAction(nameof(Index));
                 }
 
-                return View(activityViewModel);
+                return View(collaboratortypeVM);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 throw new Exception(ex.Message);
             }
@@ -55,49 +57,49 @@ namespace FluxoCaixa.SFinanceiro.Controllers
                     return NotFound();
                 }
 
-                var activity = await _activityService.GetById(id);
+                var collaboratortype = await _collaboratorTypeService.GetById(id);
 
-                if (activity == null)
+                if (collaboratortype == null)
                 {
                     return NotFound();
                 }
 
-                return View(activity);
+                return View(collaboratortype);
             }
             catch (Exception ex)
             {
-                throw new Exception(ex.Message,ex.InnerException);
+                throw new Exception(ex.Message, ex.InnerException);
             }
-            
+
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Edit(ActivityViewModel activityViewModel)
+        public IActionResult Edit(CollaboratorTypeViewModel collaboratorTypeVM)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
-                    _activityService.UpdateActivity(activityViewModel);
+                    _collaboratorTypeService.Update(collaboratorTypeVM);
 
                     return RedirectToAction(nameof(Index));
                 }
 
-                return View(activityViewModel);
+                return View(collaboratorTypeVM);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 throw new Exception(ex.Message, ex.InnerException);
             }
         }
 
-        [HttpPost]        
+        [HttpPost]
         public ActionResult Delete(int id)
         {
             try
             {
-                _activityService.DeleteActivity(id);
+                _collaboratorTypeService.Delete(id);
 
                 return Json(new { success = true });
 
@@ -117,14 +119,14 @@ namespace FluxoCaixa.SFinanceiro.Controllers
                     return NotFound();
                 }
 
-                var activity = await _activityService.GetById(id);
+                var collaboratorType = await _collaboratorTypeService.GetById(id);
 
-                return View(activity);
+                return View(collaboratorType);
             }
             catch (Exception ex)
             {
                 throw new Exception(ex.Message, ex.InnerException);
-            }            
-        }        
+            }
+        }
     }
 }

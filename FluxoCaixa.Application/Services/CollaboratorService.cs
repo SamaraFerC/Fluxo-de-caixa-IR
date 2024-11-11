@@ -8,25 +8,25 @@ namespace FluxoCaixa.Application.Services
 {
     public class CollaboratorService : ICollaboratorService
     {
-        private readonly ICollaboratorRepository _CollaboratorRepository;
+        private readonly ICollaboratorRepository _collaboratorRepository;
         private readonly IMapper _mapper;
 
         public CollaboratorService(ICollaboratorRepository collaboratorRepository, IMapper mapper)
         {
-            _CollaboratorRepository = collaboratorRepository;
+            _collaboratorRepository = collaboratorRepository;
             _mapper = mapper;
         }
 
         public async Task<CollaboratorViewModel> GetById(int? id)
         {
-            var objCollaborator = await _CollaboratorRepository.GetById(id);
+            var objCollaborator = await _collaboratorRepository.GetById(id);
 
             return _mapper.Map<CollaboratorViewModel>(objCollaborator);
         }
 
         public IEnumerable<CollaboratorViewModel> GetAll()
         {
-            var objCollaborator = _CollaboratorRepository.GetAll();
+            var objCollaborator = _collaboratorRepository.GetAll();
 
             return _mapper.Map<IEnumerable<CollaboratorViewModel>>(objCollaborator);
         }
@@ -39,14 +39,14 @@ namespace FluxoCaixa.Application.Services
 
             var newCollaborator = _mapper.Map<Collaborator>(collaborator);
 
-            _CollaboratorRepository.Add(newCollaborator);
+            _collaboratorRepository.Add(newCollaborator);
         }
 
         public void Delete(int CollaboratorID)
         {
-            var coll = _CollaboratorRepository.GetById(CollaboratorID).Result;
+            var coll = _collaboratorRepository.GetById(CollaboratorID).Result;
 
-            _CollaboratorRepository.Delete(coll);
+            _collaboratorRepository.Delete(coll);
         }
 
         public void Update(CollaboratorViewModel collaborator)
@@ -56,7 +56,7 @@ namespace FluxoCaixa.Application.Services
 
             var updatectivity = _mapper.Map<Collaborator>(collaborator);
 
-            _CollaboratorRepository.Update(updatectivity);
+            _collaboratorRepository.Update(updatectivity);
         }
     }
 }
