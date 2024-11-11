@@ -1,4 +1,6 @@
 ﻿@using Microsoft.AspNetCore.Identity
+@using FluxoCaixa.Infra.Data.ViewModel
+
 @inject SignInManager<IdentityUser> SignInManager
 
     @if (SignInManager.IsSignedIn(User))
@@ -11,7 +13,7 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href=" @Url.Action("Index", "Usuarios") ">
+            <a class="nav-link" href=" @Url.Action("Index", "Voluntarios") ">
                 Voluntários
                 <span class="visually-hidden">(current)</span>
             </a>
