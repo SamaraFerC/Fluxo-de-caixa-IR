@@ -31,15 +31,9 @@ namespace FluxoCaixa.Application.Services
             return _mapper.Map<IEnumerable<CollaboratorViewModel>>(objCollaborator);
         }
 
-        public IEnumerable<CollaboratorViewModel> GetAllActives()
-        {
-            var objCollaborator = _collaboratorRepository.GetAll().Where(x =>x.Status);
-
-            return _mapper.Map<IEnumerable<CollaboratorViewModel>>(objCollaborator);
-        }
-
         public void Add(CollaboratorViewModel collaborator)
         {
+            collaborator.Status = true;
             collaborator.UserIncluded = "fulano";
             collaborator.DateIncluded = DateTime.Now;
 
