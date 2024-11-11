@@ -9,21 +9,31 @@ namespace SFinanceiro.Controllers
     public class CollaboratorController : Controller
     {
         private readonly ICollaboratorService _collaboratorService;
-
-        public CollaboratorController(ICollaboratorService collaboratorService)
+        private readonly ICollaboratorTypeService _collaboratorTypeService;
+        public CollaboratorController(ICollaboratorService collaboratorService, ICollaboratorTypeService collaboratorTypeService)
         {
             _collaboratorService = collaboratorService;
+            _collaboratorTypeService = collaboratorTypeService;
         }
 
         [HttpGet]
         public ActionResult Index()
         {
+            CreateViewBags();
             var obterGrid = _collaboratorService.GetAll();
+
+
             return View(obterGrid);
+        }
+
+        private void CreateViewBags()
+        {
+            ViewBag.collaboratorTypes = _collaboratorTypeService.GetAllActives();
         }
 
         public ActionResult Create()
         {
+            CreateViewBags();
             return View();
         }
 
