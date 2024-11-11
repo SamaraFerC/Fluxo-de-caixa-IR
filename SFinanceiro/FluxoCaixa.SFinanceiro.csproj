@@ -14,10 +14,15 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Remove="wwwroot\js\CollaboratorType\Index.js" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Areas\Admin\Views\AdminRoles\" />
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="wwwroot\js\CollaboratorType\Index.js" />
     <None Include="wwwroot\js\Activity\Index.js" />
   </ItemGroup>
 

@@ -8,9 +8,9 @@ namespace FluxoCaixa.SFinanceiro.Controllers
     {
         private readonly IActivityService _activityService;
         
-        public ActivityController(IActivityService activityService)
+        public ActivityController(IActivityService activityServices)
         {
-            _activityService = activityService;
+            _activityService = activityServices;
         }
 
         [HttpGet]

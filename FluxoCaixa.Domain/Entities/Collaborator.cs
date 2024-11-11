@@ -2,20 +2,20 @@
 {
     public class Collaborator
     {
-        public required int Id { get; set; }
-        public required string FullName { get; set; }
+        public  int Id { get; set; }
+        public  string FullName { get; set; }
         public DateTime? DateBirth { get; set; }
-        public required string UserIncluded { get; set; }
+        public  string UserIncluded { get; set; }
         public DateTime DateIncluded { get; set; }      
         public string? UserChanged { get; set; }
         public DateTime? DateChanged { get; set; }
-        public required bool Status { get; set; }
+        public  bool Status { get; set; }
 
-        public required int AddressID { get; set; }
-        public required int CollaboratorTypeID { get; set; }
+        public  int AddressID { get; set; }
+        public  int CollaboratorTypeID { get; set; }
 
-        public required CollaboratorType CollaboratorType { get; set; }
-        public required Address Address { get; set; }
+        public  CollaboratorTypes CollaboratorType { get; set; }
+        public  Address Address { get; set; }
 
         public Collaborator() { }
 

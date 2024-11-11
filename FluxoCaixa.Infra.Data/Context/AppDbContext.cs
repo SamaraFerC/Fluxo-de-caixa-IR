@@ -18,7 +18,7 @@ namespace FluxoCaixa.Infra.Data.Context
         public DbSet<Address> Addresses { get; set; }
         public DbSet<CashFlow> CashFlow { get; set; }
         public DbSet<Collaborator> Collaborator { get; set; }
-        public DbSet<CollaboratorType> CollaboratorTypes { get; set; }
+        public DbSet<CollaboratorTypes> CollaboratorTypes { get; set; }
         public DbSet<FlowType>  FlowType { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

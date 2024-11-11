@@ -1,24 +1,24 @@
-﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
-using FluxoCaixa.Application.Interfaces;
+﻿using FluxoCaixa.Application.Interfaces;
 using FluxoCaixa.Application.ViewModel;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 
 namespace SFinanceiro.Controllers
 {
-    [Authorize]
-    public class CollaboratorController : Controller
-    {
-        private readonly ICollaboratorService _collaboratorService;
 
-        public CollaboratorController(ICollaboratorService collaboratorService)
+    public class CollaboratorTypeController : Controller
+    {
+        private readonly ICollaboratorTypeService _collaboratorTypeService;
+
+        public CollaboratorTypeController(ICollaboratorTypeService collaboratortypeService)
         {
-            _collaboratorService = collaboratorService;
+            _collaboratorTypeService = collaboratortypeService;
         }
 
         [HttpGet]
         public ActionResult Index()
         {
-            var obterGrid = _collaboratorService.GetAll();
+            var obterGrid = _collaboratorTypeService.GetAll();
             return View(obterGrid);
         }
 
@@ -29,18 +29,18 @@ namespace SFinanceiro.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(CollaboratorViewModel collaboratorVM)
+        public ActionResult Create(CollaboratorTypeViewModel collaboratortypeVM)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
-                    _collaboratorService.Add(collaboratorVM);
+                    _collaboratorTypeService.Add(collaboratortypeVM);
 
                     return RedirectToAction(nameof(Index));
                 }
 
-                return View(collaboratorVM);
+                return View(collaboratortypeVM);
             }
             catch (Exception ex)
             {
@@ -57,14 +57,14 @@ namespace SFinanceiro.Controllers
                     return NotFound();
                 }
 
-                var collaborator = await _collaboratorService.GetById(id);
+                var collaboratortype = await _collaboratorTypeService.GetById(id);
 
-                if (collaborator == null)
+                if (collaboratortype == null)
                 {
                     return NotFound();
                 }
 
-                return View(collaborator);
+                return View(collaboratortype);
             }
             catch (Exception ex)
             {
@@ -75,18 +75,18 @@ namespace SFinanceiro.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Edit(CollaboratorViewModel collaboratorVM)
+        public IActionResult Edit(CollaboratorTypeViewModel collaboratorTypeVM)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
-                    _collaboratorService.Update(collaboratorVM);
+                    _collaboratorTypeService.Update(collaboratorTypeVM);
 
                     return RedirectToAction(nameof(Index));
                 }
 
-                return View(collaboratorVM);
+                return View(collaboratorTypeVM);
             }
             catch (Exception ex)
             {
@@ -99,7 +99,7 @@ namespace SFinanceiro.Controllers
         {
             try
             {
-                _collaboratorService.Delete(id);
+                _collaboratorTypeService.Delete(id);
 
                 return Json(new { success = true });
 
@@ -119,9 +119,9 @@ namespace SFinanceiro.Controllers
                     return NotFound();
                 }
 
-                var collaborator = await _collaboratorService.GetById(id);
+                var collaboratorType = await _collaboratorTypeService.GetById(id);
 
-                return View(collaborator);
+                return View(collaboratorType);
             }
             catch (Exception ex)
             {

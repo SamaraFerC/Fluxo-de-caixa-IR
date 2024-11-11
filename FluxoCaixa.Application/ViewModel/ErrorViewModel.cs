@@ -1,5 +1,5 @@
-namespace FluxoCaixa.Infra.Data.ViewModel
-{
+namespace FluxoCaixa.Application.ViewModel 
+{ 
     public class ErrorViewModel
     {
         public string? RequestId { get; set; }
