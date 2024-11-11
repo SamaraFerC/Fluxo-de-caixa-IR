@@ -3,7 +3,7 @@
 
     if (userConfirmed) {
         $.ajax({
-            url: '/CollaboratorType/Delete', 
+            url: '/Collaborator/Delete', 
             type: 'POST',
             data: { id: activityId },
             success: function (response) {

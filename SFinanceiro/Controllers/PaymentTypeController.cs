@@ -1,60 +1,48 @@
-﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
-using FluxoCaixa.Application.Interfaces;
+﻿using FluxoCaixa.Application.Interfaces;
 using FluxoCaixa.Application.ViewModel;
+using Microsoft.AspNetCore.Mvc;
 
-namespace SFinanceiro.Controllers
+namespace FluxoCaixa.SFinanceiro.Controllers
 {
-    [Authorize]
-    public class CollaboratorController : Controller
+    public class PaymentTypeController : Controller
     {
-        private readonly ICollaboratorService _collaboratorService;
-        private readonly ICollaboratorTypeService _collaboratorTypeService;
-        public CollaboratorController(ICollaboratorService collaboratorService, ICollaboratorTypeService collaboratorTypeService)
+        private readonly IPaymentTypeService _PaymentTypeService;
+
+        public PaymentTypeController(IPaymentTypeService paymentTypeService)
         {
-            _collaboratorService = collaboratorService;
-            _collaboratorTypeService = collaboratorTypeService;
+            _PaymentTypeService = paymentTypeService;
         }
 
         [HttpGet]
         public ActionResult Index()
         {
-            CreateViewBags();
-            var obterGrid = _collaboratorService.GetAll();
-
-
+            var obterGrid = _PaymentTypeService.GetAll();
             return View(obterGrid);
-        }
-
-        private void CreateViewBags()
-        {
-            ViewBag.collaboratorTypes = _collaboratorTypeService.GetAllActives();
         }
 
         public ActionResult Create()
         {
-            CreateViewBags();
             return View();
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(CollaboratorViewModel collaboratorVM)
+        public ActionResult Create(PaymentTypeViewModel paymentTypeVM)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
-                    _collaboratorService.Add(collaboratorVM);
+                    _PaymentTypeService.Add(paymentTypeVM);
 
                     return RedirectToAction(nameof(Index));
                 }
 
-                return View(collaboratorVM);
+                return View(paymentTypeVM);
             }
             catch (Exception ex)
             {
-                throw new Exception(ex.Message);
+                throw new Exception(ex.Message,ex.InnerException);
             }
         }
 
@@ -67,14 +55,14 @@ namespace SFinanceiro.Controllers
                     return NotFound();
                 }
 
-                var collaborator = await _collaboratorService.GetById(id);
+                var paymentType = await _PaymentTypeService.GetById(id);
 
-                if (collaborator == null)
+                if (paymentType == null)
                 {
                     return NotFound();
                 }
 
-                return View(collaborator);
+                return View(paymentType);
             }
             catch (Exception ex)
             {
@@ -85,18 +73,18 @@ namespace SFinanceiro.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Edit(CollaboratorViewModel collaboratorVM)
+        public IActionResult Edit(PaymentTypeViewModel paymentTypeVM)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
-                    _collaboratorService.Update(collaboratorVM);
+                    _PaymentTypeService.Update(paymentTypeVM);
 
                     return RedirectToAction(nameof(Index));
                 }
 
-                return View(collaboratorVM);
+                return View(paymentTypeVM);
             }
             catch (Exception ex)
             {
@@ -109,7 +97,7 @@ namespace SFinanceiro.Controllers
         {
             try
             {
-                _collaboratorService.Delete(id);
+                _PaymentTypeService.Delete(id);
 
                 return Json(new { success = true });
 
@@ -129,9 +117,9 @@ namespace SFinanceiro.Controllers
                     return NotFound();
                 }
 
-                var collaborator = await _collaboratorService.GetById(id);
+                var paymentType = await _PaymentTypeService.GetById(id);
 
-                return View(collaborator);
+                return View(paymentType);
             }
             catch (Exception ex)
             {
