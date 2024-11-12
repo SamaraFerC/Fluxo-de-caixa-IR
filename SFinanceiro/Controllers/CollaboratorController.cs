@@ -2,7 +2,6 @@
 using FluxoCaixa.Application.Interfaces;
 using FluxoCaixa.Application.ViewModel;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using FluxoCaixa.Domain.Entities;
 
 namespace SFinanceiro.Controllers
 {
