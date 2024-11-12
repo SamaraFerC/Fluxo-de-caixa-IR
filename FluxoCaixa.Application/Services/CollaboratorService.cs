@@ -49,6 +49,7 @@ namespace FluxoCaixa.Application.Services
 
         public void Add(CollaboratorViewModel collaborator)
         {
+            collaborator.Status = true;
             collaborator.UserIncluded = "fulano";
             collaborator.DateIncluded = DateTime.Now;
             var newCollaborator = _mapper.Map<Collaborator>(collaborator);

@@ -1,12 +1,12 @@
 ﻿@model FluxoCaixa.Application.ViewModel.ActivityViewModel
 
-<h4>Atividades</h4>
+<h1>Editar atividade</h1>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="Id"/>
+            <input type="hidden" asp-for="Id" />
             <input type="hidden" asp-for="UserIncluded" />
             <input type="hidden" asp-for="DateIncluded" />
 
@@ -17,7 +17,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="Description" class="control-label"></label>
-                <input asp-for="Description" class="form-control" />
+                <textarea asp-for="Description" class="form-control" rows="4"></textarea>
                 <span asp-validation-for="Description" class="text-danger"></span>
             </div>
             <div class="form-group form-check">
@@ -26,13 +26,11 @@
                 </label>
             </div>
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <div class="btn-group" role="group">
+                    <input type="submit" value="Salvar" class="btn btn-primary" />
+                    <a href="@Url.Action("Index")" class="btn btn-secondary">Cancelar</a>
+                </div>
             </div>
         </form>
     </div>
 </div>
-
-<div>
-    <a asp-action="Index"> Voltar</a>
-</div>
-

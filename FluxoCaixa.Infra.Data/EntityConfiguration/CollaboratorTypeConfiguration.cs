@@ -11,7 +11,7 @@ namespace FluxoCaixa.Infra.Data.EntityConfiguration
             entity.HasKey(x => x.Id);
 
             entity.Property(p => p.Name)
-                .HasMaxLength(50)
+                .HasMaxLength(100)
                 .IsRequired();
 
             entity.Property(p => p.Description)

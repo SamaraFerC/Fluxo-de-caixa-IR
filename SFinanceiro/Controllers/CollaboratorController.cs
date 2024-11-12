@@ -22,10 +22,7 @@ namespace SFinanceiro.Controllers
         [HttpGet]
         public ActionResult Index()
         {
-            CreateViewBags();
             var obterGrid = _collaboratorService.GetAll();
-
-
             return View(obterGrid);
         }
 
@@ -38,7 +35,6 @@ namespace SFinanceiro.Controllers
 
         public ActionResult Create()
         {
-            CreateViewBags();
             return View();
         }
 

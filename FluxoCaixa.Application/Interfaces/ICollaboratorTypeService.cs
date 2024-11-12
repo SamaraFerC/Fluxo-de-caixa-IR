@@ -4,9 +4,7 @@ namespace FluxoCaixa.Application.Interfaces
 {
     public interface ICollaboratorTypeService
     {
-        public IEnumerable<CollaboratorTypeViewModel> GetAll();
-
-        public IEnumerable<CollaboratorTypeViewModel> GetAllActives();
+        IEnumerable<CollaboratorTypeViewModel> GetAll();
 
         public Task<CollaboratorTypeViewModel> GetById(int? id);
 
