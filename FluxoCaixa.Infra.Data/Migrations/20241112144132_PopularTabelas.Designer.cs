@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FluxoCaixa.Infra.Data.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20241105034823_CriarTabelas")]
-    partial class CriarTabelas
+    [Migration("20241112144132_PopularTabelas")]
+    partial class PopularTabelas
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -36,8 +36,8 @@ namespace FluxoCaixa.Infra.Data.Migrations
 
                     b.Property<string>("Description")
                         .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("varchar(100)");
+                        .HasMaxLength(200)
+                        .HasColumnType("varchar(200)");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -69,13 +69,13 @@ namespace FluxoCaixa.Infra.Data.Migrations
 
                     b.Property<string>("CEP")
                         .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("varchar(100)");
+                        .HasMaxLength(8)
+                        .HasColumnType("varchar(8)");
 
                     b.Property<string>("City")
                         .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("varchar(100)");
+                        .HasMaxLength(50)
+                        .HasColumnType("varchar(50)");
 
                     b.Property<DateTime?>("DateChanged")
                         .HasColumnType("datetime(6)");
@@ -85,8 +85,8 @@ namespace FluxoCaixa.Infra.Data.Migrations
 
                     b.Property<string>("State")
                         .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("varchar(100)");
+                        .HasMaxLength(50)
+                        .HasColumnType("varchar(50)");
 
                     b.Property<bool>("Status")
                         .HasColumnType("tinyint(1)");
@@ -119,8 +119,9 @@ namespace FluxoCaixa.Infra.Data.Migrations
                     b.Property<int>("ActivityId")
                         .HasColumnType("int");
 
-                    b.Property<int>("CollaboratorId")
-                        .HasColumnType("int");
+                    b.Property<string>("CollaboratorId")
+                        .IsRequired()
+                        .HasColumnType("VARCHAR(20)");
 
                     b.Property<DateTime?>("DateChanged")
                         .HasColumnType("datetime(6)");
@@ -138,14 +139,17 @@ namespace FluxoCaixa.Infra.Data.Migrations
                         .HasColumnType("tinyint(1)");
 
                     b.Property<string>("UserChanged")
-                        .HasColumnType("longtext");
+                        .HasMaxLength(50)
+                        .HasColumnType("varchar(50)");
 
                     b.Property<string>("UserIncluded")
                         .IsRequired()
-                        .HasColumnType("longtext");
+                        .HasMaxLength(50)
+                        .HasColumnType("varchar(50)");
 
                     b.Property<decimal>("Value")
-                        .HasColumnType("decimal(18,2)");
+                        .HasPrecision(15, 2)
+                        .HasColumnType("decimal(15,2)");
 
                     b.HasKey("Id");
 
@@ -155,18 +159,16 @@ namespace FluxoCaixa.Infra.Data.Migrations
 
                     b.HasIndex("FlowTypeId");
 
-                    b.HasIndex("PaymentTypeId");
-
                     b.ToTable("CashFlow");
                 });
 
             modelBuilder.Entity("FluxoCaixa.Domain.Entities.Collaborator", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                    b.Property<string>("Id")
+                        .HasMaxLength(20)
+                        .HasColumnType("VARCHAR");
 
-                    b.Property<int>("AddressID")
+                    b.Property<int?>("AddressID")
                         .HasColumnType("int");
 
                     b.Property<int>("CollaboratorTypeID")
@@ -184,8 +186,8 @@ namespace FluxoCaixa.Infra.Data.Migrations
 
                     b.Property<string>("FullName")
                         .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("varchar(100)");
+                        .HasMaxLength(50)
+                        .HasColumnType("varchar(50)");
 
                     b.Property<bool>("Status")
                         .HasColumnType("tinyint(1)");
@@ -208,7 +210,7 @@ namespace FluxoCaixa.Infra.Data.Migrations
                     b.ToTable("Collaborator");
                 });
 
-            modelBuilder.Entity("FluxoCaixa.Domain.Entities.CollaboratorType", b =>
+            modelBuilder.Entity("FluxoCaixa.Domain.Entities.CollaboratorTypes", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -222,13 +224,13 @@ namespace FluxoCaixa.Infra.Data.Migrations
 
                     b.Property<string>("Description")
                         .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("varchar(100)");
+                        .HasMaxLength(200)
+                        .HasColumnType("varchar(200)");
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("varchar(100)");
+                        .HasMaxLength(50)
+                        .HasColumnType("varchar(50)");
 
                     b.Property<bool>("Status")
                         .HasColumnType("tinyint(1)");
@@ -261,21 +263,25 @@ namespace FluxoCaixa.Infra.Data.Migrations
 
                     b.Property<string>("Description")
                         .IsRequired()
-                        .HasColumnType("longtext");
+                        .HasMaxLength(200)
+                        .HasColumnType("varchar(200)");
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("longtext");
+                        .HasMaxLength(100)
+                        .HasColumnType("varchar(100)");
 
                     b.Property<bool>("Status")
                         .HasColumnType("tinyint(1)");
 
                     b.Property<string>("UserChanged")
-                        .HasColumnType("longtext");
+                        .HasMaxLength(50)
+                        .HasColumnType("varchar(50)");
 
                     b.Property<string>("UserIncluded")
                         .IsRequired()
-                        .HasColumnType("longtext");
+                        .HasMaxLength(50)
+                        .HasColumnType("varchar(50)");
 
                     b.HasKey("Id");
 
@@ -296,21 +302,25 @@ namespace FluxoCaixa.Infra.Data.Migrations
 
                     b.Property<string>("Description")
                         .IsRequired()
-                        .HasColumnType("longtext");
+                        .HasMaxLength(200)
+                        .HasColumnType("varchar(200)");
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("longtext");
+                        .HasMaxLength(100)
+                        .HasColumnType("varchar(100)");
 
                     b.Property<bool>("Status")
                         .HasColumnType("tinyint(1)");
 
                     b.Property<string>("UserChanged")
-                        .HasColumnType("longtext");
+                        .HasMaxLength(50)
+                        .HasColumnType("varchar(50)");
 
                     b.Property<string>("UserIncluded")
                         .IsRequired()
-                        .HasColumnType("longtext");
+                        .HasMaxLength(50)
+                        .HasColumnType("varchar(50)");
 
                     b.HasKey("Id");
 
@@ -531,7 +541,7 @@ namespace FluxoCaixa.Infra.Data.Migrations
 
                     b.HasOne("FluxoCaixa.Domain.Entities.PaymentType", "PaymentType")
                         .WithMany("CashFlow")
-                        .HasForeignKey("PaymentTypeId")
+                        .HasForeignKey("FlowTypeId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -548,11 +558,9 @@ namespace FluxoCaixa.Infra.Data.Migrations
                 {
                     b.HasOne("FluxoCaixa.Domain.Entities.Address", "Address")
                         .WithMany("Collaborators")
-                        .HasForeignKey("AddressID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("AddressID");
 
-                    b.HasOne("FluxoCaixa.Domain.Entities.CollaboratorType", "CollaboratorType")
+                    b.HasOne("FluxoCaixa.Domain.Entities.CollaboratorTypes", "CollaboratorType")
                         .WithMany("Collaborators")
                         .HasForeignKey("CollaboratorTypeID")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -619,7 +627,7 @@ namespace FluxoCaixa.Infra.Data.Migrations
                     b.Navigation("Collaborators");
                 });
 
-            modelBuilder.Entity("FluxoCaixa.Domain.Entities.CollaboratorType", b =>
+            modelBuilder.Entity("FluxoCaixa.Domain.Entities.CollaboratorTypes", b =>
                 {
                     b.Navigation("Collaborators");
                 });

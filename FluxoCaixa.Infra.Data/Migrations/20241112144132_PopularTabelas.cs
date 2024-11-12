@@ -7,7 +7,7 @@ using MySql.EntityFrameworkCore.Metadata;
 namespace FluxoCaixa.Infra.Data.Migrations
 {
     /// <inheritdoc />
-    public partial class CriarTabelas : Migration
+    public partial class PopularTabelas : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -22,7 +22,7 @@ namespace FluxoCaixa.Infra.Data.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
                     Name = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false),
-                    Description = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: false),
+                    Description = table.Column<string>(type: "varchar(200)", maxLength: 200, nullable: false),
                     Status = table.Column<bool>(type: "tinyint(1)", nullable: false),
                     UserIncluded = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false),
                     DateIncluded = table.Column<DateTime>(type: "datetime(6)", nullable: false),
@@ -42,9 +42,9 @@ namespace FluxoCaixa.Infra.Data.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
                     Street = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: false),
-                    CEP = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: false),
-                    City = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: false),
-                    State = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: false),
+                    CEP = table.Column<string>(type: "varchar(8)", maxLength: 8, nullable: false),
+                    City = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false),
+                    State = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false),
                     Status = table.Column<bool>(type: "tinyint(1)", nullable: false),
                     UserIncluded = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false),
                     DateIncluded = table.Column<DateTime>(type: "datetime(6)", nullable: false),
@@ -104,8 +104,8 @@ namespace FluxoCaixa.Infra.Data.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
-                    Name = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: false),
-                    Description = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: false),
+                    Name = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false),
+                    Description = table.Column<string>(type: "varchar(200)", maxLength: 200, nullable: false),
                     Status = table.Column<bool>(type: "tinyint(1)", nullable: false),
                     UserIncluded = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false),
                     DateIncluded = table.Column<DateTime>(type: "datetime(6)", nullable: false),
@@ -124,12 +124,12 @@ namespace FluxoCaixa.Infra.Data.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
-                    Name = table.Column<string>(type: "longtext", nullable: false),
-                    Description = table.Column<string>(type: "longtext", nullable: false),
+                    Name = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: false),
+                    Description = table.Column<string>(type: "varchar(200)", maxLength: 200, nullable: false),
                     Status = table.Column<bool>(type: "tinyint(1)", nullable: false),
-                    UserIncluded = table.Column<string>(type: "longtext", nullable: false),
+                    UserIncluded = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false),
                     DateIncluded = table.Column<DateTime>(type: "datetime(6)", nullable: false),
-                    UserChanged = table.Column<string>(type: "longtext", nullable: true),
+                    UserChanged = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: true),
                     DateChanged = table.Column<DateTime>(type: "datetime(6)", nullable: true)
                 },
                 constraints: table =>
@@ -144,12 +144,12 @@ namespace FluxoCaixa.Infra.Data.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
-                    Name = table.Column<string>(type: "longtext", nullable: false),
-                    Description = table.Column<string>(type: "longtext", nullable: false),
+                    Name = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: false),
+                    Description = table.Column<string>(type: "varchar(200)", maxLength: 200, nullable: false),
                     Status = table.Column<bool>(type: "tinyint(1)", nullable: false),
-                    UserIncluded = table.Column<string>(type: "longtext", nullable: false),
+                    UserIncluded = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false),
                     DateIncluded = table.Column<DateTime>(type: "datetime(6)", nullable: false),
-                    UserChanged = table.Column<string>(type: "longtext", nullable: true),
+                    UserChanged = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: true),
                     DateChanged = table.Column<DateTime>(type: "datetime(6)", nullable: true)
                 },
                 constraints: table =>
@@ -273,16 +273,15 @@ namespace FluxoCaixa.Infra.Data.Migrations
                 name: "Collaborator",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
-                    FullName = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: false),
+                    Id = table.Column<string>(type: "VARCHAR(20)", maxLength: 20, nullable: false),
+                    FullName = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false),
                     DateBirth = table.Column<DateTime>(type: "datetime(6)", nullable: false),
                     UserIncluded = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false),
                     DateIncluded = table.Column<DateTime>(type: "datetime(6)", nullable: false),
                     UserChanged = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: true),
                     DateChanged = table.Column<DateTime>(type: "datetime(6)", nullable: true),
                     Status = table.Column<bool>(type: "tinyint(1)", nullable: false),
-                    AddressID = table.Column<int>(type: "int", nullable: false),
+                    AddressID = table.Column<int>(type: "int", nullable: true),
                     CollaboratorTypeID = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -292,8 +291,7 @@ namespace FluxoCaixa.Infra.Data.Migrations
                         name: "FK_Collaborator_Addresses_AddressID",
                         column: x => x.AddressID,
                         principalTable: "Addresses",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_Collaborator_CollaboratorTypes_CollaboratorTypeID",
                         column: x => x.CollaboratorTypeID,
@@ -311,13 +309,13 @@ namespace FluxoCaixa.Infra.Data.Migrations
                         .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
                     FlowTypeId = table.Column<int>(type: "int", nullable: false),
                     ActivityId = table.Column<int>(type: "int", nullable: false),
-                    CollaboratorId = table.Column<int>(type: "int", nullable: false),
+                    CollaboratorId = table.Column<string>(type: "VARCHAR(20)", nullable: false),
                     PaymentTypeId = table.Column<int>(type: "int", nullable: false),
-                    Value = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    Value = table.Column<decimal>(type: "decimal(15,2)", precision: 15, scale: 2, nullable: false),
                     Status = table.Column<bool>(type: "tinyint(1)", nullable: false),
-                    UserIncluded = table.Column<string>(type: "longtext", nullable: false),
+                    UserIncluded = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false),
                     DateIncluded = table.Column<DateTime>(type: "datetime(6)", nullable: false),
-                    UserChanged = table.Column<string>(type: "longtext", nullable: true),
+                    UserChanged = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: true),
                     DateChanged = table.Column<DateTime>(type: "datetime(6)", nullable: true)
                 },
                 constraints: table =>
@@ -342,8 +340,8 @@ namespace FluxoCaixa.Infra.Data.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_CashFlow_PaymentType_PaymentTypeId",
-                        column: x => x.PaymentTypeId,
+                        name: "FK_CashFlow_PaymentType_FlowTypeId",
+                        column: x => x.FlowTypeId,
                         principalTable: "PaymentType",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
@@ -401,11 +399,6 @@ namespace FluxoCaixa.Infra.Data.Migrations
                 name: "IX_CashFlow_FlowTypeId",
                 table: "CashFlow",
                 column: "FlowTypeId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_CashFlow_PaymentTypeId",
-                table: "CashFlow",
-                column: "PaymentTypeId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Collaborator_AddressID",
