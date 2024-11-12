@@ -1,9 +1,7 @@
-﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using FluxoCaixa.Application.Interfaces;
 using FluxoCaixa.Application.ViewModel;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using System.ComponentModel.DataAnnotations;
 
 namespace SFinanceiro.Controllers
 {
@@ -48,6 +46,7 @@ namespace SFinanceiro.Controllers
             {
                 if (ModelState.IsValid)
                 {
+                    Validar(collaboratorVM);
                     _collaboratorService.Add(collaboratorVM);
 
                     return RedirectToAction(nameof(Index));
