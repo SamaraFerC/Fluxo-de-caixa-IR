@@ -2,6 +2,35 @@
     ViewData["Title"] = "Página Inicial";
 }
 
-<div class="text-center mt-5">
-    <h1 style="margin-top: 20px;">Seja bem-vindo!</h1>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - FluxoCaixa</title>
+    <link rel="stylesheet" href="https://bootswatch.com/5/cosmo/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/SFinanceiro.styles.css" asp-append-version="true" />
+    <style>
+        body {
+            background-color: #e0f7fa; /* Azul bem claro para o fundo de toda a página */
+            margin: 0;
+            padding: 0;
+        }
+
+        .text-center.mt-5 {
+            margin-top: 20px;
+            padding: 20px;
+        }
+
+        .text-center h1 {
+            font-size: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="text-center mt-5">
+        <h1 style="margin-top: 20px; font-size: 50px;">Seja bem-vindo!</h1>
+    </div>
+</body>
+</html>

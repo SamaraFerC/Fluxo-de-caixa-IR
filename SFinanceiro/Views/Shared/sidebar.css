@@ -1,0 +1,77 @@
+﻿.sidebar {
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200px;
+    background-color: #007bff;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-top {
+    flex-grow: 1;
+}
+
+.sidebar-bottom {
+    margin-top: auto;
+    padding-bottom: 20px;
+}
+
+.sidebar .navbar-brand {
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 10px 0;
+    font-size: 1.5rem;
+}
+
+.sidebar .nav-link {
+    color: white !important;
+    padding: 10px 20px;
+}
+
+    .sidebar .nav-link:hover {
+        color: #f8f9fa !important;
+        background-color: #0056b3;
+    }
+
+.content {
+    margin-left: 220px;
+    padding: 20px;
+}
+
+.btn-black {
+    background-color: black;
+    color: white;
+    border: none;
+    width: 160px;
+    margin-bottom: 10px;
+}
+
+    .btn-black:hover {
+        background-color: #333;
+        color: white;
+    }
+
+.btn-white {
+    background-color: white;
+    color: black;
+    border: 1px solid #ccc;
+    width: 160px;
+}
+
+    .btn-white:hover {
+        background-color: #f0f0f0;
+    }
+
+.auth-buttons {
+    padding: 0 20px;
+}
+
+.logout-button {
+    width: 160px;
+    margin: 0 20px;
+}

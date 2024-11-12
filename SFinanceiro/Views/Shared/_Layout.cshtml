@@ -7,84 +7,66 @@
     <link rel="stylesheet" href="https://bootswatch.com/5/cosmo/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/SFinanceiro.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/SFinanceiro\Views\Shared\sidebar.css" asp-append-version="true" />
+
     <style>
+
+        .footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Estilos para a sidebar */
         .sidebar {
             height: 100vh;
             position: fixed;
             top: 0;
             left: 0;
             width: 200px;
-            background-color: #007bff; /* Cor de fundo */
+            background-color: #007bff; 
             padding-top: 20px;
         }
 
-            .sidebar a.nav-link {
-                color: white !important;
-            }
+        .sidebar a.nav-link {
+            color: white !important;
+            padding: 10px 20px;
+            display: block;
+            text-decoration: none;
+        }
 
-                .sidebar a.nav-link:hover {
-                    color: #f8f9fa !important; /* Cor ao passar o mouse */
-                }
+        .sidebar a.nav-link:hover {
+            color: #f8f9fa !important; /* Cor ao passar o mouse */
+            background-color: #0056b3;
+        }
 
+        /* Ajusta o conteúdo para não sobrepor a sidebar */
         .content {
             margin-left: 220px;
             padding: 20px;
         }
     </style>
 </head>
-<<<<<<< HEAD
-<body style="background-color: ghostwhite;">
-
-    <!-- Sidebar -->
+<body>
     <div class="sidebar">
-        <a class="navbar-brand d-block text-white mb-4" href="@Url.Action("Index", "Home")">FluxoCaixa</a>
-        @Html.Partial("_LoginPartial")
+        <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">FluxoCaixa</a>
+        <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Início</a>
+        <a class="nav-link" asp-area="" asp-controller="Activity" asp-action="Index">Atividades</a>
+        <a class="nav-link" asp-area="" asp-controller="Collaborator" asp-action="Index">Colaboradores</a>
+        <a class="nav-link" asp-area="" asp-controller="CollaboratorType" asp-action="Index">Tipo Colaborador</a>
     </div>
 
-    <!-- Conteúdo principal -->
     <div class="content">
-=======
-<body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Fluxo Caixa</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Activity" asp-action="Index">Atividades</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Collaborator" asp-action="Index">Collaborator</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="CollaboratorType" asp-action="Index">Tipo Colaborador</a>
-                        </li>
-                       @*  <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Collaborator" asp-action="Index">Collaborator</a>
-                        </li> *@
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
-    <div class="container">
->>>>>>> parent of d71ded7 (Merge pull request #10 from SamaraFerC/Sprint_02_CleanArchiteture)
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
+    <footer class="footer text-muted">
         <div class="container">
-            Sistema de Fluxo de Caixa
+            <div class="d-flex justify-content-end w-100">
+                <span>Sistema de Fluxo de Caixa</span>
+            </div>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
