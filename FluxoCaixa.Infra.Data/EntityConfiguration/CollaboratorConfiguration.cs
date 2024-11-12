@@ -10,8 +10,13 @@ namespace FluxoCaixa.Infra.Data.EntityConfiguration
         {
             entity.HasKey(x => x.Id);
 
+            entity.Property(p => p.Id)
+                  .IsRequired()
+                  .HasMaxLength(20)
+                  .HasColumnType("VARCHAR");
+
             entity.Property(p => p.FullName)
-                .HasMaxLength(100)
+                .HasMaxLength(50)
                 .IsRequired();
 
             entity.Property(p => p.DateBirth)
@@ -30,8 +35,7 @@ namespace FluxoCaixa.Infra.Data.EntityConfiguration
             entity.Property(p => p.UserChanged)
                 .HasMaxLength(50);
 
-            entity.Property(p => p.AddressID)
-                .IsRequired();
+            entity.Property(p => p.AddressID);
 
             entity.Property(p => p.CollaboratorTypeID)
                 .IsRequired();

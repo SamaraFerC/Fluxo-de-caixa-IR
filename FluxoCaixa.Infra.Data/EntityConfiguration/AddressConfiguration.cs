@@ -15,15 +15,15 @@ namespace FluxoCaixa.Infra.Data.EntityConfiguration
                 .IsRequired();
 
             entity.Property(p => p.CEP)
-                .HasMaxLength(100)
+                .HasMaxLength(8)
                 .IsRequired();
 
             entity.Property(p => p.City)
-                .HasMaxLength(100)
+                .HasMaxLength(50)
                 .IsRequired();
 
             entity.Property(p => p.State)
-                .HasMaxLength(100)
+                .HasMaxLength(50)
                 .IsRequired();
 
             entity.Property(p => p.Status)
