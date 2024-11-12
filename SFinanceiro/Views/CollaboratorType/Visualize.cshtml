@@ -1,6 +1,6 @@
 ﻿@model FluxoCaixa.Application.ViewModel.CollaboratorTypeViewModel
 
-<h4>Tipo de Colaborador</h4>
+<h1>Detalhes</h1>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -22,9 +22,9 @@
                 <input class="form-check-input" asp-for="Status" disabled /> 
             </label>
         </div>
+        <div>
+            <a class="btn btn-secondary" asp-action="Index"> Voltar</a>
+        </div>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index"> Voltar</a>
-</div>
