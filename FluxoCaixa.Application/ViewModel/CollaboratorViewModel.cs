@@ -6,6 +6,7 @@ namespace FluxoCaixa.Application.ViewModel
     public class CollaboratorViewModel
     {
         [Required]
+        [MaxLength(18)]
         [Display(Name = "CPF/CNPJ")]
         [CpfCnpj(ErrorMessage = "O CPF/CNPJ é inválido.")]
         public string Id { get; set; }

@@ -52,7 +52,7 @@ namespace SFinanceiro.Controllers
                     return RedirectToAction(nameof(Index));
                 }
 
-                return View(collaboratorVM);
+                return RedirectToAction(nameof(Create));
             }
             catch (Exception ex)
             {
