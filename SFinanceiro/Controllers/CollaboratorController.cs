@@ -1,9 +1,7 @@
-﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using FluxoCaixa.Application.Interfaces;
 using FluxoCaixa.Application.ViewModel;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using FluxoCaixa.Application.Services;
 
 namespace SFinanceiro.Controllers
 {
@@ -34,7 +32,6 @@ namespace SFinanceiro.Controllers
         {
             var collaboratorTypes = _collaboratorTypeService.GetAllActives();
             ViewBag.collaboratorTypes = new SelectList(collaboratorTypes, "Id", "Name");
-
         }
 
         public ActionResult Create()
@@ -75,14 +72,14 @@ namespace SFinanceiro.Controllers
                 collaboratorVM.addressVM = null;
             }
 
-            var existeColaborador = _collaboratorService.GetById(collaboratorVM.Id) != null ? true : false;
-            if (existeColaborador)
-            {
-                var mensagem = "existe";
-            }
+            //var existeColaborador = _collaboratorService.GetById(collaboratorVM.Id) != null ? true : false;
+            //if (existeColaborador)
+            //{
+            //    var mensagem = "existe";
+            //} ///aruumar questao ded transação
         }
 
-        public async Task<IActionResult> Edit(int? id)
+        public async Task<IActionResult> Edit(string? id)
         {
             try
             {
@@ -129,7 +126,7 @@ namespace SFinanceiro.Controllers
         }
 
         [HttpPost]
-        public ActionResult Delete(int id)
+        public ActionResult Delete(string id)
         {
             try
             {
@@ -144,7 +141,7 @@ namespace SFinanceiro.Controllers
             }
         }
 
-        public async Task<IActionResult> Visualize(int? id)
+        public async Task<IActionResult> Visualize(string? id)
         {
             try
             {

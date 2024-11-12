@@ -62,7 +62,7 @@ namespace FluxoCaixa.Application.Services
             _collaboratorRepository.Add(newCollaborator);
         }
 
-        public void Delete(int CollaboratorID)
+        public void Delete(string CollaboratorID)
         {
             var coll = _collaboratorRepository.GetById(CollaboratorID).Result;
 

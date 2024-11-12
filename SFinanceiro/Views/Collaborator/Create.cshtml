@@ -11,7 +11,6 @@
         <form asp-action="Create"> 
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Status" value="true" />
-
             <div>
                 <h4>Tipo de Parceiro</h4>
                 <div>
@@ -43,22 +42,18 @@
                 <div>
                     <label asp-for="addressVM.Street"></label>
                     <input asp-for="addressVM.Street" class="form-control" />
-                    @* <span asp-validation-for="addressVM.Street" class="text-danger"></span> *@
                 </div>                
                 <div>
                     <label asp-for="addressVM.City"></label>
                     <input asp-for="addressVM.City" class="form-control" />
-                    @* <span asp-validation-for="addressVM.City" class="text-danger"></span> *@
                 </div>
                 <div>
                     <label asp-for="addressVM.State"></label>
                     <input asp-for="addressVM.State" class="form-control" />
-                    @* <span asp-validation-for="addressVM.State" class="text-danger"></span> *@
                 </div>
                 <div>
                     <label asp-for="addressVM.CEP"></label>
                     <input asp-for="addressVM.CEP" class="form-control" />
-                    @* <span asp-validation-for="addressVM.CEP" class="text-danger"></span> *@
                 </div>
             </div>          
             <div class="form-group">

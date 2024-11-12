@@ -14,6 +14,6 @@ namespace FluxoCaixa.Application.Interfaces
 
         void Update(CollaboratorViewModel activity);
 
-        void Delete(int id);
+        void Delete(string id);
     }
 }
