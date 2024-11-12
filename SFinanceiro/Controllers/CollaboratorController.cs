@@ -2,6 +2,7 @@
 using FluxoCaixa.Application.Interfaces;
 using FluxoCaixa.Application.ViewModel;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using FluxoCaixa.Domain.Entities;
 
 namespace SFinanceiro.Controllers
 {
@@ -32,6 +33,7 @@ namespace SFinanceiro.Controllers
         {
             var collaboratorTypes = _collaboratorTypeService.GetAllActives();
             ViewBag.collaboratorTypes = new SelectList(collaboratorTypes, "Id", "Name");
+            
         }
 
         public ActionResult Create()
@@ -62,22 +64,7 @@ namespace SFinanceiro.Controllers
                 CreateViewBags();
                 throw new Exception(ex.Message);
             }
-        }
-
-        private void Validar(CollaboratorViewModel collaboratorVM)
-        {
-            if (string.IsNullOrEmpty(collaboratorVM.addressVM.CEP) || string.IsNullOrEmpty(collaboratorVM.addressVM.City)
-                                    || string.IsNullOrEmpty(collaboratorVM.addressVM.State) || string.IsNullOrEmpty(collaboratorVM.addressVM.CEP))
-            {
-                collaboratorVM.addressVM = null;
-            }
-
-            //var existeColaborador = _collaboratorService.GetById(collaboratorVM.Id) != null ? true : false;
-            //if (existeColaborador)
-            //{
-            //    var mensagem = "existe";
-            //} ///aruumar questao ded transação
-        }
+        }       
 
         public async Task<IActionResult> Edit(string? id)
         {
@@ -88,7 +75,11 @@ namespace SFinanceiro.Controllers
                     return NotFound();
                 }
 
-                var collaborator = await _collaboratorService.GetById(id);
+                var collaborator = _collaboratorService.FindCollaborator(id);
+
+                var collaboratorTypes = _collaboratorTypeService.GetAllActives().Where(x=> x.Id == collaborator.CollaboratorTypeID);
+
+                ViewBag.collaboratorTypes = new SelectList(collaboratorTypes, "Id", "Name");
 
                 if (collaborator == null)
                 {
@@ -158,6 +149,21 @@ namespace SFinanceiro.Controllers
             {
                 throw new Exception(ex.Message, ex.InnerException);
             }
+        }
+
+        private void Validar(CollaboratorViewModel collaboratorVM)
+        {
+            if (string.IsNullOrEmpty(collaboratorVM.addressVM.CEP) || string.IsNullOrEmpty(collaboratorVM.addressVM.City)
+                                    || string.IsNullOrEmpty(collaboratorVM.addressVM.State) || string.IsNullOrEmpty(collaboratorVM.addressVM.CEP))
+            {
+                collaboratorVM.addressVM = null;
+            }
+
+            //var existeColaborador = _collaboratorService.GetById(collaboratorVM.Id) != null ? true : false;
+            //if (existeColaborador)
+            //{
+            //    var mensagem = "existe";
+            //} ///aruumar questao ded transação
         }
     }
 }

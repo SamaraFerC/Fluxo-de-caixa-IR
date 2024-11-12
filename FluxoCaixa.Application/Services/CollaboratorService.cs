@@ -40,6 +40,13 @@ namespace FluxoCaixa.Application.Services
             return _mapper.Map<IEnumerable<CollaboratorViewModel>>(objCollaborator);
         }
 
+        public CollaboratorViewModel FindCollaborator(string id)
+        {
+            var collaborator = _collaboratorRepository.FindCollaborator(id);
+
+            return _mapper.Map<CollaboratorViewModel>(collaborator);
+        }
+
         public void Add(CollaboratorViewModel collaborator)
         {
             collaborator.UserIncluded = "fulano";

@@ -23,6 +23,12 @@ namespace FluxoCaixa.Infra.Data.Repositories
             return _context.Collaborator.FirstOrDefaultAsync(x => x.Id.Equals(id));
         }
 
+        public Collaborator? FindCollaborator(string id)
+        {
+            return _context.Collaborator.Include(p => p.CollaboratorType).Include(x => x.Address)
+                .FirstOrDefault(p => p.Id == id); ;
+        }
+
         public void Add(Collaborator collaborator)
         {
             _context.Add(collaborator);

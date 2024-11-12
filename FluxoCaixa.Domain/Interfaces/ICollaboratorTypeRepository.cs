@@ -8,6 +8,8 @@ namespace FluxoCaixa.Domain.Interfaces
 
         public Task<Collaborator> GetById(string id);
 
+        public Collaborator? FindCollaborator(string id);
+
         void Add(Collaborator activity);
 
         void Update(Collaborator activity);
