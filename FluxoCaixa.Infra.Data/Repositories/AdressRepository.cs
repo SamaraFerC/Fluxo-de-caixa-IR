@@ -16,7 +16,7 @@ namespace FluxoCaixa.Infra.Data.Repositories
 
         public Task<Address> GetById(int id)
         {
-            return _context.Address.FirstOrDefaultAsync(x => x.Id == id);
+            return _context.Addresses.FirstOrDefaultAsync(x => x.Id == id);
         }
 
         public void Add(Address address)
