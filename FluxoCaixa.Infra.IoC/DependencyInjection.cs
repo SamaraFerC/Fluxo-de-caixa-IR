@@ -33,6 +33,9 @@ namespace FluxoCaixa.Infra.Ioc
             services.AddScoped<ICollaboratorTypeService, CollaboratorTypeService>();
             services.AddScoped<IPaymentTypeRepository, PaymentTypeRepository>();
             services.AddScoped<IPaymentTypeService, PaymentTypeService>();
+            services.AddScoped<IAddressRepository, AddressRepository>();
+            services.AddScoped<IAddressService, AddressService>();
+
             //services. AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<AppDbContext>();
 
             //services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)

@@ -62,17 +62,19 @@ namespace FluxoCaixa.Infra.Data.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("string")
+                        .HasMaxLength(20)
+                        .HasColumnType("varchar(20)");
 
                     b.Property<string>("CEP")
                         .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("varchar(100)");
+                        .HasMaxLength(8)
+                        .HasColumnType("varchar(8)");
 
                     b.Property<string>("City")
                         .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("varchar(100)");
+                        .HasMaxLength(50)
+                        .HasColumnType("varchar(50)");
 
                     b.Property<DateTime?>("DateChanged")
                         .HasColumnType("datetime(6)");
@@ -159,9 +161,10 @@ namespace FluxoCaixa.Infra.Data.Migrations
 
             modelBuilder.Entity("FluxoCaixa.Domain.Entities.Collaborator", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<string>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("String")
+                        .HasMaxLength(50);
 
                     b.Property<int>("AddressID")
                         .HasColumnType("int");
@@ -181,8 +184,8 @@ namespace FluxoCaixa.Infra.Data.Migrations
 
                     b.Property<string>("FullName")
                         .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("varchar(100)");
+                        .HasMaxLength(50)
+                        .HasColumnType("varchar(50)");
 
                     b.Property<bool>("Status")
                         .HasColumnType("tinyint(1)");

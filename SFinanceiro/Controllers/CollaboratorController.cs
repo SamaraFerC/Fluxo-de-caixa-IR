@@ -2,10 +2,11 @@
 using Microsoft.AspNetCore.Mvc;
 using FluxoCaixa.Application.Interfaces;
 using FluxoCaixa.Application.ViewModel;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using FluxoCaixa.Application.Services;
 
 namespace SFinanceiro.Controllers
 {
-    
     public class CollaboratorController : Controller
     {
         private readonly ICollaboratorService _collaboratorService;
@@ -31,7 +32,9 @@ namespace SFinanceiro.Controllers
 
         private void CreateViewBags()
         {
-            ViewBag.collaboratorTypes = _collaboratorTypeService.GetAllActives();
+            var collaboratorTypes = _collaboratorTypeService.GetAllActives();
+            ViewBag.collaboratorTypes = new SelectList(collaboratorTypes, "Id", "Name");
+
         }
 
         public ActionResult Create()
@@ -48,8 +51,9 @@ namespace SFinanceiro.Controllers
             {
                 if (ModelState.IsValid)
                 {
+                    Validar(collaboratorVM);
+
                     _collaboratorService.Add(collaboratorVM);
-                    
 
                     return RedirectToAction(nameof(Index));
                 }
@@ -58,7 +62,23 @@ namespace SFinanceiro.Controllers
             }
             catch (Exception ex)
             {
+                CreateViewBags();
                 throw new Exception(ex.Message);
+            }
+        }
+
+        private void Validar(CollaboratorViewModel collaboratorVM)
+        {
+            if (string.IsNullOrEmpty(collaboratorVM.addressVM.CEP) || string.IsNullOrEmpty(collaboratorVM.addressVM.City)
+                                    || string.IsNullOrEmpty(collaboratorVM.addressVM.State) || string.IsNullOrEmpty(collaboratorVM.addressVM.CEP))
+            {
+                collaboratorVM.addressVM = null;
+            }
+
+            var existeColaborador = _collaboratorService.GetById(collaboratorVM.Id) != null ? true : false;
+            if (existeColaborador)
+            {
+                var mensagem = "existe";
             }
         }
 
