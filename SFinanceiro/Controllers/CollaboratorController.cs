@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using FluxoCaixa.Application.Interfaces;
 using FluxoCaixa.Application.ViewModel;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -9,19 +10,19 @@ namespace SFinanceiro.Controllers
     {
         private readonly ICollaboratorService _collaboratorService;
         private readonly ICollaboratorTypeService _collaboratorTypeService;
-        private readonly IAddressService _AddressService;
-
-        public CollaboratorController(ICollaboratorService collaboratorService, ICollaboratorTypeService collaboratorTypeService, IAddressService AddressService)
+        public CollaboratorController(ICollaboratorService collaboratorService, ICollaboratorTypeService collaboratorTypeService)
         {
             _collaboratorService = collaboratorService;
             _collaboratorTypeService = collaboratorTypeService;
-            _AddressService = AddressService;
         }
 
         [HttpGet]
         public ActionResult Index()
         {
+            CreateViewBags();
             var obterGrid = _collaboratorService.GetAll();
+
+
             return View(obterGrid);
         }
 
@@ -34,6 +35,7 @@ namespace SFinanceiro.Controllers
 
         public ActionResult Create()
         {
+            CreateViewBags();
             return View();
         }
 
@@ -45,8 +47,6 @@ namespace SFinanceiro.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    Validar(collaboratorVM);
-
                     _collaboratorService.Add(collaboratorVM);
 
                     return RedirectToAction(nameof(Index));
@@ -59,7 +59,7 @@ namespace SFinanceiro.Controllers
                 CreateViewBags();
                 throw new Exception(ex.Message);
             }
-        }       
+        }
 
         public async Task<IActionResult> Edit(string? id)
         {

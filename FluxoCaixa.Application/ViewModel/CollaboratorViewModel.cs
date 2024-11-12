@@ -24,7 +24,7 @@ namespace FluxoCaixa.Application.ViewModel
         public DateTime? DateBirth { get; set; }
 
         public AddressViewModel? addressVM { get; set; }
-        public CollaboratorTypeViewModel CollaboratorTypeVM { get; set; }
+        public CollaboratorTypeViewModel? CollaboratorTypeVM { get; set; }
 
         public int AddressID { get; set; }
 
