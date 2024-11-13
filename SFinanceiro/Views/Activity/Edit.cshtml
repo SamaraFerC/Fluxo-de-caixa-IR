@@ -10,17 +10,17 @@
             <input type="hidden" asp-for="UserIncluded" />
             <input type="hidden" asp-for="DateIncluded" />
 
-            <div class="form-group">
+            <div class="form-group mb-3">
                 <label asp-for="Name" class="control-label"></label>
                 <input asp-for="Name" class="form-control" />
                 <span asp-validation-for="Name" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group mb-3">
                 <label asp-for="Description" class="control-label"></label>
                 <textarea asp-for="Description" class="form-control" rows="4"></textarea>
                 <span asp-validation-for="Description" class="text-danger"></span>
             </div>
-            <div class="form-group form-check">
+            <div class="form-group form-check mb-3">
                 <label class="form-check-label">
                     <input class="form-check-input" asp-for="Status" /> @Html.DisplayNameFor(model => model.Status)
                 </label>
@@ -28,7 +28,7 @@
             <div class="form-group">
                 <div class="btn-group" role="group">
                     <input type="submit" value="Salvar" class="btn btn-primary" />
-                    <a href="@Url.Action("Index")" class="btn btn-secondary">Cancelar</a>
+                    <a href="@Url.Action("Index")" class="btn btn-secondary ms-2">Cancelar</a>
                 </div>
             </div>
         </form>

@@ -5,7 +5,7 @@
 <script src="~/js/Collaborator/Index.js"></script>
 <p>
     <div class="mt-3">
-        <h1 style="margin-top: 20px;">Editar voluntário</h1>
+        <h1 style="margin-top: 20px;">Editar colaborador</h1>
     </div>
 </p>
 
@@ -17,7 +17,7 @@
             <input type="hidden" asp-for="UserIncluded"/>
             <input type="hidden" asp-for="DateIncluded"/>
             <input type="hidden" asp-for="CollaboratorTypeID"/>
-            <div>
+            <div class="mb-3">
                 <h4>Tipo de Parceiro</h4>
                 <div>
                     <label asp-for="CollaboratorTypeID"></label>
@@ -25,52 +25,52 @@
                 </div>
             </div>
 
-            <div class="form-group">
+            <div class="form-group mb-3">
                 <label asp-for="Id" class="control-label"></label>
-                <input asp-for="Id" class="form-control" disabled/>
+                <input asp-for="Id" class="form-control" disabled />
                 <span asp-validation-for="Id" class="text-danger"></span>
             </div>
-            <div>
+
+            <div class="form-group mb-3">
                 <label asp-for="FullName"></label>
                 <input asp-for="FullName" class="form-control" />
                 <span asp-validation-for="FullName" class="text-danger"></span>
             </div>
 
-            <div>
+            <div class="form-group mb-3">
                 <label asp-for="DateBirth"></label>
                 <input asp-for="DateBirth" type="date" class="form-control" />
                 <span asp-validation-for="DateBirth" class="text-danger"></span>
             </div>
 
-            <div>
+            <div class="mb-3">
                 <h4>Endereço</h4>
-                <div>
+                <div class="form-group mb-3">
                     <label asp-for="addressVM.Street"></label>
                     <input asp-for="addressVM.Street" class="form-control" />
                 </div>
-                <div>
+                <div class="form-group mb-3">
                     <label asp-for="addressVM.City"></label>
                     <input asp-for="addressVM.City" class="form-control" />
                 </div>
-                <div>
+                <div class="form-group mb-3">
                     <label asp-for="addressVM.State"></label>
                     <input asp-for="addressVM.State" class="form-control" />
                 </div>
-                <div>
+                <div class="form-group mb-3">
                     <label asp-for="addressVM.CEP"></label>
                     <input asp-for="addressVM.CEP" class="form-control" />
                 </div>
             </div>
+
             <div class="form-group">
                 <input type="submit" value="Adicionar" class="btn btn-primary mt-5" />
-                <a class="btn btn-secondary mt-5" asp-action="Index">Voltar</a>
+                <a class="btn btn-secondary mt-5 ms-2" asp-action="Index">Voltar</a>
             </div>
         </form>
     </div>
 </div>
-<script>
-  
-</script>
+
 @section Scripts {
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
