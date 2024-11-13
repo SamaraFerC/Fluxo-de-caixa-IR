@@ -2,6 +2,7 @@
 using FluxoCaixa.Application.Interfaces;
 using FluxoCaixa.Application.ViewModel;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using System.Text.RegularExpressions;
 
 namespace SFinanceiro.Controllers
 {
@@ -155,6 +156,7 @@ namespace SFinanceiro.Controllers
                 collaboratorVM.addressVM = null;
             }
 
+            collaboratorVM.Id = Regex.Replace(collaboratorVM.Id, @"[./-]", "");
             //var existeColaborador = _collaboratorService.GetById(collaboratorVM.Id) != null ? true : false;
             //if (existeColaborador)
             //{
