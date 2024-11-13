@@ -1,6 +1,7 @@
 ﻿using FluxoCaixa.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using System.Reflection.Emit;
 
 namespace FluxoCaixa.Infra.Data.EntityConfiguration
 {
@@ -38,7 +39,17 @@ namespace FluxoCaixa.Infra.Data.EntityConfiguration
             entity.Property(p => p.AddressID);
 
             entity.Property(p => p.CollaboratorTypeID)
-                .IsRequired();
+                  .IsRequired();
+
+            entity.HasOne(c => c.CollaboratorType)
+                  .WithMany(tc => tc.Collaborators)
+                  .HasForeignKey(c => c.CollaboratorTypeID)
+                  .IsRequired();
+
+            entity.HasOne(c => c.Address)
+                  .WithMany(tc => tc.Collaborators)
+                  .HasForeignKey(c => c.AddressID)
+                  .IsRequired(false);
         }
     }
 }

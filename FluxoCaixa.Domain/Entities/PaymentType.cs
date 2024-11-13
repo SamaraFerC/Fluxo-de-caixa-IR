@@ -11,7 +11,7 @@
         public string? UserChanged { get; set; }
         public DateTime? DateChanged { get; set; }
 
-        public ICollection<CashFlow>? CashFlow { get; set; }
+        public ICollection<CashFlow> CashFlow { get; set; }
 
         public PaymentType()
         {

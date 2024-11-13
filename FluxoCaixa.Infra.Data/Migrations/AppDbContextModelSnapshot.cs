@@ -156,6 +156,8 @@ namespace FluxoCaixa.Infra.Data.Migrations
 
                     b.HasIndex("FlowTypeId");
 
+                    b.HasIndex("PaymentTypeId");
+
                     b.ToTable("CashFlow");
                 });
 
@@ -226,8 +228,8 @@ namespace FluxoCaixa.Infra.Data.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("varchar(50)");
+                        .HasMaxLength(100)
+                        .HasColumnType("varchar(100)");
 
                     b.Property<bool>("Status")
                         .HasColumnType("tinyint(1)");
@@ -519,13 +521,13 @@ namespace FluxoCaixa.Infra.Data.Migrations
             modelBuilder.Entity("FluxoCaixa.Domain.Entities.CashFlow", b =>
                 {
                     b.HasOne("FluxoCaixa.Domain.Entities.Activity", "Activity")
-                        .WithMany()
+                        .WithMany("CashFlow")
                         .HasForeignKey("ActivityId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("FluxoCaixa.Domain.Entities.Collaborator", "Collaborator")
-                        .WithMany()
+                        .WithMany("CashFlow")
                         .HasForeignKey("CollaboratorId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -538,7 +540,7 @@ namespace FluxoCaixa.Infra.Data.Migrations
 
                     b.HasOne("FluxoCaixa.Domain.Entities.PaymentType", "PaymentType")
                         .WithMany("CashFlow")
-                        .HasForeignKey("FlowTypeId")
+                        .HasForeignKey("PaymentTypeId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -619,9 +621,19 @@ namespace FluxoCaixa.Infra.Data.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("FluxoCaixa.Domain.Entities.Activity", b =>
+                {
+                    b.Navigation("CashFlow");
+                });
+
             modelBuilder.Entity("FluxoCaixa.Domain.Entities.Address", b =>
                 {
                     b.Navigation("Collaborators");
+                });
+
+            modelBuilder.Entity("FluxoCaixa.Domain.Entities.Collaborator", b =>
+                {
+                    b.Navigation("CashFlow");
                 });
 
             modelBuilder.Entity("FluxoCaixa.Domain.Entities.CollaboratorTypes", b =>

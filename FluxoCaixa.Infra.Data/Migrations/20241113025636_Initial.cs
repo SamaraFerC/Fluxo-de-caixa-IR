@@ -1,4 +1,6 @@
-﻿using System;
+﻿]
+]
+using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 using MySql.EntityFrameworkCore.Metadata;
 
@@ -7,7 +9,7 @@ using MySql.EntityFrameworkCore.Metadata;
 namespace FluxoCaixa.Infra.Data.Migrations
 {
     /// <inheritdoc />
-    public partial class PopularTabelas : Migration
+    public partial class Initial : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -104,7 +106,7 @@ namespace FluxoCaixa.Infra.Data.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
-                    Name = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false),
+                    Name = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: false),
                     Description = table.Column<string>(type: "varchar(200)", maxLength: 200, nullable: false),
                     Status = table.Column<bool>(type: "tinyint(1)", nullable: false),
                     UserIncluded = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false),
@@ -281,8 +283,8 @@ namespace FluxoCaixa.Infra.Data.Migrations
                     UserChanged = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: true),
                     DateChanged = table.Column<DateTime>(type: "datetime(6)", nullable: true),
                     Status = table.Column<bool>(type: "tinyint(1)", nullable: false),
-                    AddressID = table.Column<int>(type: "int", nullable: true),
-                    CollaboratorTypeID = table.Column<int>(type: "int", nullable: false)
+                    CollaboratorTypeID = table.Column<int>(type: "int", nullable: false),
+                    AddressID = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -340,8 +342,8 @@ namespace FluxoCaixa.Infra.Data.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_CashFlow_PaymentType_FlowTypeId",
-                        column: x => x.FlowTypeId,
+                        name: "FK_CashFlow_PaymentType_PaymentTypeId",
+                        column: x => x.PaymentTypeId,
                         principalTable: "PaymentType",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
@@ -399,6 +401,11 @@ namespace FluxoCaixa.Infra.Data.Migrations
                 name: "IX_CashFlow_FlowTypeId",
                 table: "CashFlow",
                 column: "FlowTypeId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_CashFlow_PaymentTypeId",
+                table: "CashFlow",
+                column: "PaymentTypeId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Collaborator_AddressID",

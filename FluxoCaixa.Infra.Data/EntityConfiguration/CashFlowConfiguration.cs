@@ -38,6 +38,26 @@ namespace FluxoCaixa.Infra.Data.EntityConfiguration
 
             entity.Property(p => p.UserChanged)
                 .HasMaxLength(50);
+
+            entity.HasOne(e => e.Activity)
+                  .WithMany(e => e.CashFlow)
+                  .HasForeignKey(e => e.ActivityId)
+                  .IsRequired();
+
+            entity.HasOne(e => e.Collaborator)
+                  .WithMany(e => e.CashFlow)
+                  .HasForeignKey(e => e.CollaboratorId)
+                  .IsRequired();
+
+            entity.HasOne(e => e.FlowType)
+                  .WithMany(e => e.CashFlow)
+                  .HasForeignKey(e => e.FlowTypeId)
+                  .IsRequired();
+
+            entity.HasOne(e => e.PaymentType)
+                  .WithMany(e => e.CashFlow)
+                  .HasForeignKey(e => e.PaymentTypeId)
+                  .IsRequired();
         }
     }
 }

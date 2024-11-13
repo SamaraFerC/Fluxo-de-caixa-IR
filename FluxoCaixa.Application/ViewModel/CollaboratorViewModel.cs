@@ -19,7 +19,6 @@ namespace FluxoCaixa.Application.ViewModel
         [Display(Name = "Situação")]
         public bool Status { get; set; }
 
-        [Required]
         [Display(Name = "Data de Nascimento")]
         [DataType(DataType.Date)]
         public DateTime? DateBirth { get; set; }

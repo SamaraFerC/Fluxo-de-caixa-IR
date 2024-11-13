@@ -13,7 +13,7 @@
         public string? UserChanged { get; set; }
         public DateTime? DateChanged { get; set; }
 
-        public ICollection<Collaborator> Collaborators { get; set; }
+        public ICollection<Collaborator>? Collaborators { get; set; }
 
         public Address()
         {
