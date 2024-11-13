@@ -2,6 +2,7 @@
 using FluxoCaixa.Application.Interfaces;
 using FluxoCaixa.Application.ViewModel;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using System.Text.RegularExpressions;
 
 namespace SFinanceiro.Controllers
 {
@@ -49,10 +50,11 @@ namespace SFinanceiro.Controllers
                     Validar(collaboratorVM);
                     _collaboratorService.Add(collaboratorVM);
 
+                    TempData["MensagemSucesso"] = "Colaborador salvo com sucesso!";
                     return RedirectToAction(nameof(Index));
                 }
 
-                return View(collaboratorVM);
+                return RedirectToAction(nameof(Create));
             }
             catch (Exception ex)
             {
@@ -154,6 +156,7 @@ namespace SFinanceiro.Controllers
                 collaboratorVM.addressVM = null;
             }
 
+            collaboratorVM.Id = Regex.Replace(collaboratorVM.Id, @"[./-]", "");
             //var existeColaborador = _collaboratorService.GetById(collaboratorVM.Id) != null ? true : false;
             //if (existeColaborador)
             //{

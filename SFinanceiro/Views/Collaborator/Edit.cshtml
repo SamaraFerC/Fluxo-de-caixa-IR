@@ -2,6 +2,7 @@
 @{
     ViewData["Title"] = "Edit";
 }
+<script src="~/js/Collaborator/Index.js"></script>
 <p>
     <div class="mt-3">
         <h1 style="margin-top: 20px;">Editar colaborador</h1>
@@ -13,12 +14,14 @@
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Status" value="true" />
+            <input type="hidden" asp-for="UserIncluded"/>
+            <input type="hidden" asp-for="DateIncluded"/>
+            <input type="hidden" asp-for="CollaboratorTypeID"/>
             <div class="mb-3">
                 <h4>Tipo de Parceiro</h4>
                 <div>
                     <label asp-for="CollaboratorTypeID"></label>
-                    @Html.DropDownListFor(model => model.CollaboratorTypeID, (SelectList)ViewBag.collaboratorTypes, "Selecione..", new { @class = "form-control span12", @disabled = "disabled" })
-                    <span asp-validation-for="CollaboratorTypeID" class="text-danger"></span>
+                    @Html.DropDownListFor(model => model.CollaboratorTypeID,(SelectList)ViewBag.collaboratorTypes,"Selecione..",new { @class = "form-control span12", @disabled = "disabled" })                    <span asp-validation-for="CollaboratorTypeID" class="text-danger"></span>
                 </div>
             </div>
 

@@ -56,11 +56,7 @@ namespace FluxoCaixa.Application.Services
 
             if (collaborator.addressVM != null)
             {
-                var newAddress = _mapper.Map<Address>(collaborator.addressVM);
-                newAddress.UserIncluded = "fulano";
-                newAddress.DateIncluded = DateTime.Now;
-                _addressRepository.Add(newAddress);
-                newCollaborator.AddressID = newAddress.Id;
+                AddAddress(collaborator, newCollaborator);
             }
             else
             {
@@ -68,6 +64,15 @@ namespace FluxoCaixa.Application.Services
             }
 
             _collaboratorRepository.Add(newCollaborator);
+        }
+
+        private void AddAddress(CollaboratorViewModel collaborator, Collaborator newCollaborator)
+        {
+            var newAddress = _mapper.Map<Address>(collaborator.addressVM);
+            newAddress.UserIncluded = "fulano";
+            newAddress.DateIncluded = DateTime.Now;
+            _addressRepository.Add(newAddress);
+            newCollaborator.AddressID = newAddress.Id;
         }
 
         public void Delete(string CollaboratorID)
@@ -82,9 +87,18 @@ namespace FluxoCaixa.Application.Services
             collaborator.UserChanged = "fulano";
             collaborator.DateChanged = DateTime.Now;
 
-            var updatectivity = _mapper.Map<Collaborator>(collaborator);
+            var newColl = _mapper.Map<Collaborator>(collaborator);
 
-            _collaboratorRepository.Update(updatectivity);
+            if (collaborator.addressVM != null)
+            {
+                AddAddress(collaborator, newColl);
+            }
+            else
+            {
+                //updateAddres();
+            }
+
+            _collaboratorRepository.Update(newColl);
         }
     }
 }
