@@ -49,6 +49,7 @@ namespace SFinanceiro.Controllers
                     Validar(collaboratorVM);
                     _collaboratorService.Add(collaboratorVM);
 
+                    TempData["MensagemSucesso"] = "Colaborador salvo com sucesso!";
                     return RedirectToAction(nameof(Index));
                 }
 
