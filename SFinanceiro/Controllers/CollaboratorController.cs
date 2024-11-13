@@ -73,10 +73,7 @@ namespace SFinanceiro.Controllers
                 }
 
                 var collaborator = _collaboratorService.FindCollaborator(id);
-
-                var collaboratorTypes = _collaboratorTypeService.GetAllActives().Where(x=> x.Id == collaborator.CollaboratorTypeID);
-
-                ViewBag.collaboratorTypes = new SelectList(collaboratorTypes, "Id", "Name");
+                ViewBagEdicao(collaborator);
 
                 if (collaborator == null)
                 {
@@ -90,6 +87,13 @@ namespace SFinanceiro.Controllers
                 throw new Exception(ex.Message, ex.InnerException);
             }
 
+        }
+
+        private void ViewBagEdicao(CollaboratorViewModel collaborator)
+        {
+            var collaboratorTypes = _collaboratorTypeService.GetAllActives().Where(x => x.Id == collaborator.CollaboratorTypeID);
+
+            ViewBag.collaboratorTypes = new SelectList(collaboratorTypes, "Id", "Name");
         }
 
         [HttpPost]
@@ -138,7 +142,8 @@ namespace SFinanceiro.Controllers
                     return NotFound();
                 }
 
-                var collaborator = await _collaboratorService.GetById(id);
+                var collaborator =  _collaboratorService.FindCollaborator(id);
+                ViewBagEdicao(collaborator);
 
                 return View(collaborator);
             }
