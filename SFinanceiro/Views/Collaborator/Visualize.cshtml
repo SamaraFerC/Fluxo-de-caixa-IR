@@ -1,0 +1,60 @@
+﻿@model FluxoCaixa.Application.ViewModel.CollaboratorViewModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+<h1 style="margin-top:20px;">Detalhes</h1>
+<div>
+    <dl class="row">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input type="hidden" asp-for="Status" value="true" />
+        <input type="hidden" asp-for="UserIncluded" />
+        <input type="hidden" asp-for="DateIncluded" />
+        <input type="hidden" asp-for="CollaboratorTypeID" />
+        <div class="mb-3">
+            <h4>Tipo de Parceiro</h4>
+            <div>
+                <label asp-for="CollaboratorTypeID"></label>
+                @Html.DropDownListFor(model => model.CollaboratorTypeID, (SelectList)ViewBag.collaboratorTypes, "Selecione..", new { @class = "form-control span12", @disabled = "disabled" })                    <span asp-validation-for="CollaboratorTypeID" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-group mb-3">
+            <label asp-for="Id" class="control-label"></label>
+            <input asp-for="Id" class="form-control" disabled />
+        </div>
+
+        <div class="form-group mb-3">
+            <label asp-for="FullName"></label>
+            <input asp-for="FullName" class="form-control" disabled />
+        </div>
+
+        <div class="form-group mb-3">
+            <label asp-for="DateBirth"></label>
+            <input asp-for="DateBirth" type="date" class="form-control" disabled />
+        </div>
+
+        <div class="mb-3">
+            <h4>Endereço</h4>
+            <div class="form-group mb-3">
+                <label asp-for="addressVM.Street"></label>
+                <input asp-for="addressVM.Street" class="form-control" disabled/>
+            </div>
+            <div class="form-group mb-3">
+                <label asp-for="addressVM.City"></label>
+                <input asp-for="addressVM.City" class="form-control" disabled />
+            </div>
+            <div class="form-group mb-3">
+                <label asp-for="addressVM.State"></label>
+                <input asp-for="addressVM.State" class="form-control" disabled />
+            </div>
+            <div class="form-group mb-3">
+                <label asp-for="addressVM.CEP"></label>
+                <input asp-for="addressVM.CEP" class="form-control" disabled />
+            </div>
+        </div>
+    </dl>
+</div>
+<div>
+    <a class="btn btn-secondary" asp-action="Index">Voltar</a>
+</div>
