@@ -4,6 +4,8 @@ namespace FluxoCaixa.Application.ViewModel
 {
     public class AddressViewModel
     {
+        public int? Id { get; set; }
+
         [Display(Name = "Endereço")]
         [MaxLength(100)]
         public string? Street { get; set; }

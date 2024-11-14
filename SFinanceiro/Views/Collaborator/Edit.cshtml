@@ -15,6 +15,7 @@
                 <input type="hidden" asp-for="UserIncluded" />
                 <input type="hidden" asp-for="DateIncluded" />
                 <input type="hidden" asp-for="CollaboratorTypeID" />
+                <input type="hidden" asp-for="AddressID" />
 
                 <div class="mb-3">
                     <h4><strong>Tipo de Parceiro</strong></h4>
@@ -34,7 +35,14 @@
                     <span asp-validation-for="DateBirth" class="text-danger"></span>
                 </div>
 
-                <div class="mb-3">
+                <label asp-for="IsAddress" class="control-label"></label>
+                <input class="form-check-input" asp-for="IsAddress" id="IsAddress" />
+
+                <div id="divAddress" style="display:none;" class="mb-4">
+                    <input type="hidden" asp-for="addressVM.Id" />
+                    <input type="hidden" asp-for="addressVM.UserIncluded" />
+                    <input type="hidden" asp-for="addressVM.DateIncluded" />
+
                     <h4><strong>Endereço</strong></h4>
                     <div class="form-group mb-3">
                         <label asp-for="addressVM.Street" class="form-label">Rua</label>
@@ -55,7 +63,7 @@
                 </div>
 
                 <div class="text-center">
-                    <input type="submit" value="Adicionar" class="btn btn-primary" />
+                    <input type="submit" value="Editar" class="btn btn-primary" />
                     <a class="btn btn-secondary ms-2" asp-action="Index">Voltar</a>
                 </div>
             </form>
@@ -85,3 +93,4 @@
         border-color: #6c757d;
     }
 </style>
+<script src="~/js/Collaborator/Editar.js"></script>

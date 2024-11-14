@@ -3,6 +3,7 @@ using FluxoCaixa.Application.Interfaces;
 using FluxoCaixa.Application.ViewModel;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System.Text.RegularExpressions;
+using System.ComponentModel.DataAnnotations;
 
 namespace SFinanceiro.Controllers
 {
@@ -50,7 +51,6 @@ namespace SFinanceiro.Controllers
                     Validar(collaboratorVM);
                     _collaboratorService.Add(collaboratorVM);
 
-                    TempData["MensagemSucesso"] = "Colaborador salvo com sucesso!";
                     return RedirectToAction(nameof(Index));
                 }
 
@@ -104,7 +104,8 @@ namespace SFinanceiro.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    _collaboratorService.Update(collaboratorVM);
+                    Validar(collaboratorVM);
+                    _collaboratorService.Update(collaboratorVM, true);
 
                     return RedirectToAction(nameof(Index));
                 }
@@ -155,6 +156,13 @@ namespace SFinanceiro.Controllers
 
         private void Validar(CollaboratorViewModel collaboratorVM)
         {
+            if (!collaboratorVM.IsAddress && (string.IsNullOrEmpty(collaboratorVM.addressVM.CEP) || string.IsNullOrEmpty(collaboratorVM.addressVM.Street) ||
+                                                string.IsNullOrEmpty(collaboratorVM.addressVM.City) || string.IsNullOrEmpty(collaboratorVM.addressVM.State)))
+            {
+                collaboratorVM.addressVM = null;
+                ///trartar erro em tela
+            }
+
             if (!collaboratorVM.IsAddress)
             {
                 collaboratorVM.addressVM = null;

@@ -12,8 +12,6 @@ namespace FluxoCaixa.Application.Interfaces
 
         void Add(CashFlowViewModel activity);
 
-        void Update(CashFlowViewModel activity);
-
-        void Delete(int id);
+        void Update(int cashFlowID);
     }
 }

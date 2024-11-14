@@ -40,7 +40,7 @@ namespace FluxoCaixa.Application.Services
         public void AddActivity(ActivityViewModel activity)
         {
             activity.Status = true;
-            activity.UserIncluded = "fulano";
+            activity.UserIncluded = "userSystem";
             activity.DateIncluded = DateTime.Now;
 
             var newActivity = _mapper.Map<Activity>(activity);
@@ -57,7 +57,7 @@ namespace FluxoCaixa.Application.Services
 
         public void UpdateActivity(ActivityViewModel activity)
         {            
-            activity.UserChanged = "fulano";
+            activity.UserChanged = "userSystem";
             activity.DateChanged = DateTime.Now;
 
             var updatectivity = _mapper.Map<Activity>(activity);
