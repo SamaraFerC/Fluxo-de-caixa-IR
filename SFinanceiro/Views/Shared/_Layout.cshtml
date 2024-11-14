@@ -9,6 +9,11 @@
     <link rel="stylesheet" href="~/SFinanceiro.styles.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/SFinanceiro\Views\Shared\sidebar.css" asp-append-version="true" />
     <style>
+        /* Fundo azul claro */
+        body {
+            background-color: #e3f2fd; /* Azul claro */
+        }
+
         .footer {
             position: absolute;
             bottom: 0;
@@ -26,6 +31,7 @@
             padding-top: 20px;
             box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
         }
+
         .sidebar-title {
             color: white !important;
             font-size: 24px;
@@ -35,9 +41,11 @@
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             text-align: center;
         }
+
         .sidebar-nav {
             padding-top: 10px;
         }
+
         .sidebar a.nav-link {
             color: rgba(255, 255, 255, 0.9) !important;
             padding: 12px 25px;
@@ -46,16 +54,17 @@
             transition: all 0.3s ease;
             margin: 4px 0;
         }
-        .sidebar a.nav-link:hover {
-            color: white !important;
-            background-color: rgba(255, 255, 255, 0.1);
-            transform: translateX(5px);
-        }
+
+            .sidebar a.nav-link:hover {
+                color: white !important;
+                background-color: rgba(255, 255, 255, 0.1);
+                transform: translateX(5px);
+            }
+
         .content {
             margin-left: 270px;
             padding: 20px;
         }
-
     </style>
 </head>
 <body>
