@@ -16,7 +16,7 @@
                 }
             },
             error: function () {
-                alert("Ocorreu um erro ao tentar excluir a atividade.");
+                alert("Ocorreu um erro ao tentar inativar esta movimentação.");
             }
         });
     }
