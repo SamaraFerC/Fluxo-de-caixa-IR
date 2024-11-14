@@ -56,7 +56,6 @@ namespace FluxoCaixa.SFinanceiro.Controllers
             }
         }
         [HttpPost]
-        [ValidateAntiForgeryToken]
         public ActionResult Edit(int id)
         {
             try
