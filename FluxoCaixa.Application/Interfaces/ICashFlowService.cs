@@ -6,14 +6,14 @@ namespace FluxoCaixa.Application.Interfaces
     {
         IEnumerable<CashFlowViewModel> GetAll();
 
-        public Task<CashFlowViewModel> GetById(string id);
+        public Task<CashFlowViewModel> GetById(int id);
 
-        public CashFlowViewModel FindCashFlow(string id);
+        public CashFlowViewModel FindCashFlow(int id);
 
         void Add(CashFlowViewModel activity);
 
         void Update(CashFlowViewModel activity);
 
-        void Delete(string id);
+        void Delete(int id);
     }
 }

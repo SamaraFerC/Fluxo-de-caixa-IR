@@ -4,7 +4,7 @@ namespace FluxoCaixa.Domain.Interfaces
 {
     public interface ICashFlowRepository
     {
-        IEnumerable<CashFlow> GetAll();
+        public IEnumerable<CashFlow> GetAll();
 
         public Task<CashFlow> GetById(int id);
 

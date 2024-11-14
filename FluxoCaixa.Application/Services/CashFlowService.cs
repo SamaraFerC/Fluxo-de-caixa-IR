@@ -3,7 +3,6 @@ using FluxoCaixa.Application.Interfaces;
 using FluxoCaixa.Application.ViewModel;
 using FluxoCaixa.Domain.Entities;
 using FluxoCaixa.Domain.Interfaces;
-using FluxoCaixa.Infra.Data.Repositories;
 
 namespace FluxoCaixa.Application.Services
 {
@@ -18,52 +17,47 @@ namespace FluxoCaixa.Application.Services
             _mapper = mapper;
         }
 
-        public CashFlowViewModel FindCashFlow(string id)
+        public async Task<CashFlowViewModel> GetById(int id)
         {
-            throw new NotImplementedException();
+            var cashFlow = await _cashFlowRepository.GetById(id);
+
+            return _mapper.Map<CashFlowViewModel>(cashFlow);
         }
 
         public IEnumerable<CashFlowViewModel> GetAll()
         {
-            var objMov = await _cashFlowRepository;
+            var cashFlow =  _cashFlowRepository.GetAll();
 
-            return _mapper.Map<CashFlowViewModel>(objMov);
+            return _mapper.Map<IEnumerable<CashFlowViewModel>>(cashFlow);
         }
 
-        public Task<CashFlowViewModel> GetById(string id)
-        {
-            var objMov = await _cashFlowRepository.GetById(id);
-
-            return _mapper.Map<CashFlowViewModel>(objMov);
-        }
-
-        public void Update(CashFlowViewModel cashFlowVM)
+        public CashFlowViewModel FindCashFlow(int id)
         {
             throw new NotImplementedException();
         }
 
-        public void Delete(int cashFlowID)
+        public void Add(CashFlowViewModel flow)
         {
-            var coll = _cashFlowRepository.GetById(cashFlowID).Result;
+            flow.UserIncluded = "fulano";
+            flow.DateIncluded = DateTime.Now;
+
+            var newCF = _mapper.Map<CashFlow>(flow);
+
+            _cashFlowRepository.Add(newCF);
+        }
+        public void Delete(int id)
+        {
+            var coll = _cashFlowRepository.GetById(id).Result;
 
             _cashFlowRepository.Delete(coll);
         }
 
-        public void Update(CashFlowViewModel cashFlowVM)
+        public void Update(CashFlowViewModel flow)
         {
-            //collaborator.UserChanged = "fulano";
-            //collaborator.DateChanged = DateTime.Now;
+            flow.UserChanged = "fulano";
+            flow.DateChanged = DateTime.Now;
 
-            var newcf = _mapper.Map<Collaborator>(cashFlowVM);
-
-            //if (collaborator.addressVM != null)
-            //{
-            //    AddAddress(collaborator, newColl);
-            //}
-            //else
-            //{
-            //    //updateAddres();
-            //}
+            var newcf = _mapper.Map<CashFlow>(flow);
 
             _cashFlowRepository.Update(newcf);
         }
