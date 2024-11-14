@@ -35,7 +35,7 @@ namespace FluxoCaixa.Application.Services
 
         public IEnumerable<CollaboratorViewModel> GetAllActives()
         {
-            var objCollaborator = _collaboratorRepository.GetAll().Where(x =>x.Status);
+            var objCollaborator = _collaboratorRepository.GetAll().Where(x => x.Status);
 
             var teste = _mapper.Map<IEnumerable<CollaboratorViewModel>>(objCollaborator);
             return teste;
@@ -55,7 +55,7 @@ namespace FluxoCaixa.Application.Services
 
         public void Add(CollaboratorViewModel collaborator)
         {
-            collaborator.UserIncluded = "fulano";
+            collaborator.UserIncluded = "userSystem";
             collaborator.DateIncluded = DateTime.Now;
             var newCollaborator = _mapper.Map<Collaborator>(collaborator);
 
@@ -74,10 +74,19 @@ namespace FluxoCaixa.Application.Services
         private void AddAddress(CollaboratorViewModel collaborator, Collaborator newCollaborator)
         {
             var newAddress = _mapper.Map<Address>(collaborator.addressVM);
-            newAddress.UserIncluded = "fulano";
+            newAddress.UserIncluded = "userSystem";
             newAddress.DateIncluded = DateTime.Now;
             _addressRepository.Add(newAddress);
             newCollaborator.AddressID = newAddress.Id;
+        }
+
+        private void UpdateAddress(AddressViewModel addressViewModel)
+        {
+            addressViewModel.UserChanged = "userSystem";
+            addressViewModel.DateChanged = DateTime.Now;
+            var addressUp = _mapper.Map<Address>(addressViewModel);
+
+            _addressRepository.Update(addressUp);
         }
 
         public void Delete(string CollaboratorID)
@@ -87,20 +96,20 @@ namespace FluxoCaixa.Application.Services
             _collaboratorRepository.Delete(coll);
         }
 
-        public void Update(CollaboratorViewModel collaborator)
+        public void Update(CollaboratorViewModel collaborator, bool isEdit)
         {
-            collaborator.UserChanged = "fulano";
+            collaborator.UserChanged = "userSystem";
             collaborator.DateChanged = DateTime.Now;
 
             var newColl = _mapper.Map<Collaborator>(collaborator);
 
-            if (collaborator.addressVM != null)
+            if (collaborator.IsAddress && !isEdit)
             {
                 AddAddress(collaborator, newColl);
             }
             else
             {
-                //updateAddres();
+                UpdateAddress(collaborator.addressVM);
             }
 
             _collaboratorRepository.Update(newColl);

@@ -30,13 +30,6 @@ namespace FluxoCaixa.SFinanceiro.Controllers
             return View(obterGrid);
         }
 
-        private void CreateViewBags()
-        {
-            ViewBag.flowType = new SelectList(_flowTypeService.GetAll(), "Id", "Name");
-            ViewBag.activity = new SelectList(_activityService.GetAllActives(),"Id", "Name");
-            ViewBag.collaborator = new SelectList(_collaboratorService.GetAllActives(), "Id", "FullName");
-            ViewBag.paymentType = new SelectList(_paymentTypeService.GetAllActives(), "Id", "Name");            
-        }
         public ActionResult Create()
         {
             CreateViewBags();
@@ -62,22 +55,20 @@ namespace FluxoCaixa.SFinanceiro.Controllers
                 return View();
             }
         }
-        public ActionResult Edit(int id)
-        {
-            return View();
-        }
-
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(CashFlowViewModel cashFlowVM)
+        public ActionResult Edit(int id)
         {
             try
             {
-                return RedirectToAction(nameof(Index));
+                _cashFlowService.Update(id);
+
+                return Json(new { success = true });
+
             }
-            catch
+            catch (Exception ex)
             {
-                return View();
+                return Json(new { success = false });
             }
         }
 
@@ -101,14 +92,7 @@ namespace FluxoCaixa.SFinanceiro.Controllers
             }
         }
 
-        private void ViewBagEdit(CashFlowViewModel cashFlowVM)
-        {
-            ViewBag.flowType = new SelectList(_flowTypeService.GetAll().Where(x => x.Id == cashFlowVM.FlowTypeId), "Id", "Name");
-            ViewBag.activity = new SelectList(_activityService.GetAllActivities().Where(x =>x.Id == cashFlowVM.ActivityId), "Id", "Name");
-            ViewBag.collaborator = new SelectList(_collaboratorService.GetAll().Where(x =>x.Id.Equals(cashFlowVM.CollaboratorId)), "Id", "FullName");
-            ViewBag.paymentType = new SelectList(_paymentTypeService.GetAll().Where(x =>x.Id == cashFlowVM.PaymentTypeId), "Id", "Name");
-        }
-
+        
         public ActionResult Delete(int id, IFormCollection collection)
         {
             try
@@ -119,6 +103,22 @@ namespace FluxoCaixa.SFinanceiro.Controllers
             {
                 return View();
             }
+        }
+
+        private void CreateViewBags()
+        {
+            ViewBag.flowType = new SelectList(_flowTypeService.GetAll(), "Id", "Name");
+            ViewBag.activity = new SelectList(_activityService.GetAllActives(), "Id", "Name");
+            ViewBag.collaborator = new SelectList(_collaboratorService.GetAllActives(), "Id", "FullName");
+            ViewBag.paymentType = new SelectList(_paymentTypeService.GetAllActives(), "Id", "Name");
+        }
+
+        private void ViewBagEdit(CashFlowViewModel cashFlowVM)
+        {
+            ViewBag.flowType = new SelectList(_flowTypeService.GetAll().Where(x => x.Id == cashFlowVM.FlowTypeId), "Id", "Name");
+            ViewBag.activity = new SelectList(_activityService.GetAllActivities().Where(x => x.Id == cashFlowVM.ActivityId), "Id", "Name");
+            ViewBag.collaborator = new SelectList(_collaboratorService.GetAll().Where(x => x.Id.Equals(cashFlowVM.CollaboratorId)), "Id", "FullName");
+            ViewBag.paymentType = new SelectList(_paymentTypeService.GetAll().Where(x => x.Id == cashFlowVM.PaymentTypeId), "Id", "Name");
         }
     }
 }

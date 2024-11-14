@@ -54,17 +54,14 @@ namespace FluxoCaixa.Application.Services
 
             _cashFlowRepository.Add(newCF);
         }
-        public void Delete(int id)
-        {
-            var coll = _cashFlowRepository.GetById(id).Result;
 
-            _cashFlowRepository.Delete(coll);
-        }
-
-        public void Update(CashFlowViewModel flow)
+        public void Update(int cashFlowID)
         {
-            flow.UserChanged = "fulano";
+            var flow = _cashFlowRepository.FindCashFlow(cashFlowID);
+
+            flow.UserChanged = "userSystem";
             flow.DateChanged = DateTime.Now;
+            flow.Status = false;
 
             var newcf = _mapper.Map<CashFlow>(flow);
 

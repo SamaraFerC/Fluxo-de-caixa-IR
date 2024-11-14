@@ -41,7 +41,7 @@ namespace FluxoCaixa.Application.Services
 
         public void Add(CollaboratorTypeViewModel type)
         {
-            type.UserIncluded = "fulano";
+            type.UserIncluded = "userSystem";
             type.DateIncluded = DateTime.Now;
 
             var updateType = _mapper.Map<CollaboratorTypes>(type);
@@ -58,7 +58,7 @@ namespace FluxoCaixa.Application.Services
 
         public void Update(CollaboratorTypeViewModel type)
         {
-            type.UserChanged = "fulano";
+            type.UserChanged = "userSystem";
             type.DateChanged = DateTime.Now;
 
             var updateType = _mapper.Map<CollaboratorTypes>(type);

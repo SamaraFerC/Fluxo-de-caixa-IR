@@ -40,7 +40,7 @@ namespace FluxoCaixa.Application.Services
 
         public void Add(PaymentTypeViewModel typevm)
         {
-            typevm.UserIncluded = "fulano"; //pegar usuario logado
+            typevm.UserIncluded = "userSystem"; //pegar usuario logado
             typevm.DateIncluded = DateTime.Now;
 
             var updateType = _mapper.Map<PaymentType>(typevm);
@@ -57,7 +57,7 @@ namespace FluxoCaixa.Application.Services
 
         public void Update(PaymentTypeViewModel type)
         {
-            type.UserChanged = "fulano";
+            type.UserChanged = "userSystem";
             type.DateChanged = DateTime.Now;
 
             var updateType = _mapper.Map<PaymentType>(type);

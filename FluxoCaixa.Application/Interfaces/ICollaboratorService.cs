@@ -13,7 +13,7 @@ namespace FluxoCaixa.Application.Interfaces
 
         void Add(CollaboratorViewModel activity);
 
-        void Update(CollaboratorViewModel activity);
+        void Update(CollaboratorViewModel activity, bool isEdit);
 
         void Delete(string id);
     }
