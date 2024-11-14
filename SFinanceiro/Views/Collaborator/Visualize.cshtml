@@ -11,7 +11,7 @@
 
             <!-- Tipo de Parceiro -->
             <div class="mb-3">
-                <h4>Tipo de Parceiro</h4>
+                <h4><strong>Tipo de Parceiro</strong></h4>
                 <div>
                     <label asp-for="CollaboratorTypeID" class="form-label">Tipo</label>
                     @Html.DropDownListFor(model => model.CollaboratorTypeID, (SelectList)ViewBag.collaboratorTypes, "Selecione...", new { @class = "form-control", @disabled = "disabled" })
@@ -35,7 +35,7 @@
 
             <!-- Endereço -->
             <div class="mb-3">
-                <h4>Endereço</h4>
+                <h4><strong>Endereço</strong></h4>
                 <div class="form-group mb-3">
                     <label asp-for="addressVM.Street" class="form-label">Rua</label>
                     <input asp-for="addressVM.Street" class="form-control" disabled />
