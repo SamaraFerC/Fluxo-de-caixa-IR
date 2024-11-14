@@ -13,26 +13,12 @@ namespace FluxoCaixa.Application.ViewModel
         public int FlowTypeId { get; set; }
 
         [Required]
-        [Display(Name = "Nome movimentacao")]
-        [MaxLength(50)]
-        public string FlowName { get; set; }
-
-        [Required]
         [Display(Name = "Tipo Atividade")]
         public int ActivityId { get; set; }
-
-        public string ActivityName { get; set; }
-
 
         [Required]
         [Display(Name = "Colaborador")]
         public int CollaboratorId { get; set; }
-
-
-        [Required]
-        [Display(Name = "Nome")]
-        [MaxLength(50)]
-        public string CollaboratorName { get; set; }
 
         public int PaymentTypeId { get; set; }
 
@@ -40,9 +26,9 @@ namespace FluxoCaixa.Application.ViewModel
         public int CollaboratorTypeID { get;set; }
 
         [Required]
-        [Display(Name = "Nome")]
-        [MaxLength(50)]
-        public string Name { get; set; }
+        [Display(Name = "Justificativa")]
+        [MaxLength(100)]
+        public string? Justificativa { get; set; }
 
         [Required]
         [DisplayName("Valor")]

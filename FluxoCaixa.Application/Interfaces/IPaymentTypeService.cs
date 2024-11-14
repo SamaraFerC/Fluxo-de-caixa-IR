@@ -7,6 +7,7 @@ namespace FluxoCaixa.Application.Interfaces
         IEnumerable<PaymentTypeViewModel> GetAll();
 
         public Task<PaymentTypeViewModel> GetById(int? id);
+        public IEnumerable<PaymentTypeViewModel> GetAllActives();
 
         void Add(PaymentTypeViewModel activity);
 

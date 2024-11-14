@@ -37,7 +37,8 @@ namespace FluxoCaixa.Application.Services
         {
             var objCollaborator = _collaboratorRepository.GetAll().Where(x =>x.Status);
 
-            return _mapper.Map<IEnumerable<CollaboratorViewModel>>(objCollaborator);
+            var teste = _mapper.Map<IEnumerable<CollaboratorViewModel>>(objCollaborator);
+            return teste;
         }
 
         public CollaboratorViewModel FindCollaborator(string id)

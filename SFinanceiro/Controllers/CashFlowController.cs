@@ -1,22 +1,21 @@
 ﻿using FluxoCaixa.Application.Interfaces;
-using Microsoft.AspNetCore.Http;
+using FluxoCaixa.Application.ViewModel;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace FluxoCaixa.SFinanceiro.Controllers
 {
     public class CashFlowController : Controller
     {
         private readonly ICashFlowService _cashFlowService;
-        private readonly ICollaboratorTypeService _collaboratorTypeService;
         private readonly ICollaboratorService _collaboratorService;
         private readonly IActivityService _activityService;
         private readonly IPaymentTypeService _paymentTypeService;
         private readonly IFlowTypeService _flowTypeService;
 
-        public CashFlowController(ICashFlowService cashFlowService, ICollaboratorTypeService collaboratorTypeService, ICollaboratorService collaboratorService, IActivityService activityService, IPaymentTypeService paymentTypeService, IFlowTypeService flowTypeService)
+        public CashFlowController(ICashFlowService cashFlowService, ICollaboratorService collaboratorService, IActivityService activityService, IPaymentTypeService paymentTypeService, IFlowTypeService flowTypeService)
         {
             _cashFlowService = cashFlowService;
-            _collaboratorTypeService = collaboratorTypeService;
             _collaboratorService = collaboratorService;
             _activityService = activityService;
             _paymentTypeService = paymentTypeService;
@@ -25,8 +24,18 @@ namespace FluxoCaixa.SFinanceiro.Controllers
 
         public ActionResult Index()
         {
+            CreateViewBags();
             var obterGrid = _cashFlowService.GetAll();
+
             return View(obterGrid);
+        }
+
+        private void CreateViewBags()
+        {
+            ViewBag.flowType = new SelectList(_flowTypeService.GetAll(), "Id", "Name");
+            ViewBag.activity = new SelectList(_activityService.GetAllActives(),"Id", "Name");
+            ViewBag.collaborator = new SelectList(_collaboratorService.GetAllActives(), "Id", "FullName");
+            ViewBag.paymentType = new SelectList(_paymentTypeService.GetAllActives(), "Id", "Name");            
         }
 
         public ActionResult Details(int id)
@@ -35,12 +44,14 @@ namespace FluxoCaixa.SFinanceiro.Controllers
         }
         public ActionResult Create()
         {
+            CreateViewBags();
+
             return View();
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public ActionResult Create(CashFlowViewModel cashFlowVM)
         {
             try
             {
@@ -58,7 +69,7 @@ namespace FluxoCaixa.SFinanceiro.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public ActionResult Edit(CashFlowViewModel cashFlowVM)
         {
             try
             {

@@ -31,6 +31,13 @@ namespace FluxoCaixa.Application.Services
             return _mapper.Map<IEnumerable<PaymentTypeViewModel>>(objCollaborator);
         }
 
+        public IEnumerable<PaymentTypeViewModel> GetAllActives()
+        {
+            var objCollaborator = _collaboratorRepository.GetAll().Where(x =>x.Status);
+
+            return _mapper.Map<IEnumerable<PaymentTypeViewModel>>(objCollaborator);
+        }
+
         public void Add(PaymentTypeViewModel typevm)
         {
             typevm.UserIncluded = "fulano"; //pegar usuario logado

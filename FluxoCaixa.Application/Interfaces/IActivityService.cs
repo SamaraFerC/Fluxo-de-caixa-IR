@@ -6,6 +6,8 @@ namespace FluxoCaixa.Application.Interfaces
     {
         IEnumerable<ActivityViewModel> GetAllActivities();
 
+        IEnumerable<ActivityViewModel> GetAllActives();
+
         public Task<ActivityViewModel> GetById(int? id);
 
         void AddActivity(ActivityViewModel activity);
