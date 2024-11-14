@@ -1,16 +1,16 @@
 ﻿@model FluxoCaixa.Application.ViewModel.CashFlowViewModel
 @{
-    ViewData["Title"] = "Cadastro de Colaborador";
+    ViewData["Title"] = "Relatórios";
 }
 <h1 class="text-center mb-4">@ViewData["Title"]</h1>
-<div class="row justify-content-center">
+@*<div class="row justify-content-center">
     <div class="col-md-6">
         <div class="card shadow-sm p-4">
             <form asp-action="Create"> 
                 <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
                 <input type="hidden" asp-for="Status" value="true" />
 
-                <!-- Tipo de Parceiro -->
+
                 <div class="mb-4">
                     <h4 class="text-muted"><strong>Tipo de Parceiro</strong></h4>
                     <label asp-for="CollaboratorTypeID" class="form-label">Selecione o Tipo</label>
@@ -18,7 +18,7 @@
                     <span asp-validation-for="CollaboratorTypeID" class="text-danger"></span>
                 </div>
 
-                <!-- Nome Completo -->
+
                 <div class="form-group mb-3">
                     <label asp-for="FullName" class="form-label">Nome Completo</label>
                     <input asp-for="FullName" class="form-control" placeholder="Insira o nome completo" />
@@ -30,15 +30,13 @@
                     <input asp-for="Id" class="form-control" placeholder="Insira o nome CPF ou CNPJ"/>
                     <span asp-validation-for="Id" class="text-danger"></span>
                 </div>
-
-                <!-- Data de Nascimento -->
                 <div class="form-group mb-3">
                     <label asp-for="DateBirth" class="form-label">Data de Nascimento</label>
                     <input asp-for="DateBirth" type="date" class="form-control" />
                     <span asp-validation-for="DateBirth" class="text-danger"></span>
                 </div>
 
-                <!-- Endereço -->
+
                 <div class="mb-4">
                     <h4 class="text-muted"><strong>Endereço</strong></h4>
                     <div class="form-group mb-3">
@@ -59,7 +57,7 @@
                     </div>
                 </div>          
 
-                <!-- Botões de Ação -->
+
                 <div class="form-group text-center">
                     <input type="submit" value="Salvar" class="btn btn-primary me-2" />
                     <a class="btn btn-secondary" asp-action="Index">Voltar</a>
@@ -67,7 +65,7 @@
             </form>
         </div>
     </div>
-</div>
+</div>*@
 
 <style>
     h1 {
