@@ -26,6 +26,10 @@ namespace FluxoCaixa.Infra.Data.EntityConfiguration
                 .HasPrecision(15, 2)
                 .IsRequired();
 
+            entity.Property(p => p.Description)
+                .HasMaxLength(200)
+                .IsRequired();
+
             entity.Property(p => p.Status)
                 .IsRequired();
 

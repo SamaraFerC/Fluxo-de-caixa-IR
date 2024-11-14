@@ -126,6 +126,11 @@ namespace FluxoCaixa.Infra.Data.Migrations
                     b.Property<DateTime>("DateIncluded")
                         .HasColumnType("datetime(6)");
 
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("varchar(200)");
+
                     b.Property<int>("FlowTypeId")
                         .HasColumnType("int");
 
@@ -174,7 +179,6 @@ namespace FluxoCaixa.Infra.Data.Migrations
                         .HasColumnType("int");
 
                     b.Property<DateTime?>("DateBirth")
-                        .IsRequired()
                         .HasColumnType("datetime(6)");
 
                     b.Property<DateTime?>("DateChanged")

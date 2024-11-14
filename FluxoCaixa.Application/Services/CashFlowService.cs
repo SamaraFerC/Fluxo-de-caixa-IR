@@ -26,19 +26,28 @@ namespace FluxoCaixa.Application.Services
 
         public IEnumerable<CashFlowViewModel> GetAll()
         {
-            var cashFlow =  _cashFlowRepository.GetAll();
+            var cashFlow =  _cashFlowRepository.GetAll();            
 
             return _mapper.Map<IEnumerable<CashFlowViewModel>>(cashFlow);
         }
 
         public CashFlowViewModel FindCashFlow(int id)
         {
-            throw new NotImplementedException();
+            var cashFlow = _cashFlowRepository.FindCashFlow(id);
+
+            var cashFlowVM = _mapper.Map<CashFlowViewModel>(cashFlow);
+
+            cashFlowVM.ActivityVM = _mapper.Map<ActivityViewModel>(cashFlow.Activity);
+            cashFlowVM.CollaboratorView = _mapper.Map<CollaboratorViewModel>(cashFlow.Collaborator);
+            cashFlowVM.FlowTypeView = _mapper.Map<FlowTypeViewModel>(cashFlow.FlowType);
+            cashFlowVM.PaymentTypeView = _mapper.Map<PaymentTypeViewModel>(cashFlow.PaymentType);
+
+            return cashFlowVM;
         }
 
         public void Add(CashFlowViewModel flow)
         {
-            flow.UserIncluded = "fulano";
+            flow.UserIncluded = "user";
             flow.DateIncluded = DateTime.Now;
 
             var newCF = _mapper.Map<CashFlow>(flow);

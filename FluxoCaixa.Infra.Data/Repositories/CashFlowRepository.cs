@@ -16,7 +16,7 @@ namespace FluxoCaixa.Infra.Data.Repositories
 
         public CashFlow? FindCashFlow(int id)
         {
-            throw new NotImplementedException();
+            return _context.CashFlow.FirstOrDefault(x => x.Id == id);
         }
 
         public IEnumerable<CashFlow> GetAll()

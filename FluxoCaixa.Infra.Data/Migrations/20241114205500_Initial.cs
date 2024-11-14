@@ -139,13 +139,13 @@ namespace FluxoCaixa.Infra.Data.Migrations
                 .Annotation("MySQL:Charset", "utf8mb4");
 
             migrationBuilder.InsertData(
-                   table: "FlowType",
-                   columns: new[] { "Id", "Name" , "Description", "Status", "UserIncluded", "DateIncluded", "UserChanged", "DateChanged"},
-                   values: new object[,]
-                   {
-                        { 1, "Entrada", "Description", true, "userDB", DateTime.Parse("2024-11-14 00:00:00.140638"),null,null},
-                        { 2, "Saída",  "Description", true, "userDB", DateTime.Parse("2024-11-14 00:00:00.140638"), null, null}
-                   });
+                table: "FlowType",
+                columns: new[] { "Id", "Name", "Description", "Status", "UserIncluded", "DateIncluded", "UserChanged", "DateChanged" },
+                values: new object[,]
+                {
+                     { 1, "Entrada", "Description", true, "userDB", DateTime.Parse("2024-11-14 00:00:00.140638"),null,null},
+                     { 2, "Saída",  "Description", true, "userDB", DateTime.Parse("2024-11-14 00:00:00.140638"), null, null}
+                });
 
             migrationBuilder.CreateTable(
                 name: "PaymentType",
@@ -297,6 +297,11 @@ namespace FluxoCaixa.Infra.Data.Migrations
                 {
                     table.PrimaryKey("PK_Collaborator", x => x.Id);
                     table.ForeignKey(
+                        name: "FK_Collaborator_Addresses_AddressID",
+                        column: x => x.AddressID,
+                        principalTable: "Addresses",
+                        principalColumn: "Id");
+                    table.ForeignKey(
                         name: "FK_Collaborator_CollaboratorTypes_CollaboratorTypeID",
                         column: x => x.CollaboratorTypeID,
                         principalTable: "CollaboratorTypes",
@@ -317,6 +322,7 @@ namespace FluxoCaixa.Infra.Data.Migrations
                     PaymentTypeId = table.Column<int>(type: "int", nullable: false),
                     Value = table.Column<decimal>(type: "decimal(15,2)", precision: 15, scale: 2, nullable: false),
                     Status = table.Column<bool>(type: "tinyint(1)", nullable: false),
+                    Description = table.Column<string>(type: "varchar(200)", maxLength: 200, nullable: false),
                     UserIncluded = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false),
                     DateIncluded = table.Column<DateTime>(type: "datetime(6)", nullable: false),
                     UserChanged = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: true),

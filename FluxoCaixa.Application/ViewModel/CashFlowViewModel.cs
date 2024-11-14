@@ -18,7 +18,7 @@ namespace FluxoCaixa.Application.ViewModel
 
         [Required]
         [Display(Name = "Colaborador")]
-        public int CollaboratorId { get; set; }
+        public string CollaboratorId { get; set; }
 
         public int PaymentTypeId { get; set; }
 
@@ -28,7 +28,7 @@ namespace FluxoCaixa.Application.ViewModel
         [Required]
         [Display(Name = "Justificativa")]
         [MaxLength(100)]
-        public string? Justificativa { get; set; }
+        public string? Description { get; set; }
 
         [Required]
         [DisplayName("Valor")]
@@ -40,5 +40,10 @@ namespace FluxoCaixa.Application.ViewModel
         public DateTime? DateIncluded { get; set; }
         public string? UserChanged { get; set; }
         public DateTime? DateChanged { get; set; }
+
+        public ActivityViewModel? ActivityVM { get; set; }
+        public CollaboratorViewModel? CollaboratorView{ get; set; }
+        public FlowTypeViewModel? FlowTypeView { get; set; }
+        public PaymentTypeViewModel? PaymentTypeView { get; set; }
     }
 }

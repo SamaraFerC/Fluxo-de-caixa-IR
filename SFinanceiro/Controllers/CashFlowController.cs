@@ -37,11 +37,6 @@ namespace FluxoCaixa.SFinanceiro.Controllers
             ViewBag.collaborator = new SelectList(_collaboratorService.GetAllActives(), "Id", "FullName");
             ViewBag.paymentType = new SelectList(_paymentTypeService.GetAllActives(), "Id", "Name");            
         }
-
-        public ActionResult Details(int id)
-        {
-            return View();
-        }
         public ActionResult Create()
         {
             CreateViewBags();
@@ -55,6 +50,11 @@ namespace FluxoCaixa.SFinanceiro.Controllers
         {
             try
             {
+                if (ModelState.IsValid)
+                {
+                    _cashFlowService.Add(cashFlowVM);
+
+                }
                 return RedirectToAction(nameof(Index));
             }
             catch
@@ -81,15 +81,34 @@ namespace FluxoCaixa.SFinanceiro.Controllers
             }
         }
 
-        // GET: CashFlowController/Delete/5
-        public ActionResult Delete(int id)
+        public async Task<IActionResult> Visualize(int id)
         {
-            return View();
+            try
+            {
+                if (id == 0)
+                {
+                    return NotFound();
+                }
+
+                var cashFlow = _cashFlowService.FindCashFlow(id);
+                ViewBagEdit(cashFlow);
+
+                return View(cashFlow);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message, ex.InnerException);
+            }
         }
 
-        // POST: CashFlowController/Delete/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
+        private void ViewBagEdit(CashFlowViewModel cashFlowVM)
+        {
+            ViewBag.flowType = new SelectList(_flowTypeService.GetAll().Where(x => x.Id == cashFlowVM.FlowTypeId), "Id", "Name");
+            ViewBag.activity = new SelectList(_activityService.GetAllActivities().Where(x =>x.Id == cashFlowVM.ActivityId), "Id", "Name");
+            ViewBag.collaborator = new SelectList(_collaboratorService.GetAll().Where(x =>x.Id.Equals(cashFlowVM.CollaboratorId)), "Id", "FullName");
+            ViewBag.paymentType = new SelectList(_paymentTypeService.GetAll().Where(x =>x.Id == cashFlowVM.PaymentTypeId), "Id", "Name");
+        }
+
         public ActionResult Delete(int id, IFormCollection collection)
         {
             try
