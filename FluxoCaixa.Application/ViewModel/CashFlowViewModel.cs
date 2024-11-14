@@ -40,5 +40,10 @@ namespace FluxoCaixa.Application.ViewModel
         public DateTime? DateIncluded { get; set; }
         public string? UserChanged { get; set; }
         public DateTime? DateChanged { get; set; }
+
+        public ActivityViewModel? ActivityVM { get; set; }
+        public CollaboratorViewModel? CollaboratorView{ get; set; }
+        public FlowTypeViewModel? FlowTypeView { get; set; }
+        public PaymentTypeViewModel? PaymentTypeView { get; set; }
     }
 }

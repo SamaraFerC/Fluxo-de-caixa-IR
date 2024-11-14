@@ -33,7 +33,16 @@ namespace FluxoCaixa.Application.Services
 
         public CashFlowViewModel FindCashFlow(int id)
         {
-            throw new NotImplementedException();
+            var cashFlow = _cashFlowRepository.FindCashFlow(id);
+
+            var cashFlowVM = _mapper.Map<CashFlowViewModel>(cashFlow);
+
+            cashFlowVM.ActivityVM = _mapper.Map<ActivityViewModel>(cashFlow.Activity);
+            cashFlowVM.CollaboratorView = _mapper.Map<CollaboratorViewModel>(cashFlow.Collaborator);
+            cashFlowVM.FlowTypeView = _mapper.Map<FlowTypeViewModel>(cashFlow.FlowType);
+            cashFlowVM.PaymentTypeView = _mapper.Map<PaymentTypeViewModel>(cashFlow.PaymentType);
+
+            return cashFlowVM;
         }
 
         public void Add(CashFlowViewModel flow)
