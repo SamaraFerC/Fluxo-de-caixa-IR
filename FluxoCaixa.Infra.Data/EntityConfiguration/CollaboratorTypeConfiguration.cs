@@ -30,11 +30,6 @@ namespace FluxoCaixa.Infra.Data.EntityConfiguration
 
             entity.Property(p => p.UserChanged)
                 .HasMaxLength(50);
-
-            entity.HasMany(e => e.Collaborators)
-                  .WithOne(e => e.CollaboratorType)
-                  .HasForeignKey(e => e.CollaboratorTypeID)
-                  .HasPrincipalKey(e => e.Id);
         }
     }
 }

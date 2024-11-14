@@ -11,6 +11,8 @@
         public string? UserChanged { get; set; }
         public DateTime? DateChanged { get; set; }
 
+        public IEnumerable<CashFlow> CashFlow {  get; set; }
+
         public Activity()
         {
 
