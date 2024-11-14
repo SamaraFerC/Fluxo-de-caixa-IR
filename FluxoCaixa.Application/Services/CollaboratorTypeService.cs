@@ -18,7 +18,7 @@ namespace FluxoCaixa.Application.Services
             _mapper = mapper;
         }
 
-        public async Task<CollaboratorTypeViewModel> GetById(int? id)
+        public async Task<CollaboratorTypeViewModel> GetById(int id)
         {
             var objCollaborator = await _collaboratorTypeRepository.GetById(id);
 

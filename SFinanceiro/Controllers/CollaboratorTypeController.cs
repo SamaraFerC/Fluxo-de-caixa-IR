@@ -48,13 +48,13 @@ namespace SFinanceiro.Controllers
             }
         }
 
-        public async Task<IActionResult> Edit(int? id)
+        public async Task<IActionResult> Edit(int id)
         {
             try
             {
-                if (id == null)
+                if (id == 0)
                 {
-                    return NotFound();
+                    return RedirectToAction(nameof(Index));
                 }
 
                 var collaboratortype = await _collaboratorTypeService.GetById(id);
@@ -110,11 +110,11 @@ namespace SFinanceiro.Controllers
             }
         }
 
-        public async Task<IActionResult> Visualize(int? id)
+        public async Task<IActionResult> Visualize(int id)
         {
             try
             {
-                if (id == null)
+                if (id == 0)
                 {
                     return NotFound();
                 }

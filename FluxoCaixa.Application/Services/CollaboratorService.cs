@@ -44,7 +44,12 @@ namespace FluxoCaixa.Application.Services
         {
             var collaborator = _collaboratorRepository.FindCollaborator(id);
 
-            return _mapper.Map<CollaboratorViewModel>(collaborator);
+            var addresVM = _mapper.Map<AddressViewModel>(collaborator.Address);
+            var collaboratorVM = _mapper.Map<CollaboratorViewModel>(collaborator);
+
+            collaboratorVM.addressVM = addresVM;
+
+            return collaboratorVM;
         }
 
         public void Add(CollaboratorViewModel collaborator)
@@ -54,7 +59,7 @@ namespace FluxoCaixa.Application.Services
             collaborator.DateIncluded = DateTime.Now;
             var newCollaborator = _mapper.Map<Collaborator>(collaborator);
 
-            if (collaborator.addressVM != null)
+            if (collaborator.IsAddress)
             {
                 AddAddress(collaborator, newCollaborator);
             }

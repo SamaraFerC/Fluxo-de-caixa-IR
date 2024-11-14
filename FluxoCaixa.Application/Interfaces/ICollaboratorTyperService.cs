@@ -8,7 +8,7 @@ namespace FluxoCaixa.Application.Interfaces
 
         public IEnumerable<CollaboratorTypeViewModel> GetAllActives();
 
-        public Task<CollaboratorTypeViewModel> GetById(int? id);
+        public Task<CollaboratorTypeViewModel> GetById(int id);
 
         void Add(CollaboratorTypeViewModel activity);
 

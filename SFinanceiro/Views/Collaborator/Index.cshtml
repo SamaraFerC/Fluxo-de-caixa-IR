@@ -22,6 +22,9 @@
             <table class="table table-hover">
                 <thead class="table-light">
                     <tr>
+                        <th scope="align-middle">
+                             @Html.DisplayNameFor(model => model.CollaboratorTypeID)
+                        </th>
                         <th>Nome completo</th>
                         <th style="width: 250px;" class="text-left">Ações</th>
                     </tr>
@@ -30,6 +33,9 @@
                     @foreach (var user in Model)
                     {
                         <tr id="row-@user.Id">
+                            <td class="align-middle">
+                                @Html.DropDownListFor(model => user.CollaboratorTypeID,(SelectList)ViewBag.collaboratorTypes,"Selecione..",new { @class = "form-control span12", @disabled = "disabled" })
+                            </td>
                             <td class="align-middle">
                                 @Html.DisplayFor(modelItem => user.FullName)
                             </td>
