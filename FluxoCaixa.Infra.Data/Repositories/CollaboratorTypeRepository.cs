@@ -17,7 +17,8 @@ namespace FluxoCaixa.Infra.Data.Repositories
         {
             return _context.CollaboratorTypes;
         }
-        public Task<CollaboratorTypes> GetById(int? id)
+
+        public Task<CollaboratorTypes?> GetById(int id)
         {
             return _context.CollaboratorTypes.FirstOrDefaultAsync(x => x.Id == id);
         }

@@ -16,14 +16,22 @@
     <table class="table table-light">
         <thead>
             <tr>
-                <th scope="col">@Html.DisplayNameFor(model => model.FullName)</th>
-                <th scope="col" class="text-end">Ações</th>
+              <th scope="align-middle">
+                   @Html.DisplayNameFor(model => model.CollaboratorTypeID)
+              </th>
+              <th class="align-middle">
+                  @Html.DisplayNameFor(model => model.FullName)
+              </th>
+              <th scope="align-middle">Ações</th>
             </tr>
         </thead>
         <tbody>
             @foreach (var user in Model)
             {
                 <tr id="row-@user.Id">
+                    <td class="align-middle">
+                        @Html.DropDownListFor(model => user.CollaboratorTypeID,(SelectList)ViewBag.collaboratorTypes,"Selecione..",new { @class = "form-control span12", @disabled = "disabled" })
+                    </td>
                     <td class="align-middle">
                         @Html.DisplayFor(modelItem => user.FullName)
                     </td>
@@ -33,7 +41,7 @@
                                 <i class="fas fa-edit me-1"></i><span>Editar</span>
                             </a>
                             <a class="btn btn-info btn-sm d-inline-flex align-items-center me-2" asp-action="Visualize" asp-route-id="@user.Id">
-                                <i class="fas fa-info-circle me-1"></i><span>Detalhes</span>
+                                <i class="fas fa-info-circle me-1"></i><span>Visualizar</span>
                             </a>
                             <button onclick="confirmDelete(@user.Id)" title="Excluir" class="btn btn-danger btn-sm d-inline-flex align-items-center">
                                 <i class="fas fa-trash-alt me-1"></i><span>Excluir</span>

@@ -6,7 +6,7 @@ namespace FluxoCaixa.Domain.Interfaces
     {
         IEnumerable<CollaboratorTypes> GetAll();
 
-        public Task<CollaboratorTypes> GetById(int? id);
+        public Task<CollaboratorTypes> GetById(int id);
 
         void Add(CollaboratorTypes activity);
 

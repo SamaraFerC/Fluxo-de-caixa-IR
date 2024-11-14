@@ -1,5 +1,5 @@
 ﻿function confirmDelete(activityId) {
-    const userConfirmed = confirm("Tem certeza de que deseja excluir esta atividade?");
+    const userConfirmed = confirm("Tem certeza de que deseja excluir este tipo de pagamento?");
 
     if (userConfirmed) {
         $.ajax({
@@ -10,13 +10,13 @@
                 if (response.success) {
                     const row = document.getElementById(`row-${activityId}`);
                     if (row) row.remove();
-                    alert("Atividade excluída com sucesso.");
+                    alert("Tipo de pagamento excluída com sucesso.");
                 } else {
-                    alert("Falha ao excluir a atividade.");
+                    alert("Falha ao excluir o Tipo de pagamento.");
                 }
             },
             error: function () {
-                alert("Ocorreu um erro ao tentar excluir a atividade.");
+                alert("Ocorreu um erro ao tentar excluir o Tipo de pagamento.");
             }
         });
     }
