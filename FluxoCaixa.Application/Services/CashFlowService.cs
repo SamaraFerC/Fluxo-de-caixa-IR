@@ -26,7 +26,7 @@ namespace FluxoCaixa.Application.Services
 
         public IEnumerable<CashFlowViewModel> GetAll()
         {
-            var cashFlow =  _cashFlowRepository.GetAll();
+            var cashFlow =  _cashFlowRepository.GetAll();            
 
             return _mapper.Map<IEnumerable<CashFlowViewModel>>(cashFlow);
         }
@@ -38,7 +38,7 @@ namespace FluxoCaixa.Application.Services
 
         public void Add(CashFlowViewModel flow)
         {
-            flow.UserIncluded = "fulano";
+            flow.UserIncluded = "user";
             flow.DateIncluded = DateTime.Now;
 
             var newCF = _mapper.Map<CashFlow>(flow);

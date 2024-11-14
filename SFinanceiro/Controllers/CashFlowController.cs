@@ -55,6 +55,11 @@ namespace FluxoCaixa.SFinanceiro.Controllers
         {
             try
             {
+                if (ModelState.IsValid)
+                {
+                    _cashFlowService.Add(cashFlowVM);
+
+                }
                 return RedirectToAction(nameof(Index));
             }
             catch

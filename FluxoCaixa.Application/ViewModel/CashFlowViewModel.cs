@@ -18,7 +18,7 @@ namespace FluxoCaixa.Application.ViewModel
 
         [Required]
         [Display(Name = "Colaborador")]
-        public int CollaboratorId { get; set; }
+        public string CollaboratorId { get; set; }
 
         public int PaymentTypeId { get; set; }
 

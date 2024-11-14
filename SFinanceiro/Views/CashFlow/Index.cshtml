@@ -29,9 +29,6 @@
                              @Html.DisplayNameFor(model => model.ActivityId)
                         </th>
                         <th scope="align-middle">
-                             @Html.DisplayNameFor(model => model.CollaboratorTypeID)
-                        </th>
-                        <th scope="align-middle">
                              @Html.DisplayNameFor(model => model.CollaboratorId)
                         </th>
                         <th scope="align-middle">
@@ -49,9 +46,6 @@
                             </td>
                              <td class="align-middle">
                                 @Html.DropDownListFor(model => user.ActivityId,(SelectList)ViewBag.activity,"Selecione..",new { @class = "form-control span12", @disabled = "disabled" })
-                            </td>
-                             <td class="align-middle">
-                                @Html.DropDownListFor(model => user.CollaboratorTypeID,(SelectList)ViewBag.collaboratorTypes,"Selecione..",new { @class = "form-control span12", @disabled = "disabled" })
                             </td>
                             <td class="align-middle">
                                 @Html.DropDownListFor(model => user.CollaboratorId,(SelectList)ViewBag.collaborator,"Selecione..",new { @class = "form-control span12", @disabled = "disabled" })
