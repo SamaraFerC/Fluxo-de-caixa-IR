@@ -8,9 +8,13 @@
 
   <ItemGroup>
     <Compile Remove="Areas\Admin\Data\**" />
+    <Compile Remove="Views\FlowType\**" />
     <Content Remove="Areas\Admin\Data\**" />
+    <Content Remove="Views\FlowType\**" />
     <EmbeddedResource Remove="Areas\Admin\Data\**" />
+    <EmbeddedResource Remove="Views\FlowType\**" />
     <None Remove="Areas\Admin\Data\**" />
+    <None Remove="Views\FlowType\**" />
   </ItemGroup>
 
   <ItemGroup>

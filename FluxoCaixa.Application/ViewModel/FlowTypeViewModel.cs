@@ -7,7 +7,7 @@ namespace FluxoCaixa.Application.ViewModel
         public int Id { get; set; }
 
         [Required]
-        [Display(Name = "Nome")]
+        [Display(Name = "Tipo")]
         [MaxLength(50)]
         public string Name { get; set; }
 
