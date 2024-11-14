@@ -28,7 +28,7 @@ namespace FluxoCaixa.Application.ViewModel
         [Required]
         [Display(Name = "Justificativa")]
         [MaxLength(100)]
-        public string? Justificativa { get; set; }
+        public string? Description { get; set; }
 
         [Required]
         [DisplayName("Valor")]

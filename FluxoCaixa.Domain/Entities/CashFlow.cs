@@ -9,6 +9,7 @@
         public int PaymentTypeId { get; set; }
         public decimal Value { get; set; }
         public bool Status { get; set; }
+        public string Description { get; set; }
         public string UserIncluded { get; set; }
         public DateTime DateIncluded { get; set; }
         public string? UserChanged { get; set; }
