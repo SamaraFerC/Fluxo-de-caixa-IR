@@ -1,0 +1,87 @@
+﻿@model FluxoCaixa.Application.ViewModel.CashFlowViewModel
+
+@{
+    ViewData["Title"] = "Detalhes Colaborador";
+}
+<h1 class="text-center mb-4 fw-bold">@ViewData["Title"]</h1>
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card shadow-sm p-4">
+            <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+            <!-- Tipo de Parceiro -->
+            <div class="mb-3">
+                <h4>Tipo de Parceiro</h4>
+                <div>
+                    <label asp-for="CollaboratorTypeID" class="form-label">Tipo</label>
+                    @Html.DropDownListFor(model => model.CollaboratorTypeID, (SelectList)ViewBag.collaboratorTypes, "Selecione...", new { @class = "form-control", @disabled = "disabled" })
+                    <span asp-validation-for="CollaboratorTypeID" class="text-danger"></span>
+                </div>
+            </div>
+
+            <!-- Identificação do Colaborador -->
+            <div class="form-group mb-3">
+                <label asp-for="Id" class="form-label">ID</label>
+                <input asp-for="Id" class="form-control" disabled />
+            </div>
+            <div class="form-group mb-3">
+                <label asp-for="FullName" class="form-label">Nome Completo</label>
+                <input asp-for="FullName" class="form-control" disabled />
+            </div>
+            <div class="form-group mb-3">
+                <label asp-for="DateBirth" class="form-label">Data de Nascimento</label>
+                <input asp-for="DateBirth" type="date" class="form-control" disabled />
+            </div>
+
+            <!-- Endereço -->
+            <div class="mb-3">
+                <h4>Endereço</h4>
+                <div class="form-group mb-3">
+                    <label asp-for="addressVM.Street" class="form-label">Rua</label>
+                    <input asp-for="addressVM.Street" class="form-control" disabled />
+                </div>
+                <div class="form-group mb-3">
+                    <label asp-for="addressVM.City" class="form-label">Cidade</label>
+                    <input asp-for="addressVM.City" class="form-control" disabled />
+                </div>
+                <div class="form-group mb-3">
+                    <label asp-for="addressVM.State" class="form-label">Estado</label>
+                    <input asp-for="addressVM.State" class="form-control" disabled />
+                </div>
+                <div class="form-group mb-3">
+                    <label asp-for="addressVM.CEP" class="form-label">CEP</label>
+                    <input asp-for="addressVM.CEP" class="form-control" disabled />
+                </div>
+            </div>
+
+            <!-- Botão Voltar -->
+            <div class="text-center">
+                <a class="btn btn-secondary" asp-action="Index">Voltar</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .card {
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        background-color: #f9f9f9;
+    }
+
+    .form-label {
+        font-weight: 600;
+        color: #6c757d;
+    }
+
+    .form-control {
+        border-radius: 5px;
+        box-shadow: none;
+        border: 1px solid #ccc;
+    }
+
+    .btn-secondary {
+        background-color: #6c757d;
+        border-color: #6c757d;
+    }
+</style>
