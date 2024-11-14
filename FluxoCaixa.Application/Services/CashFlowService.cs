@@ -1,23 +1,21 @@
-﻿using FluxoCaixa.Application.Interfaces;
+﻿using AutoMapper;
+using FluxoCaixa.Application.Interfaces;
 using FluxoCaixa.Application.ViewModel;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using FluxoCaixa.Domain.Entities;
+using FluxoCaixa.Domain.Interfaces;
+using FluxoCaixa.Infra.Data.Repositories;
 
 namespace FluxoCaixa.Application.Services
 {
-    internal class CashFlowService : ICashFlowService
+    public class CashFlowService : ICashFlowService
     {
-        public void Add(CashFlowViewModel activity)
-        {
-            throw new NotImplementedException();
-        }
+        private readonly ICashFlowRepository _cashFlowRepository;
+        private readonly IMapper _mapper;
 
-        public void Delete(string id)
+        public CashFlowService(ICashFlowRepository cashFlowRepository, IMapper mapper)
         {
-            throw new NotImplementedException();
+            _cashFlowRepository = cashFlowRepository;
+            _mapper = mapper;
         }
 
         public CashFlowViewModel FindCashFlow(string id)
@@ -27,22 +25,47 @@ namespace FluxoCaixa.Application.Services
 
         public IEnumerable<CashFlowViewModel> GetAll()
         {
-            throw new NotImplementedException();
-        }
+            var objMov = await _cashFlowRepository;
 
-        public IEnumerable<CashFlowViewModel> GetAllActives()
-        {
-            throw new NotImplementedException();
+            return _mapper.Map<CashFlowViewModel>(objMov);
         }
 
         public Task<CashFlowViewModel> GetById(string id)
         {
+            var objMov = await _cashFlowRepository.GetById(id);
+
+            return _mapper.Map<CashFlowViewModel>(objMov);
+        }
+
+        public void Update(CashFlowViewModel cashFlowVM)
+        {
             throw new NotImplementedException();
         }
 
-        public void Update(CashFlowViewModel activity)
+        public void Delete(int cashFlowID)
         {
-            throw new NotImplementedException();
+            var coll = _cashFlowRepository.GetById(cashFlowID).Result;
+
+            _cashFlowRepository.Delete(coll);
+        }
+
+        public void Update(CashFlowViewModel cashFlowVM)
+        {
+            //collaborator.UserChanged = "fulano";
+            //collaborator.DateChanged = DateTime.Now;
+
+            var newcf = _mapper.Map<Collaborator>(cashFlowVM);
+
+            //if (collaborator.addressVM != null)
+            //{
+            //    AddAddress(collaborator, newColl);
+            //}
+            //else
+            //{
+            //    //updateAddres();
+            //}
+
+            _cashFlowRepository.Update(newcf);
         }
     }
 }

@@ -6,9 +6,9 @@ namespace FluxoCaixa.Domain.Interfaces
     {
         IEnumerable<CashFlow> GetAll();
 
-        public Task<CashFlow> GetById(string id);
+        public Task<CashFlow> GetById(int id);
 
-        public CashFlow? FindCashFlow(string id);
+        public CashFlow? FindCashFlow(int id);
 
         void Add(CashFlow activity);
 

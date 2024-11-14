@@ -8,8 +8,6 @@ namespace FluxoCaixa.Application.Interfaces
 
         public Task<CashFlowViewModel> GetById(string id);
 
-        public IEnumerable<CashFlowViewModel> GetAllActives();
-
         public CashFlowViewModel FindCashFlow(string id);
 
         void Add(CashFlowViewModel activity);

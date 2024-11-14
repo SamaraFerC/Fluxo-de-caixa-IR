@@ -3,19 +3,9 @@ using FluxoCaixa.Domain.Interfaces;
 
 namespace FluxoCaixa.Infra.Data.Repositories
 {
-    internal class CashFlowRepository : ICashFlowRepository
+    public class CashFlowRepository : ICashFlowRepository
     {
-        public void Add(CashFlow activity)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Delete(CashFlow activity)
-        {
-            throw new NotImplementedException();
-        }
-
-        public CashFlow? FindCashFlow(string id)
+        public CashFlow? FindCashFlow(int id)
         {
             throw new NotImplementedException();
         }
@@ -25,7 +15,16 @@ namespace FluxoCaixa.Infra.Data.Repositories
             throw new NotImplementedException();
         }
 
-        public Task<CashFlow> GetById(string id)
+        public Task<CashFlow> GetById(int id)
+        {
+            throw new NotImplementedException();
+        }
+        public void Add(CashFlow activity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Delete(CashFlow activity)
         {
             throw new NotImplementedException();
         }

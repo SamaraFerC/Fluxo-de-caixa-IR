@@ -23,9 +23,20 @@
                 <thead class="table-light">
                     <tr>
                         <th scope="align-middle">
+                             @Html.DisplayNameFor(model => model.FlowTypeId)
+                        </th>
+                        <th scope="align-middle">
+                             @Html.DisplayNameFor(model => model.ActivityId)
+                        </th>
+                        <th scope="align-middle">
                              @Html.DisplayNameFor(model => model.CollaboratorTypeID)
                         </th>
-                        <th>Nome completo</th>
+                        <th scope="align-middle">
+                             @Html.DisplayNameFor(model => model.CollaboratorId)
+                        </th>
+                        <th scope="align-middle">
+                             @Html.DisplayNameFor(model => model.Value)
+                        </th>                        
                         <th style="width: 250px;" class="text-left">Ações</th>
                     </tr>
                 </thead>
@@ -33,11 +44,20 @@
                     @foreach (var user in Model)
                     {
                         <tr id="row-@user.Id">
-                            <td class="align-middle">
+                             <td class="align-middle">
+                                @Html.DropDownListFor(model => user.FlowTypeId,(SelectList)ViewBag.flowType,"Selecione..",new { @class = "form-control span12", @disabled = "disabled" })
+                            </td>
+                             <td class="align-middle">
+                                @Html.DropDownListFor(model => user.ActivityId,(SelectList)ViewBag.activity,"Selecione..",new { @class = "form-control span12", @disabled = "disabled" })
+                            </td>
+                             <td class="align-middle">
                                 @Html.DropDownListFor(model => user.CollaboratorTypeID,(SelectList)ViewBag.collaboratorTypes,"Selecione..",new { @class = "form-control span12", @disabled = "disabled" })
                             </td>
                             <td class="align-middle">
-                                @Html.DisplayFor(modelItem => user.FullName)
+                                @Html.DropDownListFor(model => user.CollaboratorId,(SelectList)ViewBag.collaborator,"Selecione..",new { @class = "form-control span12", @disabled = "disabled" })
+                            </td>
+                            <td class="align-middle">
+                                @Html.DisplayFor(modelItem => user.Value)
                             </td>
                             <td class="text-end">
                                 <div class="btn-group" role="group">
