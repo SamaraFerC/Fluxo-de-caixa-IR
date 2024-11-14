@@ -155,8 +155,7 @@ namespace SFinanceiro.Controllers
 
         private void Validar(CollaboratorViewModel collaboratorVM)
         {
-            if (string.IsNullOrEmpty(collaboratorVM.addressVM.CEP) || string.IsNullOrEmpty(collaboratorVM.addressVM.City)
-                                    || string.IsNullOrEmpty(collaboratorVM.addressVM.State) || string.IsNullOrEmpty(collaboratorVM.addressVM.CEP))
+            if (!collaboratorVM.IsAddress)
             {
                 collaboratorVM.addressVM = null;
             }

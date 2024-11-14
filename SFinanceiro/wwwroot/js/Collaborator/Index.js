@@ -3,7 +3,7 @@
 
     if (userConfirmed) {
         $.ajax({
-            url: '/Collaborator/Delete', 
+            url: '/Collaborator/Delete',
             type: 'POST',
             data: { id: activityId },
             success: function (response) {
@@ -46,4 +46,17 @@ function aplicarMascaraCPFouCNPJ(value) {
 const cpfCnpjInput = document.getElementById("Id");
 cpfCnpjInput.addEventListener("input", function (event) {
     event.target.value = aplicarMascaraCPFouCNPJ(event.target.value);
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    document.getElementById("IsAddress").addEventListener("click", function () {
+        // Verifica se o checkbox está marcado e exibe/oculta a div com base nisso
+        var divAddress = document.getElementById("divAddress");
+
+        if (this.checked) {
+            divAddress.style.display = "block";
+        } else {
+            divAddress.style.display = "none";
+        }
+    });
 });

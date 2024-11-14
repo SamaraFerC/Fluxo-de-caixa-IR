@@ -54,7 +54,7 @@ namespace FluxoCaixa.Application.Services
             collaborator.DateIncluded = DateTime.Now;
             var newCollaborator = _mapper.Map<Collaborator>(collaborator);
 
-            if (collaborator.addressVM != null)
+            if (collaborator.IsAddress)
             {
                 AddAddress(collaborator, newCollaborator);
             }

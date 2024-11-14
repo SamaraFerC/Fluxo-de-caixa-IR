@@ -21,10 +21,7 @@ namespace FluxoCaixa.Application.ViewModel
 
         [Display(Name = "Data de Nascimento")]
         [DataType(DataType.Date)]
-        public DateTime? DateBirth { get; set; }
-
-        public AddressViewModel? addressVM { get; set; }
-        public CollaboratorTypeViewModel? CollaboratorTypeVM { get; set; }
+        public DateTime? DateBirth { get; set; }      
 
         public int AddressID { get; set; }
 
@@ -35,5 +32,11 @@ namespace FluxoCaixa.Application.ViewModel
         public DateTime? DateIncluded { get; set; }
         public string? UserChanged { get; set; }
         public DateTime? DateChanged { get; set; }
+
+        [Display(Name = "Endereço")]
+        public bool IsAddress { get; set; }
+
+        public AddressViewModel? addressVM { get; set; }
+        public CollaboratorTypeViewModel? CollaboratorTypeVM { get; set; }
     }
 }

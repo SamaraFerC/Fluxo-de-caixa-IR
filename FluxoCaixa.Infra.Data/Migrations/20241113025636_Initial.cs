@@ -275,7 +275,7 @@ namespace FluxoCaixa.Infra.Data.Migrations
                 {
                     Id = table.Column<string>(type: "VARCHAR(20)", maxLength: 20, nullable: false),
                     FullName = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false),
-                    DateBirth = table.Column<DateTime>(type: "datetime(6)", nullable: false),
+                    DateBirth = table.Column<DateTime>(type: "datetime(6)", nullable: true),
                     UserIncluded = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false),
                     DateIncluded = table.Column<DateTime>(type: "datetime(6)", nullable: false),
                     UserChanged = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: true),
