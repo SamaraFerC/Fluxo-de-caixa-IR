@@ -1,48 +1,65 @@
-﻿using FluxoCaixa.Application.Interfaces;
+﻿using AutoMapper;
+using FluxoCaixa.Application.Interfaces;
 using FluxoCaixa.Application.ViewModel;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using FluxoCaixa.Domain.Entities;
+using FluxoCaixa.Domain.Interfaces;
 
 namespace FluxoCaixa.Application.Services
 {
-    internal class CashFlowService : ICashFlowService
+    public class CashFlowService : ICashFlowService
     {
-        public void Add(CashFlowViewModel activity)
+        private readonly ICashFlowRepository _cashFlowRepository;
+        private readonly IMapper _mapper;
+
+        public CashFlowService(ICashFlowRepository cashFlowRepository, IMapper mapper)
         {
-            throw new NotImplementedException();
+            _cashFlowRepository = cashFlowRepository;
+            _mapper = mapper;
         }
 
-        public void Delete(string id)
+        public async Task<CashFlowViewModel> GetById(int id)
         {
-            throw new NotImplementedException();
-        }
+            var cashFlow = await _cashFlowRepository.GetById(id);
 
-        public CashFlowViewModel FindCashFlow(string id)
-        {
-            throw new NotImplementedException();
+            return _mapper.Map<CashFlowViewModel>(cashFlow);
         }
 
         public IEnumerable<CashFlowViewModel> GetAll()
         {
-            throw new NotImplementedException();
+            var cashFlow =  _cashFlowRepository.GetAll();
+
+            return _mapper.Map<IEnumerable<CashFlowViewModel>>(cashFlow);
         }
 
-        public IEnumerable<CashFlowViewModel> GetAllActives()
+        public CashFlowViewModel FindCashFlow(int id)
         {
             throw new NotImplementedException();
         }
 
-        public Task<CashFlowViewModel> GetById(string id)
+        public void Add(CashFlowViewModel flow)
         {
-            throw new NotImplementedException();
+            flow.UserIncluded = "fulano";
+            flow.DateIncluded = DateTime.Now;
+
+            var newCF = _mapper.Map<CashFlow>(flow);
+
+            _cashFlowRepository.Add(newCF);
+        }
+        public void Delete(int id)
+        {
+            var coll = _cashFlowRepository.GetById(id).Result;
+
+            _cashFlowRepository.Delete(coll);
         }
 
-        public void Update(CashFlowViewModel activity)
+        public void Update(CashFlowViewModel flow)
         {
-            throw new NotImplementedException();
+            flow.UserChanged = "fulano";
+            flow.DateChanged = DateTime.Now;
+
+            var newcf = _mapper.Map<CashFlow>(flow);
+
+            _cashFlowRepository.Update(newcf);
         }
     }
 }

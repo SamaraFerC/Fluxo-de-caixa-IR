@@ -1,38 +1,49 @@
 ﻿using FluxoCaixa.Domain.Entities;
 using FluxoCaixa.Domain.Interfaces;
+using FluxoCaixa.Infra.Data.Context;
+using Microsoft.EntityFrameworkCore;
 
 namespace FluxoCaixa.Infra.Data.Repositories
 {
-    internal class CashFlowRepository : ICashFlowRepository
+    public class CashFlowRepository : ICashFlowRepository
     {
-        public void Add(CashFlow activity)
+        private AppDbContext _context;
+
+        public CashFlowRepository(AppDbContext context)
         {
-            throw new NotImplementedException();
+            _context = context;
         }
 
-        public void Delete(CashFlow activity)
-        {
-            throw new NotImplementedException();
-        }
-
-        public CashFlow? FindCashFlow(string id)
+        public CashFlow? FindCashFlow(int id)
         {
             throw new NotImplementedException();
         }
 
         public IEnumerable<CashFlow> GetAll()
         {
-            throw new NotImplementedException();
+            return _context.CashFlow;
         }
 
-        public Task<CashFlow> GetById(string id)
+        public Task<CashFlow?> GetById(int id)
         {
-            throw new NotImplementedException();
+            return _context.CashFlow.FirstOrDefaultAsync(c => c.Id == id);
+        }
+        public void Add(CashFlow flow)
+        {
+            _context.Add(flow);
+            _context.SaveChanges();
         }
 
-        public void Update(CashFlow activity)
+        public void Delete(CashFlow flow)
         {
-            throw new NotImplementedException();
+            _context.Remove(flow);
+            _context.SaveChanges();
+        }
+
+        public void Update(CashFlow flow)
+        {
+            _context.Update(flow);
+            _context.SaveChanges();
         }
     }
 }

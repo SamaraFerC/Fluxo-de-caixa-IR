@@ -6,19 +6,27 @@ namespace FluxoCaixa.SFinanceiro.Controllers
 {
     public class CashFlowController : Controller
     {
+        private readonly ICashFlowService _cashFlowService;
         private readonly ICollaboratorTypeService _collaboratorTypeService;
         private readonly ICollaboratorService _collaboratorService;
         private readonly IActivityService _activityService;
         private readonly IPaymentTypeService _paymentTypeService;
         private readonly IFlowTypeService _flowTypeService;
 
-        public CashFlowController( )
+        public CashFlowController(ICashFlowService cashFlowService, ICollaboratorTypeService collaboratorTypeService, ICollaboratorService collaboratorService, IActivityService activityService, IPaymentTypeService paymentTypeService, IFlowTypeService flowTypeService)
         {
-
+            _cashFlowService = cashFlowService;
+            _collaboratorTypeService = collaboratorTypeService;
+            _collaboratorService = collaboratorService;
+            _activityService = activityService;
+            _paymentTypeService = paymentTypeService;
+            _flowTypeService = flowTypeService;
         }
+
         public ActionResult Index()
         {
-            return View();
+            var obterGrid = _cashFlowService.GetAll();
+            return View(obterGrid);
         }
 
         public ActionResult Details(int id)
