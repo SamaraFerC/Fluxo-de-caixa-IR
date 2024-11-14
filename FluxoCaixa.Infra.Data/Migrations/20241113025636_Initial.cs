@@ -1,6 +1,4 @@
-﻿]
-]
-using System;
+﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 using MySql.EntityFrameworkCore.Metadata;
 
@@ -289,11 +287,6 @@ namespace FluxoCaixa.Infra.Data.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Collaborator", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Collaborator_Addresses_AddressID",
-                        column: x => x.AddressID,
-                        principalTable: "Addresses",
-                        principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_Collaborator_CollaboratorTypes_CollaboratorTypeID",
                         column: x => x.CollaboratorTypeID,

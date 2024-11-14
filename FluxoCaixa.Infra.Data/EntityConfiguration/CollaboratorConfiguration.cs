@@ -45,11 +45,6 @@ namespace FluxoCaixa.Infra.Data.EntityConfiguration
                   .WithMany(tc => tc.Collaborators)
                   .HasForeignKey(c => c.CollaboratorTypeID)
                   .IsRequired();
-
-            entity.HasOne(c => c.Address)
-                  .WithMany(tc => tc.Collaborators)
-                  .HasForeignKey(c => c.AddressID)
-                  .IsRequired(false);
         }
     }
 }
