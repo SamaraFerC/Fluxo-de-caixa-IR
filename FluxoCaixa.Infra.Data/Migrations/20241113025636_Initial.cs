@@ -138,6 +138,15 @@ namespace FluxoCaixa.Infra.Data.Migrations
                 })
                 .Annotation("MySQL:Charset", "utf8mb4");
 
+            migrationBuilder.InsertData(
+                   table: "FlowType",
+                   columns: new[] { "Id", "Name" , "Description", "Status", "UserIncluded", "DateIncluded", "UserChanged", "DateChanged"},
+                   values: new object[,]
+                   {
+                        { 1, "Entrada", "Description", true, "userDB", DateTime.Parse("2024-11-14 00:00:00.140638"),null,null},
+                        { 2, "Saída",  "Description", true, "userDB", DateTime.Parse("2024-11-14 00:00:00.140638"), null, null}
+                   });
+
             migrationBuilder.CreateTable(
                 name: "PaymentType",
                 columns: table => new
@@ -455,6 +464,11 @@ namespace FluxoCaixa.Infra.Data.Migrations
 
             migrationBuilder.DropTable(
                 name: "CollaboratorTypes");
+
+            migrationBuilder.DeleteData(
+                table: "FlowType",
+                keyColumn: "Id",
+                keyValues: new object[] { 1, 2 });
         }
     }
 }

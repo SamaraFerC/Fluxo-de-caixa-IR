@@ -9,6 +9,7 @@
         <div class="card shadow-sm p-4">
             <form asp-action="Create">
                 <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+                <input type="hidden" asp-for="Status" value="true" />
 
                 <!-- Nome do Tipo de Colaborador -->
                 <div class="form-group mb-3">

@@ -31,6 +31,12 @@ namespace FluxoCaixa.Application.Services
             return _mapper.Map<IEnumerable<ActivityViewModel>>(objActivity);
         }
 
+        public IEnumerable<ActivityViewModel> GetAllActives()
+        {
+            var objActivity = _activityRepository.GetAllActivities().Where(x =>x.Status);
+
+            return _mapper.Map<IEnumerable<ActivityViewModel>>(objActivity);
+        }
         public void AddActivity(ActivityViewModel activity)
         {
             activity.Status = true;
