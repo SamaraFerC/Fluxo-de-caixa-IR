@@ -12,7 +12,7 @@
 
                 <!-- Tipo de Parceiro -->
                 <div class="mb-4">
-                    <h4 class="text-muted">Tipo de Parceiro</h4>
+                    <h4 class="text-muted"><strong>Tipo de Parceiro</strong></h4>
                     <label asp-for="CollaboratorTypeID" class="form-label">Selecione o Tipo</label>
                     @Html.DropDownListFor(model => model.CollaboratorTypeID, (SelectList)ViewBag.collaboratorTypes, "Selecione..", new { @class = "form-control" })
                     <span asp-validation-for="CollaboratorTypeID" class="text-danger"></span>
@@ -25,6 +25,12 @@
                     <span asp-validation-for="FullName" class="text-danger"></span>
                 </div>
 
+                <div class="form-group mb-3">
+                    <label asp-for="Id" class="form-label">CPF/CNPJ</label>
+                    <input asp-for="Id" class="form-control" placeholder="Insira o nome CPF ou CNPJ"/>
+                    <span asp-validation-for="Id" class="text-danger"></span>
+                </div>
+
                 <!-- Data de Nascimento -->
                 <div class="form-group mb-3">
                     <label asp-for="DateBirth" class="form-label">Data de Nascimento</label>
@@ -34,7 +40,7 @@
 
                 <!-- Endereço -->
                 <div class="mb-4">
-                    <h4 class="text-muted">Endereço</h4>
+                    <h4 class="text-muted"><strong>Endereço</strong></h4>
                     <div class="form-group mb-3">
                         <label asp-for="addressVM.Street" class="form-label">Rua</label>
                         <input asp-for="addressVM.Street" class="form-control" placeholder="Insira a rua" />
