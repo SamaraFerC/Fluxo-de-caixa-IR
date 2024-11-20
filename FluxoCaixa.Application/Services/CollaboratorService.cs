@@ -109,7 +109,11 @@ namespace FluxoCaixa.Application.Services
             }
             else
             {
-                UpdateAddress(collaborator.addressVM);
+                if (collaborator.addressVM != null)
+                {
+                    UpdateAddress(collaborator.addressVM);
+
+                }
             }
 
             _collaboratorRepository.Update(newColl);
