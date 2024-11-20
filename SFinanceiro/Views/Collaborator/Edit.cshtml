@@ -1,0 +1,96 @@
+﻿@model FluxoCaixa.Application.ViewModel.CollaboratorViewModel
+@{
+    ViewData["Title"] = "Editar dados do colaborador";
+}
+<script src="~/js/Collaborator/Index.js"></script>
+<h1 class="text-center mb-4 fw-bold"><strong>Editar colaborador</strong></h1>
+
+
+<div class="row">
+    <div class="col-md-6 mx-auto">
+        <div class="card shadow-sm p-4">
+            <form asp-action="Edit">
+                <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+                <input type="hidden" asp-for="Status" value="true" />
+                <input type="hidden" asp-for="UserIncluded" />
+                <input type="hidden" asp-for="DateIncluded" />
+                <input type="hidden" asp-for="CollaboratorTypeID" />
+                <input type="hidden" asp-for="AddressID" />
+
+                <div class="mb-3">
+                    <h4><strong>Tipo de Parceiro</strong></h4>
+                    <label asp-for="CollaboratorTypeID" class="form-label"></label>
+                    @Html.DropDownListFor(model => model.CollaboratorTypeID, (SelectList)ViewBag.collaboratorTypes, "Selecione..", new { @class = "form-control", @disabled = "disabled" })
+                    <span asp-validation-for="CollaboratorTypeID" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label asp-for="FullName" class="form-label">Nome completo</label>
+                    <input asp-for="FullName" class="form-control" />
+                    <span asp-validation-for="FullName" class="text-danger"></span>
+                </div>
+                <div class="form-group mb-3">
+                    <label asp-for="DateBirth" class="form-label">Data de Nascimento</label>
+                    <input asp-for="DateBirth" type="date" class="form-control" />
+                    <span asp-validation-for="DateBirth" class="text-danger"></span>
+                </div>
+
+                <label asp-for="IsAddress" class="control-label"></label>
+                <input class="form-check-input" asp-for="IsAddress" id="IsAddress" />
+
+                <div id="divAddress" style="display:none;" class="mb-4">
+                    <input type="hidden" asp-for="addressVM.Id" />
+                    <input type="hidden" asp-for="addressVM.UserIncluded" />
+                    <input type="hidden" asp-for="addressVM.DateIncluded" />
+
+                    <h4><strong>Endereço</strong></h4>
+                    <div class="form-group mb-3">
+                        <label asp-for="addressVM.Street" class="form-label">Rua</label>
+                        <input asp-for="addressVM.Street" class="form-control" />
+                    </div>
+                    <div class="form-group mb-3">
+                        <label asp-for="addressVM.City" class="form-label">Cidade</label>
+                        <input asp-for="addressVM.City" class="form-control" />
+                    </div>
+                    <div class="form-group mb-3">
+                        <label asp-for="addressVM.State" class="form-label">Estado</label>
+                        <input asp-for="addressVM.State" class="form-control" />
+                    </div>
+                    <div class="form-group mb-3">
+                        <label asp-for="addressVM.CEP" class="form-label">CEP</label>
+                        <input asp-for="addressVM.CEP" class="form-control" />
+                    </div>
+                </div>
+
+                <div class="text-center">
+                    <input type="submit" value="Editar" class="btn btn-primary" />
+                    <a class="btn btn-secondary ms-2" asp-action="Index">Voltar</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<style>
+    .card {
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        background-color: #f9f9f9;
+    }
+
+    .form-label {
+        font-weight: 600;
+        color: #6c757d;
+    }
+
+    .form-control {
+        border-radius: 5px;
+        box-shadow: none;
+        border: 1px solid #ccc;
+    }
+
+    .btn-secondary {
+        background-color: #6c757d;
+        border-color: #6c757d;
+    }
+</style>
+<script src="~/js/Collaborator/Editar.js"></script>

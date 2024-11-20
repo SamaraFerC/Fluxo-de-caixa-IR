@@ -1,0 +1,66 @@
+﻿@model FluxoCaixa.Application.ViewModel.ActivityViewModel
+@{
+    ViewData["Title"] = "Editar";
+}
+<h1 class="text-center mb-4 fw-bold">@ViewData["Title"]</h1>
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card shadow-sm p-4">
+            <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+            <input type="hidden" asp-for="Id" />
+            <input type="hidden" asp-for="UserIncluded" />
+            <input type="hidden" asp-for="DateIncluded" />
+
+            <!-- Nome da Atividade -->
+            <div class="form-group mb-3">
+                <label asp-for="Name" class="form-label">Nome</label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+
+            <!-- Descrição -->
+            <div class="form-group mb-3">
+                <label asp-for="Description" class="form-label">Descrição</label>
+                <textarea asp-for="Description" class="form-control" rows="4"></textarea>
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+
+            <!-- Status -->
+            <div class="form-group mb-3">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Status" /> Ativo
+                </label>
+            </div>
+
+            <!-- Botões -->
+            <div class="text-center">
+                <input type="submit" value="Editar" class="btn btn-primary" />
+                <a href="@Url.Action("Index")" class="btn btn-secondary ms-2">Cancelar</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .card {
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        background-color: #f9f9f9;
+    }
+
+    .form-label {
+        font-weight: 600;
+        color: #6c757d;
+    }
+
+    .form-control {
+        border-radius: 5px;
+        box-shadow: none;
+        border: 1px solid #ccc;
+    }
+
+    .btn-secondary {
+        background-color: #6c757d;
+        border-color: #6c757d;
+    }
+</style>

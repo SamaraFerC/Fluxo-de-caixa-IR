@@ -1,0 +1,49 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Areas\Admin\Data\**" />
+    <Compile Remove="Views\FlowType\**" />
+    <Content Remove="Areas\Admin\Data\**" />
+    <Content Remove="Views\FlowType\**" />
+    <EmbeddedResource Remove="Areas\Admin\Data\**" />
+    <EmbeddedResource Remove="Views\FlowType\**" />
+    <None Remove="Areas\Admin\Data\**" />
+    <None Remove="Views\FlowType\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+	  <Content Remove="wwwroot\js\Collaborator\Index.js" />
+	  <Content Remove="wwwroot\js\PaymentType\Index.js" />
+    <Content Remove="wwwroot\js\CollaboratorType\Index.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Areas\Admin\Views\AdminRoles\" />
+  </ItemGroup>
+
+  <ItemGroup>
+	  <None Include="wwwroot\js\Collaborator\Index.js" />
+	  <None Include="wwwroot\js\PaymentType\Index.js" />
+    <None Include="wwwroot\js\CollaboratorType\Index.js" />
+    <None Include="wwwroot\js\Activity\Index.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.10">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.7" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FluxoCaixa.Application\FluxoCaixa.Application.csproj" />
+    <ProjectReference Include="..\FluxoCaixa.Infra.IoC\FluxoCaixa.Infra.IoC.csproj" />
+  </ItemGroup>
+</Project>

@@ -1,26 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\samar\\OneDrive\\Documentos\\GitHub\\Fluxo-de-caixa-IR\\FluxoCaixa.csproj": {}
+    "C:\\Users\\PC\\Documents\\GitHub\\Fluxo-de-caixa-IR2\\FluxoCaixa.csproj": {}
   },
   "projects": {
-    "C:\\Users\\samar\\OneDrive\\Documentos\\GitHub\\Fluxo-de-caixa-IR\\FluxoCaixa.csproj": {
+    "C:\\Users\\PC\\Documents\\GitHub\\Fluxo-de-caixa-IR2\\FluxoCaixa.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\samar\\OneDrive\\Documentos\\GitHub\\Fluxo-de-caixa-IR\\FluxoCaixa.csproj",
+        "projectUniqueName": "C:\\Users\\PC\\Documents\\GitHub\\Fluxo-de-caixa-IR2\\FluxoCaixa.csproj",
         "projectName": "FluxoCaixa",
-        "projectPath": "C:\\Users\\samar\\OneDrive\\Documentos\\GitHub\\Fluxo-de-caixa-IR\\FluxoCaixa.csproj",
-        "packagesPath": "C:\\Users\\samar\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\samar\\OneDrive\\Documentos\\GitHub\\Fluxo-de-caixa-IR\\obj\\",
+        "projectPath": "C:\\Users\\PC\\Documents\\GitHub\\Fluxo-de-caixa-IR2\\FluxoCaixa.csproj",
+        "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\PC\\Documents\\GitHub\\Fluxo-de-caixa-IR2\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\samar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
@@ -63,7 +64,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

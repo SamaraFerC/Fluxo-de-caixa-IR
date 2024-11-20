@@ -1,0 +1,127 @@
+﻿@model IEnumerable<FluxoCaixa.Application.ViewModel.ActivityViewModel>
+@{
+    ViewData["Title"] = "Atividades";
+}
+
+<script src="~/js/Activity/Index.js"></script>
+
+<div class="container mt-4">
+    <!-- Título da Página -->
+    <h1 class="text-left mb-4">@ViewData["Title"]</h1>
+
+    <!-- Botão de Adicionar Atividade -->
+    <p>
+        <a asp-action="Create" class="btn btn-primary">
+            <i class="fas fa-plus me-2"></i> Adicionar atividade
+        </a>
+    </p>
+
+    <!-- Tabela de Atividades -->
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <table class="table table-hover">
+                <thead class="table-light">
+                    <tr>
+                        <th>Tipo</th>
+                        <th>Descrição</th>
+                        <th>Status</th>
+                        <th style="width: 250px;">Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr id="row-@item.Id">
+                            <td>@Html.DisplayFor(modelItem => item.Name)</td>
+                            <td>@Html.DisplayFor(modelItem => item.Description)</td>
+                            <td>@Html.DisplayFor(modelItem => item.Status)</td>
+                            <td>
+                                <div class="btn-group" role="group">
+                                    <a asp-action="Edit" asp-route-id="@item.Id" title="Editar" class="btn btn-primary btn-sm d-inline-flex align-items-center me-2">
+                                        <i class="fas fa-pencil-alt me-1"></i><span>Editar</span>
+                                    </a>
+                                    <a asp-action="Visualize" asp-route-id="@item.Id" title="Detalhes" class="btn btn-info btn-sm d-inline-flex align-items-center me-2">
+                                        <i class="fas fa-eye me-1"></i><span>Visualizar</span>
+                                    </a>
+                                    <button onclick="confirmDelete(@item.Id)" title="Excluir" class="btn btn-danger btn-sm d-inline-flex align-items-center">
+                                        <i class="fas fa-trash-alt me-1"></i><span>Excluir</span>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<style>
+    /* Título centralizado e em negrito */
+    h1 {
+        font-weight: bold;
+        color: #444;
+    }
+
+    /* Botões com estilo moderno */
+    .btn-group {
+        display: flex;
+        gap: 8px;
+    }
+
+    .btn-sm {
+        padding: 0.5rem 1rem;
+        white-space: nowrap;
+    }
+
+    .table {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+        .table td {
+            vertical-align: middle;
+        }
+
+    /* Alinhamento correto para ícones e texto nos botões */
+    .btn-group .btn {
+        display: inline-flex !important;
+        align-items: center !important;
+    }
+
+        .btn-group .btn i {
+            margin-right: 6px;
+        }
+
+    /* Tabela com cabeçalho claro e hover nas linhas */
+    .table-light {
+        background-color: #f8f9fa;
+    }
+
+    .table-striped tbody tr:nth-child(odd) {
+        background-color: #f1f1f1;
+    }
+
+    .table-hover tbody tr:hover {
+        background-color: #e2e6ea;
+    }
+
+    .table-bordered th, .table-bordered td {
+        border: 1px solid #ddd;
+    }
+
+    /* Cartão com borda arredondada e sombra */
+    .card {
+        border-radius: 10px;
+    }
+
+    .card-body {
+        padding: 20px;
+    }
+
+    /* Botão de adicionar com cor mais suave */
+    .btn-success {
+        background-color: #28a745;
+        border-color: #28a745;
+    }
+</style>

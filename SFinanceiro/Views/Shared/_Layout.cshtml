@@ -7,28 +7,106 @@
     <link rel="stylesheet" href="https://bootswatch.com/5/cosmo/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/SFinanceiro.styles.css" asp-append-version="true" />
-</head>
-<body>
-    <!--<style>
+    <link rel="stylesheet" href="~/SFinanceiro\Views\Shared\sidebar.css" asp-append-version="true" />
+    <style>
+        /* Fundo azul claro */
         body {
-            background-color: deepskyblue;
+            background-color: #e3f2fd; /* Azul claro */
+        }
+
+        .footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Estilos aprimorados para a sidebar */
+        .sidebar {
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 250px;
+            background: linear-gradient(180deg, #0066cc 0%, #0056b3 100%);
+            padding-top: 20px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .sidebar-title {
+            color: white !important;
+            font-size: 24px;
+            font-weight: bold;
+            padding: 20px 25px;
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+        }
+
+        .sidebar-nav {
+            padding-top: 10px;
+        }
+
+        .sidebar a.nav-link {
+            color: rgba(255, 255, 255, 0.9) !important;
+            padding: 12px 25px;
+            display: block;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            margin: 4px 0;
+        }
+
+            .sidebar a.nav-link:hover {
+                color: white !important;
+                background-color: rgba(255, 255, 255, 0.1);
+                transform: translateX(5px);
+            }
+
+        .content {
+            margin-left: 270px;
+            padding: 20px;
         }
     </style>
-    <link rel="stylesheet" href="~/css/site.css" />-->
-    <div class="navbar navbar-expand-lg fixed-top bg-primary" data-bs-theme="dark">
-        <a class="navbar-brand mx-3" href="@Url.Action("Index", "Home")">FluxoCaixa</a>
-        @Html.Partial("_LoginPartial")
+</head>
+<body>
+    <div class="sidebar">
+        <div class="sidebar-title">FluxoCaixa</div>
+        <div class="sidebar-nav">
+            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">
+                <i class="fas fa-home"></i> Início
+            </a>
+            <a class="nav-link" asp-area="" asp-controller="Activity" asp-action="Index">
+                <i class="fas fa-tasks"></i> Atividades
+            </a>
+            <a class="nav-link" asp-area="" asp-controller="Collaborator" asp-action="Index">
+                <i class="fas fa-users"></i> Colaboradores
+            </a>
+            <a class="nav-link" asp-area="" asp-controller="CollaboratorType" asp-action="Index">
+                <i class="fas fa-user-tag"></i> Tipo de colaborador
+            </a>
+            <a class="nav-link" asp-area="" asp-controller="PaymentType" asp-action="Index">
+                <i class="fas fa-money-bill"></i> Tipo de pagamento
+            </a>
+            <a class="nav-link" asp-area="" asp-controller="CashFlow" asp-action="Index">
+                <i class="fas fa-chart-line"></i> Movimentação financeira
+            </a>
+        </div>
     </div>
-    <div class="container">
+    <div class="content">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
-
+    <footer class="footer text-muted">
+        <div class="container">
+            <div class="d-flex justify-content-end w-100">
+                <span>Sistema de Fluxo de Caixa</span>
+            </div>
+        </div>
+    </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
-    @await RenderSectionAsync("Scripts", required: false)
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    @RenderSection("Scripts", required: false)
 </body>
 </html>
-
